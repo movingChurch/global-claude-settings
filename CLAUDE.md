@@ -8,11 +8,11 @@ Always follow the instructions in plan.md. When I say "go", find the next unmark
 
 ```mermaid
 graph LR
-    D[1.Design] --> Doc[2.Document]
-    Doc --> R[3.Review]
-    R --> I[4.Implement]
-    I --> V[5.Verify]
-    V --> E[6.Evaluate]
+    D[1.Design] --> Doc[2.\Document]
+    Doc --> R[3.\Review]
+    R --> I[4.\Implement]
+    I --> V[5.\Verify]
+    V --> E[6.\Evaluate]
     E --> D
 ```
 
@@ -58,6 +58,8 @@ graph LR
 4. **NEVER** skip any phase or checklist item
 5. **ALWAYS** use the specified agents for each phase
 6. **NEVER** proceed to next phase without completing current phase checklist
+7. **NEVER** perform tasks directly - ALWAYS use Task tool to invoke appropriate agents
+8. **NEVER** write/edit code without using the designated agents first
 
 ### Automatic Rejection Triggers
 
@@ -67,12 +69,14 @@ graph LR
 - Missing documentation → REJECT
 - Skipped review phase → REJECT
 - Coverage below 80% → REJECT
+- Direct task execution without using agents → REJECT
+- Writing code without invoking designated agents → REJECT
 
 ### Phase Progression Gates
 
-```
+```bash
 DESIGN → All checklist items ✅ → DOCUMENT
-DOCUMENT → All checklist items ✅ → REVIEW  
+DOCUMENT → All checklist items ✅ → REVIEW
 REVIEW → All checklist items ✅ → IMPLEMENT
 IMPLEMENT → All checklist items ✅ → VERIFY
 VERIFY → All checklist items ✅ → EVALUATE
@@ -217,19 +221,31 @@ FOR EACH feature:
 - Clear commit messages (structural vs behavioral)
 - Small, frequent commits
 
+## ⚡ AGENT USAGE ENFORCEMENT
+
+### When User Requests ANY Work
+
+1. **STOP** - Do NOT work directly
+2. **IDENTIFY** the appropriate agent for the task
+3. **USE Task tool** to invoke the agent
+4. **FOLLOW** the agent's guidance and output
+5. **NEVER** bypass agents for any development work
+
 ## EXAMPLE WORKFLOW
 
 When user says: "Build user authentication"
 
 **Your Response**:
 
-```
-"Creating task with task-manager for DDRIVE Phase 1: DESIGN"
+```bash
+"Using Task tool to invoke task-manager agent for DDRIVE Phase 1: DESIGN"
 
-Using agents:
-- requirement-analyzer: Parse requirements
-- architecture-guardian: Validate auth architecture
-- performance-optimizer: Set constraints
+[Task tool call to task-manager agent]
+
+Using Task tool to invoke required agents:
+- Task tool → requirement-analyzer: Parse requirements
+- Task tool → architecture-guardian: Validate auth architecture
+- Task tool → performance-optimizer: Set constraints
 
 Design Checklist:
 ☐ Requirements understood
@@ -242,7 +258,9 @@ Design Checklist:
 [Present design and wait for approval before Phase 2]
 ```
 
-Continue through all 6 phases sequentially, using specified agents and completing all checklist items before proceeding.
+Continue through all 6 phases sequentially, using Task tool to invoke specified agents and completing all checklist items before proceeding.
+
+**⚠️ CRITICAL**: Always use Task tool to invoke agents. NEVER work directly.
 
 ## TASK MANAGEMENT INTEGRATION
 
