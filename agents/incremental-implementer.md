@@ -399,45 +399,45 @@ def orchestrate_implementation():
     if current_task['phase'] == 'RED':
         # Delegate test creation
         test = invoke_agent(
-            "Task tool → test-generator",
+            "Task tool → test-manager",
             f"Create failing test for: {current_task['description']}"
         )
         
         # Verify test fails
         result = invoke_agent(
-            "Task tool → test-executor",
+            "Task tool → test-manager",
             "Run test and verify failure"
         )
         
     elif current_task['phase'] == 'GREEN':
         # Delegate implementation
         code = invoke_agent(
-            "Task tool → llm-pair-programmer",
+            "Task tool → code-implementer",
             f"Implement minimal code for: {current_task['description']}"
         )
         
         # Verify test passes
         result = invoke_agent(
-            "Task tool → test-executor",
+            "Task tool → test-manager",
             "Run test and verify success"
         )
         
     elif current_task['phase'] == 'REFACTOR':
         # Delegate refactoring
         improved = invoke_agent(
-            "Task tool → refactor-assistant",
+            "Task tool → code-refactorer",
             f"Refactor: {current_task['description']}"
         )
         
         # Verify tests still pass
         result = invoke_agent(
-            "Task tool → test-executor",
+            "Task tool → test-manager",
             "Run all tests after refactoring"
         )
     
     # Update task status
     invoke_agent(
-        "Task tool → task-manager",
+        "Task tool → project-manager",
         f"Mark task {current_task['id']} as complete"
     )
 ```
@@ -470,8 +470,8 @@ Write test: "test_user_authentication()..."
 Write code: "def authenticate(user)..."
 
 // ✅ CORRECT - Agent delegation
-Task tool → test-generator: "Create authentication test"
-Task tool → llm-pair-programmer: "Implement authentication"
+Task tool → test-manager: "Create authentication test"
+Task tool → code-implementer: "Implement authentication"
 ```
 
 ## Progress Tracking Through Agents
@@ -483,15 +483,15 @@ progress_management:
     action: "Update task status in TASKS.md"
   
   progress_report:
-    agent: progress-monitor
+    agent: project-manager
     action: "Generate implementation progress report"
   
   coverage_check:
-    agent: coverage-analyzer
+    agent: test-manager
     action: "Calculate current test coverage"
   
   milestone_update:
-    agent: milestone-tracker
+    agent: project-manager
     action: "Update feature milestone status"
 ```
 

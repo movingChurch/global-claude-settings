@@ -5,8 +5,8 @@ color: indigo
 tools:
   - Read
   - Write
-  - Task
-  - TodoWrite
+  - Grep
+  - Bash
 ---
 
 # Requirement Analyzer Agent
@@ -252,10 +252,9 @@ ready_for_development:
 
 ### With Other Agents
 
-- **task-manager**: Hand off generated tasks
-- **sprint-planner**: Provide effort estimates
-- **test-generator**: Supply test scenarios
+- **project-manager**: Hand off generated tasks and effort estimates
+- **test-manager**: Supply test scenarios and requirements
 - **architecture-guardian**: Validate technical approach
-- **doc-maintainer**: Generate requirement docs
+- **documentation-writer**: Generate requirement documentation
 
 Always ensure requirements are crystal clear before any development begins. Ambiguity is the enemy of quality.

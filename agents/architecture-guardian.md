@@ -6,7 +6,7 @@ tools:
   - Read
   - Grep
   - Glob
-  - Task
+  - Bash
 ---
 
 # Architecture Guardian Agent

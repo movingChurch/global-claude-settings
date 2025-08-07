@@ -360,7 +360,7 @@ step_3:
   output: "Test scenarios for RED phase"
 
 step_4:
-  agent: tdd-orchestrator
+  agent: project-manager
   task: "Structure Red-Green-Refactor cycles for components"
   input: "Components + Test scenarios"
   output: "TDD cycle structure"
@@ -381,7 +381,7 @@ step_6:
   output: "Task structure with IDs and dependencies"
 
 step_7:
-  agent: doc-maintainer
+  agent: documentation-writer
   task: "Generate TASKS.md with documentation references"
   input: "Task structure + Feature documentation"
   output: "Complete TASKS.md file"
@@ -413,7 +413,7 @@ def orchestrate_task_decomposition(feature_folder):
     
     # Step 3: Structure TDD cycles
     tdd_cycles = invoke_agent(
-        "Task tool → tdd-orchestrator",
+        "Task tool → project-manager",
         f"Create Red-Green-Refactor cycles for: {components}"
     )
     
@@ -425,7 +425,7 @@ def orchestrate_task_decomposition(feature_folder):
     
     # Step 5: Create TASKS.md
     tasks_file = invoke_agent(
-        "Task tool → doc-maintainer",
+        "Task tool → documentation-writer",
         f"Generate TASKS.md from: {ordered_tasks}"
     )
     
@@ -447,7 +447,7 @@ def orchestrate_task_decomposition(feature_folder):
 2. **ALWAYS use Task tool to invoke agents**
 3. **Ensure each agent completes before next step**
 4. **Validate TDD compliance at the end**
-5. **Generate TASKS.md only through doc-maintainer**
+5. **Generate TASKS.md only through documentation-writer**
 
 ## Important: No Direct Task Creation
 

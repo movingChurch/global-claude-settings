@@ -56,14 +56,15 @@ docs/features/NNN-feature-name/
 5. **NEVER** write code without failing test first
 6. **NEVER** skip orchestrator invocation
 
-### Automatic Rejection
+### Automatic Rejection ⛔
 
-- Direct code writing → REJECT
-- Code before documentation → REJECT
-- Implementation without tests → REJECT
-- Tests after code → REJECT
-- Coverage below 80% → REJECT
-- Bypassing orchestrators → REJECT
+- Direct code writing → REJECT (use incremental-implementer)
+- Code before documentation → REJECT (use feature-documenter first)
+- Implementation without tests → REJECT (TDD violations)
+- Tests after code → REJECT (TDD violations)
+- Coverage below 80% → REJECT (quality gate failure)
+- Bypassing orchestrators → REJECT (architecture violation)
+- Invalid agent references → REJECT (system integrity)
 
 ## 📋 DDRIVE METHODOLOGY
 
@@ -103,30 +104,27 @@ Every feature MUST complete all 6 phases:
 
 ## 🤖 13-Agent Architecture
 
-### Foundation (3)
+### 🎭 Orchestrators (5) - Coordinate via Task tool only
 
-- **requirement-analyzer**: Requirements → DDRIVE tasks
-- **architecture-guardian**: Architecture validation
-- **project-manager**: Task/sprint/milestone management
+- **feature-documenter**: Creates complete docs/features/NNN/ structure
+- **task-decomposer**: Breaks docs into TDD task sequences
+- **incremental-implementer**: Executes TDD cycles from TASKS.md
+- **code-refactorer**: Systematic code quality improvements
+- **project-validator**: Complete project health validation
 
-### Core Orchestrators (5)
+### 👷 Workers (8) - Execute direct operations
 
-- **feature-documenter**: Documentation orchestration
-- **task-decomposer**: TDD task decomposition
-- **incremental-implementer**: TDD implementation
-- **code-refactorer**: Refactoring orchestration
-- **project-validator**: Validation orchestration
+**Foundation Workers:**
+- **requirement-analyzer**: Converts requirements to structured tasks
+- **architecture-guardian**: Guards system architecture integrity  
+- **project-manager**: Manages tasks/sprints with Taskmaster-style NLP
+- **dependency-resolver**: Package dependencies and security
 
-### Implementation (3)
-
-- **test-manager**: All testing operations
-- **code-implementer**: Code writing/optimization
-- **documentation-writer**: Documentation creation
-
-### Quality (2)
-
-- **code-validator**: Quality/standards validation
-- **dependency-resolver**: Dependency management
+**Implementation Workers:**
+- **code-implementer**: All code writing and optimization
+- **test-manager**: TDD enforcement, test generation, execution
+- **code-validator**: Quality standards and readability validation
+- **documentation-writer**: All documentation creation and maintenance
 
 ## 💻 TDD Implementation Process
 
@@ -187,14 +185,29 @@ Task → code-refactorer: "Improve code structure"
 Task → project-validator: "Validate implementation"
 ```
 
+## ✅ SYSTEM VALIDATION STATUS
+
+### Architecture Verified ✓
+- All 13 agents properly configured
+- Tool patterns correctly assigned (orchestrators vs workers)  
+- No circular dependencies or invalid references
+- Clear workflow integration established
+
+### Workflow Consistency ✓
+- 5 commands → 5 orchestrators mapping confirmed
+- TDD cycle enforcement in place
+- Documentation-first approach validated
+- Quality gates functioning
+
 ## ⚠️ KEY REMINDERS
 
-1. **Orchestrators handle everything** - You just invoke them
+1. **Orchestrators coordinate everything** - You just invoke them
 2. **Documentation drives development** - No docs, no code
 3. **Tests drive implementation** - No test, no code
-4. **One task at a time** - Sequential, not parallel
+4. **One task at a time** - Sequential TDD cycles
 5. **Validate constantly** - Quality gates at each phase
+6. **Never bypass the system** - Always use proper channels
 
 ---
 
-**Remember**: When in doubt, use an orchestrator. Never work directly.
+**Remember**: When in doubt, use an orchestrator. The system is designed to handle complexity through proper coordination.

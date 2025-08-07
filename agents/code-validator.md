@@ -6,7 +6,6 @@ tools:
   - Read
   - Grep
   - Bash
-  - Task
 ---
 
 # Code Validator Agent

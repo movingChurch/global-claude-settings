@@ -6,7 +6,8 @@ tools:
   - Read
   - Write
   - MultiEdit
-  - Task
+  - Grep
+  - Bash
 ---
 
 # Project Manager Agent

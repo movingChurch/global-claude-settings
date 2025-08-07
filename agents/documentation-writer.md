@@ -7,7 +7,6 @@ tools:
   - Write
   - MultiEdit
   - Grep
-  - Task
 ---
 
 # Documentation Writer Agent

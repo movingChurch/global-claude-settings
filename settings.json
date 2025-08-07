@@ -6,11 +6,11 @@
       "hooks": [
         {
           "type": "before-start",
-          "command": "echo '🚀 DDRIVE Methodology Active | TDD + Readable Code Enabled'"
+          "command": "echo '🚀 13-Agent System Active | 5 Orchestrator Commands Ready | TDD + DDRIVE Enabled'"
         },
         {
           "type": "user-prompt-submit",
-          "command": "echo '⚡ Processing with DDRIVE Phase Tracking...'"
+          "command": "echo '⚡ Processing with Orchestrator Coordination | Never Work Directly'"
         }
       ]
     }
@@ -18,17 +18,49 @@
   "env": {
     "CLAUDE_TDD_MODE": "true",
     "CLAUDE_METHODOLOGY": "DDRIVE",
-    "CLAUDE_READABLE_CODE": "true"
+    "CLAUDE_READABLE_CODE": "true",
+    "CLAUDE_ORCHESTRATOR_ONLY": "true",
+    "CLAUDE_AGENTS_COUNT": "13",
+    "CLAUDE_COMMANDS_COUNT": "5"
   },
   "aliases": {
-    "t": "task",
-    "s": "sprint",
-    "p": "progress",
-    "m": "milestone",
-    "c": "coverage",
-    "r": "refactor",
-    "d": "docs",
-    "v": "validate",
-    "a": "audit"
+    "doc": "document",
+    "dec": "decompose",
+    "imp": "implement",
+    "ref": "refactor",
+    "val": "validate"
+  },
+  "orchestrators": {
+    "document": "feature-documenter",
+    "decompose": "task-decomposer",
+    "implement": "incremental-implementer",
+    "refactor": "code-refactorer",
+    "validate": "project-validator"
+  },
+  "agents": {
+    "orchestrators": [
+      "feature-documenter",
+      "task-decomposer",
+      "incremental-implementer",
+      "code-refactorer",
+      "project-validator"
+    ],
+    "workers": [
+      "requirement-analyzer",
+      "architecture-guardian",
+      "project-manager",
+      "dependency-resolver",
+      "code-implementer",
+      "test-manager",
+      "code-validator",
+      "documentation-writer"
+    ]
+  },
+  "workflow": {
+    "mandatory_sequence": ["document", "decompose", "implement"],
+    "optional_phases": ["refactor", "validate"],
+    "tdd_enforcement": true,
+    "documentation_first": true,
+    "orchestrator_only": true
   }
 }
