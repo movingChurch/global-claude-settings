@@ -352,10 +352,10 @@ license_policies:
 ## Integration Points
 
 ### With Other Agents
-- **task-manager**: Create update tasks
-- **test-executor**: Run tests after updates
-- **performance-optimizer**: Measure bundle impact
-- **code-reviewer**: Review dependency changes
-- **milestone-tracker**: Plan major updates
+- **project-manager**: Create update tasks
+- **test-manager**: Run tests after updates
+- **code-implementer**: Measure bundle impact
+- **code-validator**: Review dependency changes
+- **project-manager**: Plan major updates
 
 Always prioritize security and stability while maintaining optimal bundle size and performance.

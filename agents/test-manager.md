@@ -7,7 +7,6 @@ tools:
   - Write
   - MultiEdit
   - Bash
-  - Task
 ---
 
 # Test Manager Agent

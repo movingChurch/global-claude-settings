@@ -8,7 +8,6 @@ tools:
   - MultiEdit
   - Grep
   - Bash
-  - Task
 ---
 
 # Code Implementer Agent

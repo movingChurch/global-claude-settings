@@ -458,7 +458,7 @@ def orchestrate_implementation():
 2. **ALWAYS use Task tool to invoke agents**
 3. **Follow TDD phases strictly through agents**
 4. **Wait for agent completion before proceeding**
-5. **Update progress only through task-manager**
+5. **Update progress only through project-manager**
 
 ## Important: No Direct Implementation
 
@@ -479,7 +479,7 @@ Task tool → code-implementer: "Implement authentication"
 ```yaml
 progress_management:
   status_update:
-    agent: task-manager
+    agent: project-manager
     action: "Update task status in TASKS.md"
   
   progress_report:

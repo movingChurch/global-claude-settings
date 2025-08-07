@@ -407,7 +407,7 @@ def orchestrate_task_decomposition(feature_folder):
     
     # Step 2: Generate test scenarios
     tests = invoke_agent(
-        "Task tool → test-generator",
+        "Task tool → test-manager",
         f"Create test scenarios for: {components}"
     )
     
