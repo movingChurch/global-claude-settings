@@ -43,7 +43,8 @@ docs/features/NNN-feature-name/
 ├── DESIGN.md          # Architecture and design decisions
 ├── INTERFACE.md       # API/function signatures
 ├── TEST-CASES.md      # Test scenarios for TDD
-└── EXAMPLES.md        # Usage examples
+├── EXAMPLES.md        # Usage examples
+└── TASKS.md           # TDD implementation tasks (created by task-decomposer)
 ```
 
 ### Auto-numbering System

@@ -5,6 +5,7 @@
 **NEVER work directly. ALWAYS use orchestrators through Task tool.**
 
 ### 5 Core Orchestrator Commands
+
 ```bash
 document   → feature-documenter    # Create complete documentation
 decompose  → task-decomposer       # Break into TDD tasks  
@@ -18,9 +19,9 @@ validate   → project-validator      # Complete validation
 ```mermaid
 graph LR
     A[User Request] --> B[document]
-    B --> C[docs/features/NNN-feature/]
+    B --> C[docs/features/NNN/]
     C --> D[decompose]
-    D --> E[TASKS.md]
+    D --> E[NNN/TASKS.md]
     E --> F[implement]
     F --> G[TDD Implementation]
     G --> H[refactor]
@@ -32,6 +33,7 @@ graph LR
 ```
 
 ### 📁 Documentation Structure
+
 ```
 docs/features/NNN-feature-name/
 ├── README.md           # Feature overview
@@ -39,12 +41,14 @@ docs/features/NNN-feature-name/
 ├── DESIGN.md          # Architecture
 ├── INTERFACE.md       # APIs
 ├── TEST-CASES.md      # TDD scenarios
-└── EXAMPLES.md        # Usage examples
+├── EXAMPLES.md        # Usage examples
+└── TASKS.md           # TDD implementation tasks
 ```
 
 ## 🛑 ENFORCEMENT RULES - NO EXCEPTIONS
 
 ### You MUST
+
 1. **ALWAYS** use orchestrators via Task tool - NEVER work directly
 2. **ALWAYS** create documentation before any code
 3. **ALWAYS** decompose into TDD tasks before implementation
@@ -53,6 +57,7 @@ docs/features/NNN-feature-name/
 6. **NEVER** skip orchestrator invocation
 
 ### Automatic Rejection
+
 - Direct code writing → REJECT
 - Code before documentation → REJECT  
 - Implementation without tests → REJECT
@@ -67,37 +72,45 @@ docs/features/NNN-feature-name/
 Every feature MUST complete all 6 phases:
 
 #### Phase 1: DESIGN
+
 - Use: `requirement-analyzer`, `architecture-guardian`
 - Output: Requirements, architecture, interfaces
 
 #### Phase 2: DOCUMENT  
+
 - Use: `document` command (feature-documenter)
 - Output: Complete feature documentation
 
 #### Phase 3: REVIEW
+
 - Use: `code-validator`, `test-manager`
 - Output: Validated design and test strategy
 
 #### Phase 4: IMPLEMENT
+
 - Use: `decompose` → `implement` commands
 - Output: TDD implementation with tests
 
 #### Phase 5: VERIFY
+
 - Use: `validate` command (project-validator)
 - Output: Quality metrics, coverage report
 
 #### Phase 6: EVALUATE
+
 - Use: `project-validator`, `documentation-writer`
 - Output: Lessons learned, improvements
 
 ## 🤖 13-Agent Architecture
 
 ### Foundation (3)
+
 - **requirement-analyzer**: Requirements → DDRIVE tasks
 - **architecture-guardian**: Architecture validation
 - **project-manager**: Task/sprint/milestone management
 
 ### Core Orchestrators (5)
+
 - **feature-documenter**: Documentation orchestration
 - **task-decomposer**: TDD task decomposition
 - **incremental-implementer**: TDD implementation
@@ -105,17 +118,20 @@ Every feature MUST complete all 6 phases:
 - **project-validator**: Validation orchestration
 
 ### Implementation (3)
+
 - **test-manager**: All testing operations
 - **code-implementer**: Code writing/optimization
 - **documentation-writer**: Documentation creation
 
 ### Quality (2)
+
 - **code-validator**: Quality/standards validation
 - **dependency-resolver**: Dependency management
 
 ## 💻 TDD Implementation Process
 
 ### Red-Green-Refactor Cycle
+
 ```
 FOR EACH task in TASKS.md:
   1. RED: Write failing test (test-manager)
@@ -125,6 +141,7 @@ FOR EACH task in TASKS.md:
 ```
 
 ### Task Structure in TASKS.md
+
 ```markdown
 ## Task 1: [Feature Name]
 - [ ] Write test for X
@@ -136,12 +153,14 @@ FOR EACH task in TASKS.md:
 ## 📊 Quality Standards
 
 ### Code Principles
+
 - **Readability First**: Clear over clever
 - **Single Responsibility**: One function, one purpose
 - **Test Coverage**: Minimum 80%
 - **Small Commits**: Atomic, focused changes
 
 ### Commit Requirements
+
 - All tests passing
 - No warnings/errors
 - Clear message
