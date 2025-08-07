@@ -16,38 +16,32 @@ graph LR
     E --> D
 ```
 
-## 🤖 Agent Ecosystem (22 Specialized Agents)
+## 🤖 Agent Ecosystem (13 Specialized Agents)
 
-### Requirements & Planning (5)
+### Foundation Agents (3)
 
 - **requirement-analyzer** (indigo): Analyzes requirements → DDRIVE tasks
-- **task-manager** (gold): Creates and manages all development tasks
-- **sprint-planner** (silver): Plans sprints and manages backlog
-- **milestone-tracker** (bronze): Tracks project milestones and deadlines
-- **progress-monitor** (teal): Real-time progress monitoring
+- **architecture-guardian** (cyan): Validates architecture patterns and dependency health
+- **project-manager** (gold): Taskmaster-style natural language task, sprint, and milestone management
 
-### Development & Testing (9)
+### Core Orchestrators (5)
 
-- **test-generator** (green): Creates comprehensive test suites
-- **spec-writer** (blue): Converts requirements to BDD scenarios
-- **mock-builder** (yellow): Generates mocks and test fixtures
-- **test-executor** (red): Manages TDD cycle execution
-- **coverage-analyzer** (purple): Analyzes test coverage
-- **refactor-assistant** (cyan): Guides safe refactoring
-- **tdd-enforcer** (orange): Enforces TDD practices
-- **regression-detector** (magenta): Detects test regressions
-- **tdd-orchestrator** (indigo): Coordinates entire TDD workflow
+- **feature-documenter** (indigo): Orchestrates feature documentation through multiple agents
+- **task-decomposer** (blue): Orchestrates task decomposition into TDD-based executable tasks
+- **incremental-implementer** (green): Orchestrates incremental implementation following TDD
+- **code-refactorer** (teal): Orchestrates systematic refactoring through coordinated agents
+- **project-validator** (crimson): Orchestrates complete project validation and health checks
 
-### Code Quality & Review (8)
+### Implementation Agents (3)
 
-- **code-reviewer** (navy): Automated comprehensive code reviews
-- **code-auditor** (crimson): Comprehensive codebase audit for vulnerabilities and improvements
-- **readable-validator** (blue): Validates readability principles
-- **architecture-guardian** (purple): Maintains architectural integrity
-- **llm-pair-programmer** (green): Optimizes AI collaboration
-- **performance-optimizer** (red): Optimizes for performance
-- **doc-maintainer** (yellow): Keeps documentation synchronized
-- **dependency-resolver** (coral): Manages package dependencies
+- **test-manager** (green): Comprehensive test management (generation, execution, TDD, coverage, mocking, regression)
+- **code-implementer** (blue): All code implementation, optimization, and improvements
+- **documentation-writer** (yellow): Creates and maintains all documentation types
+
+### Quality Agents (2)
+
+- **code-validator** (purple): Validates code quality, readability, and standards compliance
+- **dependency-resolver** (orange): Manages dependencies, security, and compatibility
 
 ## 🚨 ENFORCEMENT RULES - NO EXCEPTIONS
 
@@ -90,22 +84,22 @@ EVALUATE → All checklist items ✅ → COMPLETE
 
 **Purpose**: Think before coding. Define what we're building and why.
 
-**Agents**: requirement-analyzer → task-manager → architecture-guardian → llm-pair-programmer → dependency-resolver → performance-optimizer
+**Agents**: requirement-analyzer → project-manager → architecture-guardian → code-implementer → dependency-resolver
 
 **Checklist**:
 
 - [ ] Requirements clearly understood (requirement-analyzer)
-- [ ] Task created with DDRIVE structure (task-manager)
+- [ ] Task created with DDRIVE structure (project-manager)
 - [ ] Architecture diagram created (architecture-guardian)
-- [ ] Interfaces defined (llm-pair-programmer)
+- [ ] Interfaces defined (code-implementer)
 - [ ] Dependencies identified (dependency-resolver)
-- [ ] Performance requirements specified (performance-optimizer)
+- [ ] Performance requirements specified (code-validator)
 
 ### Phase 2: DOCUMENT 📝
 
 **Purpose**: Create clear specifications before writing any code.
 
-**Agents**: doc-maintainer → spec-writer → readable-validator
+**Agents**: documentation-writer → feature-documenter → task-decomposer
 
 **Checklist**:
 
@@ -120,33 +114,33 @@ EVALUATE → All checklist items ✅ → COMPLETE
 
 **Purpose**: Validate design and documentation before implementation.
 
-**Agents**: code-reviewer → architecture-guardian → readable-validator → dependency-resolver → tdd-orchestrator → sprint-planner
+**Agents**: code-validator → architecture-guardian → dependency-resolver → test-manager → project-manager
 
 **Checklist**:
 
-- [ ] Design reviewed and approved (code-reviewer)
+- [ ] Design reviewed and approved (code-validator)
 - [ ] Architecture validated (architecture-guardian)
-- [ ] Naming conventions verified (readable-validator)
+- [ ] Naming conventions verified (code-validator)
 - [ ] Dependencies approved (dependency-resolver)
-- [ ] Test strategy confirmed (tdd-orchestrator)
-- [ ] Sprint capacity available (sprint-planner)
+- [ ] Test strategy confirmed (test-manager)
+- [ ] Sprint capacity available (project-manager)
 
 ### Phase 4: IMPLEMENT 💻
 
 **Purpose**: Write code following TDD Red-Green-Refactor cycle.
 
-**Agents**: test-generator → mock-builder → test-executor → coverage-analyzer
+**Agents**: test-manager → code-implementer → incremental-implementer
 
 **TDD Cycle**:
 
 ```
 FOR EACH feature:
-  1. Write failing test → test-generator
-  2. Run test (expect failure) → test-executor
-  3. Write minimal implementation  
-  4. Run test (expect success) → test-executor
-  5. Refactor if needed → refactor-assistant
-  6. Run all tests → test-executor
+  1. Write failing test → test-manager
+  2. Run test (expect failure) → test-manager
+  3. Write minimal implementation → code-implementer 
+  4. Run test (expect success) → test-manager
+  5. Refactor if needed → code-refactorer
+  6. Run all tests → test-manager
 ```
 
 **Checklist**:
@@ -162,7 +156,7 @@ FOR EACH feature:
 
 **Purpose**: Ensure code meets all quality standards.
 
-**Agents**: test-executor → coverage-analyzer → regression-detector → performance-optimizer → readable-validator → tdd-enforcer
+**Agents**: test-manager → code-validator → project-validator
 
 **Checklist**:
 
@@ -177,7 +171,7 @@ FOR EACH feature:
 
 **Purpose**: Learn and improve from the implementation.
 
-**Agents**: performance-optimizer → architecture-guardian → doc-maintainer
+**Agents**: code-validator → architecture-guardian → documentation-writer → project-validator
 
 **Checklist**:
 
@@ -222,6 +216,47 @@ FOR EACH feature:
 - Clear commit messages (structural vs behavioral)
 - Small, frequent commits
 
+## 📋 DOCUMENT-FIRST DEVELOPMENT WORKFLOW
+
+### Three-Stage Feature Implementation
+
+```mermaid
+graph LR
+    A[User Request] --> B[feature-documenter]
+    B --> C[Complete Documentation]
+    C --> D[task-decomposer]
+    D --> E[TASKS.md with TDD cycles]
+    E --> F[incremental-implementer]
+    F --> G[Working Implementation]
+    
+    style B fill:#9f9
+    style D fill:#99f
+    style F fill:#f99
+```
+
+### Stage 1: Documentation (feature-documenter)
+Creates `docs/features/NNN-feature-name/` with:
+- README.md (overview)
+- SPECIFICATION.md (requirements)
+- DESIGN.md (architecture)
+- INTERFACE.md (APIs)
+- TEST-CASES.md (TDD scenarios)
+- EXAMPLES.md (usage)
+
+### Stage 2: Task Decomposition (task-decomposer)
+Generates TASKS.md with:
+- TDD cycle tasks (RED → GREEN → REFACTOR)
+- Document references for each task
+- Dependencies and ordering
+- Verification criteria
+
+### Stage 3: Implementation (incremental-implementer)
+Executes tasks incrementally:
+- Follows TASKS.md sequentially
+- Implements TDD cycles properly
+- Updates progress in real-time
+- Supports resume after interruption
+
 ## ⚡ AGENT USAGE ENFORCEMENT
 
 ### When User Requests ANY Work
@@ -232,6 +267,11 @@ FOR EACH feature:
 4. **FOLLOW** the agent's guidance and output
 5. **NEVER** bypass agents for any development work
 
+### For New Features: Use Document-First Workflow
+1. `Task tool → feature-documenter` for complete documentation
+2. `Task tool → task-decomposer` for task generation
+3. `Task tool → incremental-implementer` for TDD implementation
+
 ## EXAMPLE WORKFLOW
 
 When user says: "Build user authentication"
@@ -239,9 +279,9 @@ When user says: "Build user authentication"
 **Your Response**:
 
 ```bash
-"Using Task tool to invoke task-manager agent for DDRIVE Phase 1: DESIGN"
+"Using Task tool to invoke project-manager agent for DDRIVE Phase 1: DESIGN"
 
-[Task tool call to task-manager agent]
+[Task tool call to project-manager agent]
 
 Using Task tool to invoke required agents:
 - Task tool → requirement-analyzer: Parse requirements
@@ -274,6 +314,6 @@ Every task MUST have:
 5. **Story Points**: Estimated complexity
 6. **Sprint Assignment**: Which sprint it belongs to
 
-Use task-manager → sprint-planner → progress-monitor → milestone-tracker for complete task lifecycle management.
+Use project-manager for complete task lifecycle management including tasks, sprints, milestones, and progress tracking.
 
 Always write one test at a time, make it run, then improve structure. Always run all tests each time.

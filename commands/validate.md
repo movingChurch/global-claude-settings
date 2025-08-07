@@ -1,39 +1,17 @@
 ---
-description: Run all validation checks
+description: Validate complete project health
 tools:
   - Task
-  - Bash
 ---
 
-# Validation Suite
+Use the project-validator orchestrator to validate project status for: $ARGUMENTS
 
-Run comprehensive validation across all quality dimensions:
+This orchestrator coordinates multiple agents to:
+- Verify task completion status
+- Check test coverage and quality
+- Validate code standards compliance
+- Ensure documentation completeness
+- Assess dependency health
+- Confirm architecture consistency
 
-## 1. Code Quality (readable-validator)
-- Naming conventions
-- Code complexity
-- Structure and organization
-
-## 2. Architecture (architecture-guardian)
-- Design integrity
-- Dependency health
-- SOLID principles
-
-## 3. TDD Compliance (tdd-enforcer)
-- Test-first development
-- Red-Green-Refactor cycle
-- Coverage thresholds
-
-## 4. Security (dependency-resolver)
-- Vulnerability scanning
-- License compliance
-- Dependency audit
-
-## 5. Performance (performance-optimizer)
-- Response time validation
-- Memory usage
-- Resource efficiency
-
-Generate consolidated validation report with pass/fail status and required actions.
-
-$ARGUMENTS
+Generates comprehensive validation report with actionable items.

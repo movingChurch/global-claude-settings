@@ -1,30 +1,16 @@
 ---
-description: Start guided refactoring with tests passing
+description: Orchestrate systematic code refactoring
 tools:
   - Task
 ---
 
-Use the refactor-assistant agent to guide safe refactoring.
+Use the code-refactorer orchestrator to refactor code for: $ARGUMENTS
 
-Prerequisites check:
+This orchestrator coordinates multiple agents to:
+- Verify all tests are passing
+- Identify refactoring opportunities
+- Apply one refactoring at a time
+- Validate tests after each change
+- Improve code quality metrics
 
-1. Verify all tests are passing (Green state)
-2. Confirm test coverage is adequate
-
-Refactoring process:
-
-1. Identify code smells and improvement opportunities
-2. Apply one refactoring pattern at a time
-3. Run tests after each change
-4. Maintain external behavior
-5. Document refactoring decisions
-
-Focus on: $ARGUMENTS
-
-Common refactorings:
-
-- Extract Method
-- Replace Magic Numbers
-- Remove Duplication
-- Simplify Conditionals
-- Extract Class
+Never changes behavior, only improves structure.
