@@ -318,7 +318,7 @@ Description and code example.
 
 ## Agent-Based Workflow
 
-### Phase 1: Requirements Analysis
+### Phase 1: Requirements Analysis and User Validation
 ```yaml
 step_1:
   agent: requirement-analyzer
@@ -326,43 +326,76 @@ step_1:
   output: "Structured requirements document"
 
 step_2:
-  agent: architecture-guardian  
-  task: "Validate architectural approach"
-  output: "Architecture validation report"
+  action: USER_VALIDATION
+  task: "Present requirements analysis to user for confirmation"
+  required_approval:
+    - Feature scope and boundaries
+    - Core functionality requirements
+    - Non-functional requirements
+    - Success criteria
+    - Dependencies and constraints
+  output: "User-approved requirements"
+
+step_3:
+  agent: architecture-guardian
+  task: "Design architectural approach based on approved requirements"
+  output: "Proposed architecture design"
+
+step_4:
+  action: USER_VALIDATION
+  task: "Present architectural design to user for approval"
+  required_approval:
+    - Architecture patterns and approach
+    - Technology choices
+    - Integration points
+    - Performance considerations
+    - Security approach
+  output: "User-approved architecture"
 ```
 
-### Phase 2: Documentation Generation
+### Phase 2: Documentation Generation with User Review
 
 ```yaml
-step_3:
+step_5:
   agent: documentation-writer
   task: "Create feature folder structure docs/features/NNN-feature-name/"
   output: "Feature folder with template files"
 
-step_4:
+step_6:
   agent: documentation-writer
   task: "Write detailed specifications in SPECIFICATION.md"
   output: "Complete specification document"
 
-step_5:
+step_7:
   agent: architecture-guardian
   task: "Document architecture and design in DESIGN.md"
   output: "Architecture design document"
 
-step_6:
+step_8:
   agent: test-manager
   task: "Create test scenarios in TEST-CASES.md"
   output: "Comprehensive test cases"
 
-step_7:
+step_9:
   agent: documentation-writer
   task: "Generate API documentation in INTERFACE.md"
   output: "Interface specifications"
 
-step_8:
+step_10:
   agent: code-implementer
   task: "Create usage examples in EXAMPLES.md"
   output: "Working examples"
+
+step_11:
+  action: USER_REVIEW
+  task: "Present complete documentation to user for final approval"
+  required_review:
+    - SPECIFICATION.md completeness and accuracy
+    - DESIGN.md clarity and feasibility  
+    - INTERFACE.md API contracts
+    - TEST-CASES.md test coverage
+    - EXAMPLES.md usage clarity
+  output: "User-approved complete documentation"
 ```
 
 ### Phase 3: Validation
@@ -391,45 +424,71 @@ def orchestrate_documentation(feature_request):
         "Parse and structure requirements for: " + feature_request
     )
     
-    # Step 2: Validate architecture
+    # Step 2: USER VALIDATION - Requirements
+    user_approval = request_user_approval(
+        "Requirements Analysis",
+        requirements,
+        [
+            "Is the scope correct and complete?",
+            "Are all functional requirements captured?",
+            "Are success criteria clear and measurable?",
+            "Any missing dependencies or constraints?"
+        ]
+    )
+    
+    # Step 3: Design architecture
     architecture = invoke_agent(
         "Task tool → architecture-guardian",
-        "Validate architecture for: " + requirements
+        "Design architecture for: " + user_approval.requirements
     )
     
-    # Step 3: Create documentation structure
-    folder = invoke_agent(
-        "Task tool → documentation-writer",
-        "Create feature folder with templates"
+    # Step 4: USER VALIDATION - Architecture
+    arch_approval = request_user_approval(
+        "Architecture Design",
+        architecture,
+        [
+            "Does the architectural approach make sense?",
+            "Are technology choices appropriate?",
+            "Any scalability or performance concerns?",
+            "Security considerations adequately covered?"
+        ]
     )
     
-    # Step 4: Generate specifications
-    specs = invoke_agent(
-        "Task tool → documentation-writer",
-        "Write specifications based on: " + requirements
+    # Step 5: Generate complete documentation
+    complete_docs = generate_all_documentation(
+        arch_approval.requirements,
+        arch_approval.architecture
     )
     
-    # Step 5: Generate test cases
-    tests = invoke_agent(
-        "Task tool → test-manager",
-        "Create test scenarios for: " + specs
+    # Step 6: USER VALIDATION - Complete Documentation
+    final_approval = request_user_approval(
+        "Complete Feature Documentation",
+        complete_docs,
+        [
+            "Is SPECIFICATION.md complete and accurate?",
+            "Does DESIGN.md clearly explain the architecture?",
+            "Are INTERFACE.md API contracts well-defined?",
+            "Do TEST-CASES.md cover all scenarios?",
+            "Are EXAMPLES.md clear and helpful?"
+        ]
     )
     
-    # Continue with all agents...
-    return complete_documentation
+    return final_approval.documentation
 ```
 
 ### Success Criteria
 
 Feature documentation is complete when:
 
-- [ ] requirement-analyzer has validated requirements
-- [ ] architecture-guardian has approved design
-- [ ] documentation-writer has created specifications
+- [ ] requirement-analyzer has analyzed requirements
+- [ ] **USER has approved requirements and scope**
+- [ ] architecture-guardian has designed architecture
+- [ ] **USER has approved architectural approach**
+- [ ] documentation-writer has created all documents
 - [ ] test-manager has provided test cases
-- [ ] documentation-writer has assembled all documents
-- [ ] code-validator has confirmed clarity
-- [ ] architecture-guardian has approved completeness
+- [ ] code-implementer has created examples
+- [ ] **USER has reviewed and approved complete documentation**
+- [ ] code-validator has confirmed final quality
 
 ## Agent Dependencies
 
