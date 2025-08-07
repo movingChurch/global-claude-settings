@@ -38,10 +38,13 @@ docs/features/NNN-feature-name/
    - GREEN: Use code-implementer for minimal implementation
    - REFACTOR: Use code-refactorer for improvements
    - Use test-manager to verify each phase
+   - Use architecture-guardian for design validation
+   - Use code-validator for quality checks
 
 3. **Progress Management**
    - Use project-manager to update task status
    - Use project-validator to track implementation quality
+   - Use documentation-writer to update docs
    - Support resumable implementation
    - Maintain state through agent coordination
 
@@ -81,19 +84,25 @@ green_phase:
     output: "Implementation code"
   
   step_2:
-    agent: test-executor
+    agent: architecture-guardian
+    task: "Validate implementation follows design patterns"
+    input: "Implementation + DESIGN.md"
+    output: "Architecture compliance report"
+  
+  step_3:
+    agent: test-manager
     task: "Run test and verify it passes"
     input: "Implementation + Test"
     output: "Test success confirmation"
   
-  step_3:
-    agent: tdd-enforcer
-    task: "Verify minimal implementation (no over-engineering)"
-    input: "Implementation code"
-    output: "TDD compliance report"
-  
   step_4:
-    agent: task-manager
+    agent: code-validator
+    task: "Verify code quality and minimal implementation"
+    input: "Implementation code"
+    output: "Quality validation report"
+  
+  step_5:
+    agent: project-manager
     task: "Update task status to GREEN complete"
     input: "Task ID"
     output: "Updated TASKS.md"
@@ -104,25 +113,31 @@ green_phase:
 ```yaml
 refactor_phase:
   step_1:
-    agent: refactor-assistant
-    task: "Improve code while maintaining tests"
+    agent: code-refactorer
+    task: "Orchestrate refactoring while maintaining tests"
     input: "Current implementation + Optimization notes"
     output: "Refactored code"
   
   step_2:
-    agent: test-executor
-    task: "Verify all tests still pass"
+    agent: test-manager
+    task: "Verify all tests still pass after refactoring"
     input: "Refactored code + All tests"
     output: "Test success confirmation"
   
   step_3:
-    agent: readable-validator
-    task: "Validate code readability improvements"
+    agent: code-validator
+    task: "Validate code quality improvements"
     input: "Refactored code"
-    output: "Readability report"
+    output: "Quality validation report"
   
   step_4:
-    agent: task-manager
+    agent: documentation-writer
+    task: "Update code documentation if needed"
+    input: "Refactored code"
+    output: "Updated documentation"
+  
+  step_5:
+    agent: project-manager
     task: "Update task status to REFACTOR complete"
     input: "Task ID"
     output: "Updated TASKS.md"
@@ -430,16 +445,13 @@ def orchestrate_implementation():
 ## Agent Dependencies
 
 ### Required Agents for Implementation
-- **test-generator**: Creates tests for RED phase
-- **test-executor**: Runs tests and verifies results
-- **llm-pair-programmer**: Generates implementation code
-- **refactor-assistant**: Improves code quality
-- **task-manager**: Updates task status
-- **progress-monitor**: Tracks overall progress
-- **tdd-enforcer**: Validates TDD compliance
-- **readable-validator**: Checks code readability
-- **coverage-analyzer**: Monitors test coverage
-- **regression-detector**: Ensures no regressions
+- **test-manager**: Creates and runs tests for all TDD phases
+- **code-implementer**: Generates implementation code
+- **code-refactorer**: Orchestrates refactoring improvements
+- **project-manager**: Updates task status and progress
+- **architecture-guardian**: Validates design compliance
+- **code-validator**: Checks code quality and standards
+- **documentation-writer**: Updates documentation as needed
 
 ### Coordination Rules
 1. **NEVER write code or tests directly**
