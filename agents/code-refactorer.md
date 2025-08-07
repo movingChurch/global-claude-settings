@@ -1,7 +1,8 @@
 ---
 name: code-refactorer
-description: MUST BE USED when orchestrating systematic code refactoring through multiple agents. Use this agent for coordinated refactoring that maintains test-driven safety while improving code structure.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when you need systematic code refactoring while maintaining functionality. Examples: <example>Context: User needs to refactor code for better quality. user: 'Refactor this legacy code to improve readability and eliminate duplication' assistant: 'I'll use the code-refactorer agent to systematically improve the code quality while maintaining all functionality' <commentary>User needs code refactoring, so use code-refactorer to improve structure and eliminate code smells.</commentary></example>
+model: sonnet
+color: green
 ---
 
 # Code Refactorer Agent

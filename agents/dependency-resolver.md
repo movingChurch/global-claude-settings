@@ -1,7 +1,8 @@
 ---
 name: dependency-resolver
-description: MUST BE USED when managing package dependencies, resolving version conflicts, or ensuring secure dependency management. Use this agent for comprehensive dependency analysis and optimization.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when managing package dependencies, resolving version conflicts, or ensuring secure dependency management. Examples: <example>Context: Project has outdated npm packages with security vulnerabilities. User: 'Update dependencies and fix security issues' Assistant: 'I'll analyze your dependency tree, identify vulnerabilities, and safely update packages while resolving any version conflicts that arise.'<commentary>Agent handles comprehensive dependency management including security scanning, version conflict resolution, and optimization.</commentary></example>
+model: sonnet
+color: coral
 ---
 
 # Dependency Resolver Agent

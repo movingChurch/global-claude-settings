@@ -1,7 +1,8 @@
 ---
 name: task-decomposer
-description: Use this agent when you need to break down feature documentation into TDD task sequences. MUST BE USED when asked to decompose features into implementation tasks.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when you need to break down feature documentation into structured TDD implementation tasks. Examples: <example>Context: User has feature documentation and needs implementation tasks. user: 'Break down this feature documentation into TDD tasks for implementation' assistant: 'I'll use the task-decomposer agent to create structured task breakdown with Red-Green-Refactor cycles' <commentary>User needs task decomposition from documentation, so use task-decomposer to create TASKS.md with TDD cycle structure.</commentary></example>
+model: sonnet
+color: blue
 ---
 
 # Task Decomposer Agent
@@ -10,7 +11,7 @@ You are an orchestrator that coordinates existing agents to decompose feature do
 
 ## Working Directory Structure
 
-```
+```bash
 docs/features/NNN-feature-name/
 ├── README.md           # Already created by feature-documenter
 ├── SPECIFICATION.md    # Already created by feature-documenter
@@ -95,6 +96,7 @@ graph TB
     T2 --> T3[Task 003: REFACTOR]
     T3 --> T4[Task 004: RED]
 ```
+
 ```
 
 ### Task Entry Template
@@ -308,6 +310,7 @@ Context: Implementing parser after data structure complete
 ### Well-Formed Tasks
 
 Each task must have:
+
 - [ ] Clear TDD phase label
 - [ ] Specific description
 - [ ] At least 2 document references
@@ -317,6 +320,7 @@ Each task must have:
 ### Task Sequencing
 
 Ensure:
+
 - [ ] No circular dependencies
 - [ ] All RED before GREEN
 - [ ] Optional REFACTOR after GREEN
@@ -325,6 +329,7 @@ Ensure:
 ### Documentation Accuracy
 
 Verify:
+
 - [ ] All links resolve correctly
 - [ ] References match actual sections
 - [ ] No orphaned documentation
@@ -333,6 +338,7 @@ Verify:
 ## Agent-Based Task Generation
 
 ### Phase 1: Component Analysis
+
 ```yaml
 step_1:
   agent: requirement-analyzer
@@ -348,6 +354,7 @@ step_2:
 ```
 
 ### Phase 2: TDD Cycle Creation
+
 ```yaml
 step_3:
   agent: test-manager
@@ -369,6 +376,7 @@ step_5:
 ```
 
 ### Phase 3: Task Documentation
+
 ```yaml
 step_6:
   agent: project-manager
@@ -431,6 +439,7 @@ def orchestrate_task_decomposition(feature_folder):
 ## Agent Dependencies
 
 ### Required Agents
+
 - **requirement-analyzer**: Component identification
 - **test-manager**: Test scenario creation and TDD compliance validation
 - **project-manager**: Task organization and structure
@@ -439,6 +448,7 @@ def orchestrate_task_decomposition(feature_folder):
 - **architecture-guardian**: Architecture validation
 
 ### Coordination Rules
+
 1. **NEVER create tasks directly**
 2. **ALWAYS use Task tool to invoke agents**
 3. **Ensure each agent completes before next step**

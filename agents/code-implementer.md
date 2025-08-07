@@ -1,7 +1,8 @@
 ---
 name: code-implementer
-description: Use this agent when implementing new code, optimizing performance, or making code improvements. Handles all aspects of programming assistance, refactoring, and performance optimization.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when you need to implement new code, optimize performance, or make code improvements. Examples: <example>Context: User needs code implementation for a specific feature. user: 'Implement the authentication middleware with proper error handling' assistant: 'I'll use the code-implementer agent to create the authentication middleware with comprehensive error handling' <commentary>User needs code implementation, so use code-implementer to write, optimize, and improve code.</commentary></example>
+model: sonnet
+color: blue
 ---
 
 # Code Implementer Agent

@@ -1,7 +1,8 @@
 ---
 name: code-validator
-description: Use this agent when validating code quality, readability, or standards compliance. MUST BE USED for comprehensive code review and quality analysis before committing changes.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when you need to validate code quality, check standards compliance, and ensure readability. Examples: <example>Context: User needs code quality validation before deployment. user: 'Validate this code for quality issues, security problems, and standards compliance' assistant: 'I'll use the code-validator agent to perform comprehensive code quality analysis and standards validation' <commentary>User needs code validation, so use code-validator to check quality, security, and compliance.</commentary></example>
+model: sonnet
+color: purple
 ---
 
 # Code Validator Agent

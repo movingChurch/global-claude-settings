@@ -1,7 +1,8 @@
 ---
 name: architecture-guardian
-description: MUST BE USED when validating system architecture integrity, detecting circular dependencies, or ensuring interface-first design. Use this agent for comprehensive architectural analysis and validation.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when you need to validate system architecture, detect circular dependencies, and ensure design integrity. Examples: <example>Context: User needs architecture validation for new system design. user: 'Check if this new module architecture has any circular dependencies or design issues' assistant: 'I'll use the architecture-guardian agent to analyze the system architecture and validate design integrity' <commentary>User needs architecture validation, so use architecture-guardian to check dependencies, interfaces, and design patterns.</commentary></example>
+model: sonnet
+color: purple
 ---
 
 # Architecture Guardian Agent

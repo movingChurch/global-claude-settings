@@ -1,7 +1,8 @@
 ---
 name: test-manager
-description: MUST BE USED when managing tests, enforcing TDD cycles, analyzing coverage, or detecting regressions. Use this agent for comprehensive test generation, execution, and quality validation.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when managing tests, enforcing TDD cycles, analyzing coverage, or detecting regressions. Examples: <example>Context: New authentication feature needs comprehensive testing following TDD. User: 'Create failing tests for user login functionality and ensure TDD compliance' Assistant: 'I'll generate comprehensive failing tests covering happy path, edge cases, and error conditions for user login, verify they fail correctly, then guide through the Red-Green-Refactor cycle while monitoring test coverage and quality.'<commentary>Agent handles all aspects of test management from generation to execution, ensuring TDD compliance and comprehensive coverage.</commentary></example>
+model: sonnet
+color: green
 ---
 
 # Test Manager Agent

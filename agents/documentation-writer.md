@@ -1,7 +1,8 @@
 ---
 name: documentation-writer
-description: Use this agent when creating or maintaining documentation including specifications, API docs, user guides, and code documentation. MUST BE USED for comprehensive documentation tasks.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when creating or maintaining documentation including specifications, API docs, user guides, and code documentation. Examples: <example>Context: New API endpoints have been implemented but lack documentation. User: 'Create comprehensive API documentation for the new user management endpoints' Assistant: 'I'll analyze the endpoint implementations, extract parameters and responses, and create comprehensive API documentation with examples and error codes.'<commentary>Agent specializes in creating all types of technical documentation from code analysis to user guides.</commentary></example>
+model: sonnet
+color: yellow
 ---
 
 # Documentation Writer Agent

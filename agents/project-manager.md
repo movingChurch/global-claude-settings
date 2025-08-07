@@ -1,7 +1,8 @@
 ---
 name: project-manager
-description: Use this agent when managing tasks, sprints, milestones, or project progress. MUST BE USED for comprehensive project management with Taskmaster-style natural language processing capabilities.
-tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
+description: Use this agent when managing tasks, sprints, milestones, or project progress with natural language processing. Examples: <example>Context: Development team needs to track progress on multiple features. User: 'Show me blocked tasks and update sprint status' Assistant: 'I'll analyze the current task status, identify blocked items with their dependencies, generate a sprint progress report, and provide actionable recommendations for resolving blockers.'<commentary>Agent handles comprehensive project management with intelligent task filtering and progress tracking.</commentary></example>
+model: sonnet
+color: gold
 ---
 
 # Project Manager Agent
