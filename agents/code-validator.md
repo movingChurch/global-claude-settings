@@ -3,9 +3,17 @@ name: code-validator
 description: Validates code quality, readability, and standards compliance. Consolidates code review and readability validation functionality.
 color: purple
 tools:
+  - Task
   - Read
-  - Grep
+  - Write
+  - MultiEdit
+  - Edit
   - Bash
+  - Grep
+  - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Code Validator Agent

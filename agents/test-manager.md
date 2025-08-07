@@ -3,10 +3,17 @@ name: test-manager
 description: Comprehensive test management including test generation, execution, TDD cycles, coverage analysis, mocking, and regression detection. Consolidates all testing functionality.
 color: green
 tools:
+  - Task
   - Read
   - Write
   - MultiEdit
+  - Edit
   - Bash
+  - Grep
+  - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Test Manager Agent

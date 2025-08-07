@@ -3,10 +3,17 @@ name: documentation-writer
 description: Creates and maintains all documentation including specifications, API docs, user guides, and code documentation. Consolidates spec writing and doc maintenance.
 color: yellow
 tools:
+  - Task
   - Read
   - Write
   - MultiEdit
+  - Edit
+  - Bash
   - Grep
+  - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Documentation Writer Agent

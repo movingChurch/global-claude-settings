@@ -3,10 +3,17 @@ name: requirement-analyzer
 description: Analyzes requirements and converts them into structured DDRIVE tasks. Ensures clear understanding before development starts.
 color: indigo
 tools:
+  - Task
   - Read
   - Write
-  - Grep
+  - MultiEdit
+  - Edit
   - Bash
+  - Grep
+  - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Requirement Analyzer Agent

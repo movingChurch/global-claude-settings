@@ -5,6 +5,15 @@ color: teal
 tools:
   - Task
   - Read
+  - Write
+  - MultiEdit
+  - Edit
+  - Bash
+  - Grep
+  - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Code Refactorer Agent

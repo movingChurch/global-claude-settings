@@ -3,11 +3,17 @@ name: dependency-resolver
 description: Manages package dependencies, resolves conflicts, and ensures secure dependency management across different languages.
 color: coral
 tools:
+  - Task
   - Read
   - Write
+  - MultiEdit
+  - Edit
   - Bash
   - Grep
   - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Dependency Resolver Agent

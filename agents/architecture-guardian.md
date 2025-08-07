@@ -3,10 +3,17 @@ name: architecture-guardian
 description: Guards system architecture integrity. Validates responsibilities, detects circular dependencies, and ensures interface-first design.
 color: purple
 tools:
+  - Task
   - Read
+  - Write
+  - MultiEdit
+  - Edit
+  - Bash
   - Grep
   - Glob
-  - Bash
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Architecture Guardian Agent

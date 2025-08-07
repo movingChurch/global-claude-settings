@@ -5,7 +5,15 @@ color: indigo
 tools:
   - Task
   - Read
+  - Write
+  - MultiEdit
+  - Edit
+  - Bash
+  - Grep
+  - Glob
   - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Feature Documenter Agent

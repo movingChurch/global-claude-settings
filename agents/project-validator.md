@@ -4,6 +4,16 @@ description: Orchestrates complete project validation including task completion,
 color: crimson
 tools:
   - Task
+  - Read
+  - Write
+  - MultiEdit
+  - Edit
+  - Bash
+  - Grep
+  - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Project Validator Agent

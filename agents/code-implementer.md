@@ -3,11 +3,17 @@ name: code-implementer
 description: Handles all code implementation, optimization, and improvements. Consolidates programming assistance, refactoring support, and performance optimization.
 color: blue
 tools:
+  - Task
   - Read
   - Write
   - MultiEdit
-  - Grep
+  - Edit
   - Bash
+  - Grep
+  - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Code Implementer Agent

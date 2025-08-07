@@ -5,7 +5,15 @@ color: green
 tools:
   - Task
   - Read
+  - Write
+  - MultiEdit
+  - Edit
   - Bash
+  - Grep
+  - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Incremental Implementer Agent

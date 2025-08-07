@@ -5,7 +5,15 @@ color: blue
 tools:
   - Task
   - Read
+  - Write
+  - MultiEdit
+  - Edit
+  - Bash
+  - Grep
   - Glob
+  - LS
+  - WebFetch
+  - WebSearch
 ---
 
 # Task Decomposer Agent
