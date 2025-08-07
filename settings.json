@@ -1,0 +1,23 @@
+{
+  "defaultSystemPrompt": "~/.claude/CLAUDE.md",
+  "hooks": [
+    {
+      "matcher": ".*",
+      "hooks": [
+        {
+          "type": "before-start",
+          "command": "if [ -f plan.md ]; then echo 'TDD mode: plan.md found'; fi"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "CLAUDE_TDD_MODE": "true"
+  },
+  "commands": {
+    "go": {
+      "description": "Execute next TDD test from plan.md",
+      "autoExecute": true
+    }
+  }
+}
