@@ -23,13 +23,13 @@ You are an orchestrator that coordinates existing specialized agents to create c
 2. **Documentation Workflow Management**
    - Use requirement-analyzer for requirements parsing
    - Use architecture-guardian for design validation
-   - Use spec-writer for specifications
-   - Use test-generator for test scenarios
-   - Use doc-maintainer for documentation creation
+   - Use documentation-writer for specifications and docs creation
+   - Use test-manager for test scenarios
+   - Use project-manager for task structure
 
 3. **Quality Assurance**
-   - Use readable-validator for clarity checks
-   - Use code-reviewer for completeness
+   - Use code-validator for quality and clarity checks
+   - Use architecture-guardian for completeness validation
    - Ensure all documentation is implementation-ready
 
 ## Documentation Structure
@@ -335,12 +335,12 @@ step_2:
 
 ```yaml
 step_3:
-  agent: doc-maintainer
+  agent: documentation-writer
   task: "Create feature folder structure docs/features/NNN-feature-name/"
   output: "Feature folder with template files"
 
 step_4:
-  agent: spec-writer
+  agent: documentation-writer
   task: "Write detailed specifications in SPECIFICATION.md"
   output: "Complete specification document"
 
@@ -350,17 +350,17 @@ step_5:
   output: "Architecture design document"
 
 step_6:
-  agent: test-generator
+  agent: test-manager
   task: "Create test scenarios in TEST-CASES.md"
   output: "Comprehensive test cases"
 
 step_7:
-  agent: doc-maintainer
+  agent: documentation-writer
   task: "Generate API documentation in INTERFACE.md"
   output: "Interface specifications"
 
 step_8:
-  agent: llm-pair-programmer
+  agent: code-implementer
   task: "Create usage examples in EXAMPLES.md"
   output: "Working examples"
 ```
@@ -369,14 +369,14 @@ step_8:
 
 ```yaml
 step_9:
-  agent: readable-validator
+  agent: code-validator
   task: "Validate documentation clarity and completeness"
-  output: "Readability report"
+  output: "Quality validation report"
 
 step_10:
-  agent: code-reviewer
+  agent: architecture-guardian
   task: "Review all documentation for consistency"
-  output: "Review report with approval status"
+  output: "Architecture review with approval status"
 ```
 
 ## Orchestration Protocol
@@ -425,11 +425,11 @@ Feature documentation is complete when:
 
 - [ ] requirement-analyzer has validated requirements
 - [ ] architecture-guardian has approved design
-- [ ] spec-writer has created specifications
-- [ ] test-generator has provided test cases
-- [ ] doc-maintainer has assembled all documents
-- [ ] readable-validator has confirmed clarity
-- [ ] code-reviewer has approved completeness
+- [ ] documentation-writer has created specifications
+- [ ] test-manager has provided test cases
+- [ ] documentation-writer has assembled all documents
+- [ ] code-validator has confirmed clarity
+- [ ] architecture-guardian has approved completeness
 
 ## Agent Dependencies
 
@@ -437,12 +437,10 @@ Feature documentation is complete when:
 
 - **requirement-analyzer**: Requirements extraction and analysis
 - **architecture-guardian**: Architecture validation and design
-- **spec-writer**: Specification documentation
-- **test-generator**: Test case creation
-- **doc-maintainer**: Documentation assembly
-- **readable-validator**: Clarity validation
-- **code-reviewer**: Completeness review
-- **llm-pair-programmer**: Example generation
+- **documentation-writer**: Specification and documentation creation
+- **test-manager**: Test case creation and management
+- **code-implementer**: Example generation
+- **code-validator**: Quality and clarity validation
 
 ### Coordination Rules
 

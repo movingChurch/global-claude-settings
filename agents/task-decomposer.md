@@ -35,13 +35,13 @@ docs/features/NNN-feature-name/
 
 2. **Task Decomposition Workflow**
    - Use requirement-analyzer to identify components
-   - Use test-generator for TDD test scenarios
-   - Use tdd-orchestrator for Red-Green-Refactor cycles
-   - Use task-manager for task structure creation
+   - Use test-manager for TDD test scenarios
+   - Use project-manager for task structure creation
    - Use dependency-resolver for dependency mapping
+   - Use architecture-guardian for design validation
 
 3. **Quality Assurance**
-   - Use tdd-enforcer to validate TDD compliance
+   - Use test-manager to validate TDD compliance
    - Use architecture-guardian to verify task completeness
    - Ensure all tasks have proper documentation references
 

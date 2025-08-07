@@ -34,14 +34,14 @@ docs/features/NNN-feature-name/
    - Coordinate agent sequencing for TDD cycles
 
 2. **TDD Cycle Management**
-   - RED: Use test-generator to create failing tests
-   - GREEN: Use appropriate agents for minimal implementation
-   - REFACTOR: Use refactor-assistant for improvements
-   - Use test-executor to verify each phase
+   - RED: Use test-manager to create failing tests
+   - GREEN: Use code-implementer for minimal implementation
+   - REFACTOR: Use code-refactorer for improvements
+   - Use test-manager to verify each phase
 
 3. **Progress Management**
-   - Use task-manager to update task status
-   - Use progress-monitor to track implementation
+   - Use project-manager to update task status
+   - Use project-validator to track implementation quality
    - Support resumable implementation
    - Maintain state through agent coordination
 
@@ -52,19 +52,19 @@ docs/features/NNN-feature-name/
 ```yaml
 red_phase:
   step_1:
-    agent: test-generator
+    agent: test-manager
     task: "Create failing test based on specifications"
     input: "Task references from TASKS.md"
     output: "Test file with failing test"
   
   step_2:
-    agent: test-executor
+    agent: test-manager
     task: "Run test and verify it fails"
     input: "Test file"
     output: "Confirmation of test failure"
   
   step_3:
-    agent: task-manager
+    agent: project-manager
     task: "Update task status to RED complete"
     input: "Task ID"
     output: "Updated TASKS.md"
@@ -75,7 +75,7 @@ red_phase:
 ```yaml
 green_phase:
   step_1:
-    agent: llm-pair-programmer
+    agent: code-implementer
     task: "Generate minimal implementation to pass test"
     input: "Test requirements + Design docs"
     output: "Implementation code"
