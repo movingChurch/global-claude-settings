@@ -8,7 +8,7 @@
 
 ```bash
 document   → feature-documenter    # Create complete documentation
-decompose  → task-decomposer       # Break into TDD tasks  
+decompose  → task-decomposer       # Break into TDD tasks
 implement  → incremental-implementer # Execute TDD implementation
 refactor   → code-refactorer        # Systematic refactoring
 validate   → project-validator      # Complete validation
@@ -26,7 +26,7 @@ graph LR
     F --> G[TDD Implementation]
     G --> H[refactor]
     H --> I[validate]
-    
+
     style B fill:#9f9
     style D fill:#99f
     style F fill:#f99
@@ -59,7 +59,7 @@ docs/features/NNN-feature-name/
 ### Automatic Rejection
 
 - Direct code writing → REJECT
-- Code before documentation → REJECT  
+- Code before documentation → REJECT
 - Implementation without tests → REJECT
 - Tests after code → REJECT
 - Coverage below 80% → REJECT

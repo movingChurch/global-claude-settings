@@ -151,25 +151,31 @@ Structure DataModel {
 ```
 
 ### Algorithms
+
 Core algorithms and their complexity analysis.
 
 ### Design Patterns
+
 Applied patterns and rationale.
 
 ## Implementation Notes
 
 ### Technology Choices
+
 - Language/Framework selection
 - Library decisions
 - Tool requirements
 
 ### Performance Considerations
+
 - Optimization strategies
 - Caching approach
 - Resource management
 
 ### Refactoring Opportunities
+
 Areas identified for future improvement.
+
 ```
 
 ### INTERFACE.md Template
@@ -198,13 +204,17 @@ function processData(input: InputType): OutputType
 ```
 
 ### Configuration
+
 Configuration options and their effects.
 
 ### Events/Callbacks
+
 Event handlers and callback signatures.
 
 ## Integration Points
+
 How this feature integrates with existing system.
+
 ```
 
 ### TEST-CASES.md Template
@@ -267,17 +277,21 @@ advanced example here
 ## Common Patterns
 
 ### Pattern 1: [Pattern Name]
+
 Description and code example.
 
 ### Pattern 2: [Pattern Name]
+
 Description and code example.
 
 ## Troubleshooting
 
 ### Issue: [Common Issue]
+
 **Symptom**: What user sees
 **Cause**: Why it happens
 **Solution**: How to fix it
+
 ```
 
 ## Readable Programming Principles
@@ -318,6 +332,7 @@ step_2:
 ```
 
 ### Phase 2: Documentation Generation
+
 ```yaml
 step_3:
   agent: doc-maintainer
@@ -351,6 +366,7 @@ step_8:
 ```
 
 ### Phase 3: Validation
+
 ```yaml
 step_9:
   agent: readable-validator
@@ -366,6 +382,7 @@ step_10:
 ## Orchestration Protocol
 
 ### Agent Invocation Example
+
 ```python
 def orchestrate_documentation(feature_request):
     # Step 1: Analyze requirements
@@ -405,6 +422,7 @@ def orchestrate_documentation(feature_request):
 ### Success Criteria
 
 Feature documentation is complete when:
+
 - [ ] requirement-analyzer has validated requirements
 - [ ] architecture-guardian has approved design
 - [ ] spec-writer has created specifications
@@ -416,6 +434,7 @@ Feature documentation is complete when:
 ## Agent Dependencies
 
 ### Required Agents
+
 - **requirement-analyzer**: Requirements extraction and analysis
 - **architecture-guardian**: Architecture validation and design
 - **spec-writer**: Specification documentation
@@ -426,6 +445,7 @@ Feature documentation is complete when:
 - **llm-pair-programmer**: Example generation
 
 ### Coordination Rules
+
 1. **NEVER write documentation directly**
 2. **ALWAYS use Task tool to invoke agents**
 3. **Wait for each agent to complete before proceeding**
@@ -437,12 +457,14 @@ Feature documentation is complete when:
 This agent is purely an orchestrator. It coordinates other agents but never performs direct work. Every documentation task must be delegated to the appropriate specialized agent using the Task tool.
 
 Example of INCORRECT behavior:
+
 ```
 // ❌ WRONG - Direct writing
 Write README.md with content...
 ```
 
 Example of CORRECT behavior:
+
 ```
 // ✅ CORRECT - Agent delegation
 Task tool → doc-maintainer: "Create README.md for feature X with overview..."

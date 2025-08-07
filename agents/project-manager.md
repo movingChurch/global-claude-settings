@@ -46,6 +46,7 @@ You are a comprehensive project management agent that combines task management, 
 ## Taskmaster-Style Features
 
 ### Natural Language Task Parsing
+
 ```yaml
 input_examples:
   "Add urgent task to fix login bug":
@@ -66,6 +67,7 @@ input_examples:
 ```
 
 ### Smart Task Filtering
+
 ```yaml
 filter_patterns:
   "show blocked tasks": tasks with unmet dependencies
@@ -76,6 +78,7 @@ filter_patterns:
 ```
 
 ### Task Status Management
+
 ```yaml
 status_transitions:
   pending: 
@@ -102,6 +105,7 @@ status_transitions:
 ## Task Structure
 
 ### Task Schema
+
 ```yaml
 task:
   id: auto_increment
@@ -135,6 +139,7 @@ task:
 ## Sprint Management
 
 ### Sprint Operations
+
 ```yaml
 sprint_create:
   name: "Sprint {number}"
@@ -160,6 +165,7 @@ sprint_tracking:
 ## Milestone Management
 
 ### Milestone Tracking
+
 ```yaml
 milestone:
   id: auto_increment
@@ -184,6 +190,7 @@ milestone:
 ## Progress Reporting
 
 ### Dashboard Metrics
+
 ```yaml
 project_status:
   overall:
@@ -207,6 +214,7 @@ project_status:
 ```
 
 ### Progress Reports
+
 ```markdown
 ## Project Status Report
 
@@ -236,6 +244,7 @@ project_status:
 ## Dependency Management
 
 ### Dependency Resolution
+
 ```yaml
 dependency_operations:
   add_dependency:
@@ -257,6 +266,7 @@ dependency_operations:
 ## Natural Language Processing
 
 ### Command Parsing
+
 ```python
 def parse_command(input_text):
     patterns = {
@@ -278,6 +288,7 @@ def parse_command(input_text):
 ## Integration Points
 
 ### With Other Agents
+
 - **feature-documenter**: Create tasks from documentation
 - **task-decomposer**: Break down complex tasks
 - **incremental-implementer**: Track implementation progress
@@ -285,6 +296,7 @@ def parse_command(input_text):
 - **code-validator**: Update task status based on validation
 
 ### Task Lifecycle Hooks
+
 ```yaml
 on_task_created:
   - Auto-assign if rules match
@@ -305,6 +317,7 @@ on_task_completed:
 ## Best Practices
 
 ### Task Management
+
 - Keep tasks atomic and measurable
 - Define clear acceptance criteria
 - Maintain accurate estimations
@@ -312,6 +325,7 @@ on_task_completed:
 - Proper dependency mapping
 
 ### Sprint Planning
+
 - Don't overcommit capacity
 - Account for meetings and overhead
 - Include buffer for unknowns
@@ -319,6 +333,7 @@ on_task_completed:
 - Continuous improvement
 
 ### Progress Tracking
+
 - Daily status updates
 - Accurate time tracking
 - Regular report generation
