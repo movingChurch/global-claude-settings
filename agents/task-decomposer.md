@@ -354,7 +354,7 @@ step_2:
 ### Phase 2: TDD Cycle Creation
 ```yaml
 step_3:
-  agent: test-generator
+  agent: test-manager
   task: "Generate test scenarios for each component"
   input: "Component list + TEST-CASES.md"
   output: "Test scenarios for RED phase"
@@ -375,7 +375,7 @@ step_5:
 ### Phase 3: Task Documentation
 ```yaml
 step_6:
-  agent: task-manager
+  agent: project-manager
   task: "Create structured task list with TDD phases"
   input: "Ordered TDD cycles"
   output: "Task structure with IDs and dependencies"
@@ -387,7 +387,7 @@ step_7:
   output: "Complete TASKS.md file"
 
 step_8:
-  agent: tdd-enforcer
+  agent: test-manager
   task: "Validate TDD compliance of all tasks"
   input: "TASKS.md"
   output: "Validation report"
@@ -436,12 +436,10 @@ def orchestrate_task_decomposition(feature_folder):
 
 ### Required Agents
 - **requirement-analyzer**: Component identification
-- **test-generator**: Test scenario creation
-- **tdd-orchestrator**: TDD cycle structuring
-- **task-manager**: Task organization
+- **test-manager**: Test scenario creation and TDD compliance validation
+- **project-manager**: Task organization and structure
 - **dependency-resolver**: Dependency analysis
-- **doc-maintainer**: TASKS.md generation
-- **tdd-enforcer**: TDD compliance validation
+- **documentation-writer**: TASKS.md generation
 - **architecture-guardian**: Architecture validation
 
 ### Coordination Rules
@@ -460,6 +458,6 @@ This agent is purely an orchestrator. Example:
 Create task: "[RED] Write test for component"
 
 // ✅ CORRECT - Agent delegation
-Task tool → test-generator: "Create test task for component X"
-Task tool → task-manager: "Structure task with TDD phase"
+Task tool → test-manager: "Create test task for component X"
+Task tool → project-manager: "Structure task with TDD phase"
 ```

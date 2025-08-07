@@ -399,19 +399,19 @@ def orchestrate_documentation(feature_request):
     
     # Step 3: Create documentation structure
     folder = invoke_agent(
-        "Task tool → doc-maintainer",
+        "Task tool → documentation-writer",
         "Create feature folder with templates"
     )
     
     # Step 4: Generate specifications
     specs = invoke_agent(
-        "Task tool → spec-writer",
+        "Task tool → documentation-writer",
         "Write specifications based on: " + requirements
     )
     
     # Step 5: Generate test cases
     tests = invoke_agent(
-        "Task tool → test-generator",
+        "Task tool → test-manager",
         "Create test scenarios for: " + specs
     )
     
@@ -465,5 +465,5 @@ Example of CORRECT behavior:
 
 ```
 // ✅ CORRECT - Agent delegation
-Task tool → doc-maintainer: "Create README.md for feature X with overview..."
+Task tool → documentation-writer: "Create README.md for feature X with overview..."
 ```
