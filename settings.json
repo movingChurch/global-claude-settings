@@ -6,18 +6,28 @@
       "hooks": [
         {
           "type": "before-start",
-          "command": "if [ -f plan.md ]; then echo 'TDD mode: plan.md found'; fi"
+          "command": "echo '🚀 DDRIVE Methodology Active | TDD + Readable Code Enabled'"
+        },
+        {
+          "type": "user-prompt-submit",
+          "command": "echo '⚡ Processing with DDRIVE Phase Tracking...'"
         }
       ]
     }
   ],
   "env": {
-    "CLAUDE_TDD_MODE": "true"
+    "CLAUDE_TDD_MODE": "true",
+    "CLAUDE_METHODOLOGY": "DDRIVE",
+    "CLAUDE_READABLE_CODE": "true"
   },
-  "commands": {
-    "go": {
-      "description": "Execute next TDD test from plan.md",
-      "autoExecute": true
-    }
+  "aliases": {
+    "t": "task",
+    "s": "sprint",
+    "p": "progress",
+    "m": "milestone",
+    "c": "coverage",
+    "r": "refactor",
+    "d": "docs",
+    "v": "validate"
   }
 }
