@@ -16,7 +16,7 @@ graph LR
     E --> D
 ```
 
-## 🤖 Agent Ecosystem (21 Specialized Agents)
+## 🤖 Agent Ecosystem (22 Specialized Agents)
 
 ### Requirements & Planning (5)
 
@@ -38,9 +38,10 @@ graph LR
 - **regression-detector** (magenta): Detects test regressions
 - **tdd-orchestrator** (indigo): Coordinates entire TDD workflow
 
-### Code Quality & Review (7)
+### Code Quality & Review (8)
 
 - **code-reviewer** (navy): Automated comprehensive code reviews
+- **code-auditor** (crimson): Comprehensive codebase audit for vulnerabilities and improvements
 - **readable-validator** (blue): Validates readability principles
 - **architecture-guardian** (purple): Maintains architectural integrity
 - **llm-pair-programmer** (green): Optimizes AI collaboration

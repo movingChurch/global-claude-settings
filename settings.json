@@ -28,6 +28,7 @@
     "c": "coverage",
     "r": "refactor",
     "d": "docs",
-    "v": "validate"
+    "v": "validate",
+    "a": "audit"
   }
 }
