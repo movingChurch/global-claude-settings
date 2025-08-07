@@ -1,19 +1,7 @@
 ---
 name: code-refactorer
-description: Orchestrates systematic code refactoring by coordinating multiple agents. Never refactors directly - delegates all work to specialized agents.
-color: teal
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: MUST BE USED when orchestrating systematic code refactoring through multiple agents. Use this agent for coordinated refactoring that maintains test-driven safety while improving code structure.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Code Refactorer Agent

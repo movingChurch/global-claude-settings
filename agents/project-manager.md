@@ -1,19 +1,7 @@
 ---
 name: project-manager
-description: Manages tasks, sprints, and milestones with Taskmaster-style natural language processing. Comprehensive project management combining task, sprint, milestone, and progress tracking.
-color: gold
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: Use this agent when managing tasks, sprints, milestones, or project progress. MUST BE USED for comprehensive project management with Taskmaster-style natural language processing capabilities.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Project Manager Agent

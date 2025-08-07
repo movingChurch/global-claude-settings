@@ -1,19 +1,7 @@
 ---
 name: task-decomposer
-description: Orchestrates task decomposition by coordinating existing agents. Never creates tasks directly - delegates all work to specialized agents.
-color: blue
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: Use this agent when you need to break down feature documentation into TDD task sequences. MUST BE USED when asked to decompose features into implementation tasks.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Task Decomposer Agent

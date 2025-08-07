@@ -1,19 +1,7 @@
 ---
 name: requirement-analyzer
-description: Analyzes requirements and converts them into structured DDRIVE tasks. Ensures clear understanding before development starts.
-color: indigo
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: MUST BE USED when analyzing requirements or converting them into structured DDRIVE tasks. Use this agent to ensure clear understanding and actionable task creation before development starts.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Requirement Analyzer Agent

@@ -1,19 +1,7 @@
 ---
 name: project-validator
-description: Orchestrates complete project validation including task completion, test coverage, code quality, documentation sync, dependency health, and architecture consistency
-color: crimson
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: MUST BE USED when orchestrating comprehensive project validation including task completion, test coverage, code quality, and architecture consistency. Use this agent for complete project readiness assessment.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Project Validator Agent

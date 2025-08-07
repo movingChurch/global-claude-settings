@@ -1,19 +1,7 @@
 ---
 name: architecture-guardian
-description: Guards system architecture integrity. Validates responsibilities, detects circular dependencies, and ensures interface-first design.
-color: purple
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: MUST BE USED when validating system architecture integrity, detecting circular dependencies, or ensuring interface-first design. Use this agent for comprehensive architectural analysis and validation.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Architecture Guardian Agent

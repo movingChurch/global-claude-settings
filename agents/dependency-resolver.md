@@ -1,19 +1,7 @@
 ---
 name: dependency-resolver
-description: Manages package dependencies, resolves conflicts, and ensures secure dependency management across different languages.
-color: coral
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: MUST BE USED when managing package dependencies, resolving version conflicts, or ensuring secure dependency management. Use this agent for comprehensive dependency analysis and optimization.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Dependency Resolver Agent

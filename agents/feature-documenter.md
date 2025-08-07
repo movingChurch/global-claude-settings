@@ -1,19 +1,7 @@
 ---
 name: feature-documenter
-description: Orchestrates comprehensive feature documentation by coordinating existing specialized agents. Never writes directly - delegates all work to appropriate agents.
-color: indigo
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: Use this agent PROACTIVELY when creating comprehensive feature documentation. Creates complete docs/features/NNN-feature-name/ structure with all required documentation files.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Feature Documenter Agent

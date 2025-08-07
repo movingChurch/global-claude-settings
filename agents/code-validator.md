@@ -1,19 +1,7 @@
 ---
 name: code-validator
-description: Validates code quality, readability, and standards compliance. Consolidates code review and readability validation functionality.
-color: purple
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: Use this agent when validating code quality, readability, or standards compliance. MUST BE USED for comprehensive code review and quality analysis before committing changes.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Code Validator Agent

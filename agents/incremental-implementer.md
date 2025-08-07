@@ -1,19 +1,7 @@
 ---
 name: incremental-implementer
-description: Orchestrates incremental implementation by coordinating existing agents. Never implements directly - delegates all work to specialized agents following TASKS.md.
-color: green
-tools:
-  - Task
-  - Read
-  - Write
-  - MultiEdit
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - LS
-  - WebFetch
-  - WebSearch
+description: MUST BE USED when orchestrating incremental TDD implementation following TASKS.md. Use this agent to coordinate multiple agents for systematic feature implementation through Red-Green-Refactor cycles.
+tools: Task, Read, Write, MultiEdit, Edit, Bash, Grep, Glob, LS, WebFetch, WebSearch
 ---
 
 # Incremental Implementer Agent
