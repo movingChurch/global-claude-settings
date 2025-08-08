@@ -315,31 +315,71 @@ Description and code example.
 
 ## Agent-Based Workflow
 
-### Phase 0: Project Structure Analysis
+### Phase 0: Comprehensive Project Analysis
 ```yaml
 step_0a:
   agent: architecture-guardian
-  task: "Analyze project structure, file organization, and existing patterns"
-  output: "Project structure analysis with conventions and patterns"
+  task: "Analyze complete project structure, existing implementations, and code patterns"
+  actions:
+    - Scan all source code directories
+    - Identify existing modules and components
+    - Map current architecture patterns
+    - Find naming conventions and code style
+  output: "Complete codebase analysis with existing implementations"
 
 step_0b:
   agent: dependency-resolver
-  task: "Identify project dependencies, technology stack, and frameworks"
-  output: "Technology stack and dependency report"
+  task: "Map all dependencies, versions, and integration points"
+  actions:
+    - Parse package.json/requirements.txt/go.mod etc
+    - Identify all external libraries in use
+    - Check for existing similar features
+    - Map integration patterns
+  output: "Complete dependency map and integration patterns"
 
 step_0c:
   agent: documentation-writer
-  task: "Check existing documentation structure and patterns in docs/"
-  output: "Documentation conventions and existing structure"
+  task: "Analyze all existing documentation and identify gaps"
+  actions:
+    - Read all docs/ content
+    - Check existing feature documentation
+    - Identify documentation patterns
+    - Find areas needing updates
+  output: "Documentation audit with existing content map"
+
+step_0d:
+  agent: test-manager
+  task: "Analyze existing test patterns and coverage"
+  actions:
+    - Review test structure and patterns
+    - Check current test coverage
+    - Identify testing frameworks in use
+    - Map test naming conventions
+  output: "Test infrastructure analysis and patterns"
+
+step_0e:
+  agent: project-manager
+  task: "Check for existing related tasks or incomplete features"
+  actions:
+    - Review existing TASKS.md files
+    - Check for incomplete implementations
+    - Identify related features already built
+    - Find reusable components
+  output: "Existing work status and reusable components"
 ```
 
 ### Phase 1: Requirements Analysis and User Validation
 ```yaml
 step_1:
   agent: requirement-analyzer
-  task: "Analyze user request and extract requirements based on project context"
-  input: "User request + Project structure analysis"
-  output: "Structured requirements document aligned with project"
+  task: "Analyze user request in context of existing implementations"
+  input: "User request + Complete project analysis from Phase 0"
+  actions:
+    - Compare with existing features
+    - Identify what's already implemented
+    - Determine what needs to be built
+    - Find potential conflicts or overlaps
+  output: "Requirements document showing delta from existing implementation"
 
 step_2:
   action: USER_VALIDATION
@@ -354,9 +394,14 @@ step_2:
 
 step_3:
   agent: architecture-guardian
-  task: "Design architectural approach based on approved requirements and existing project patterns"
-  input: "Approved requirements + Project structure analysis"
-  output: "Proposed architecture design compatible with existing codebase"
+  task: "Design architecture that extends existing implementation"
+  input: "Approved requirements + Complete codebase analysis"
+  actions:
+    - Build on existing architecture
+    - Reuse existing components where possible
+    - Maintain consistency with current patterns
+    - Identify required refactoring if any
+  output: "Architecture design that integrates with existing code"
 
 step_4:
   action: USER_VALIDATION
@@ -375,9 +420,14 @@ step_4:
 ```yaml
 step_5:
   agent: documentation-writer
-  task: "Create feature folder structure docs/features/NNN-feature-name/ following project conventions"
-  input: "Project documentation structure"
-  output: "Feature folder with template files matching project style"
+  task: "Create/update feature documentation based on existing structure"
+  input: "Complete documentation audit + Existing patterns"
+  actions:
+    - Check if feature folder already exists
+    - Read any existing documentation first
+    - Create only missing files
+    - Update existing files with new content
+  output: "Feature documentation integrated with existing docs"
 
 step_6:
   agent: documentation-writer
@@ -438,26 +488,39 @@ step_10:
 
 ```python
 def orchestrate_documentation(feature_request):
-    # Step 0: Analyze project structure first
-    project_structure = invoke_agent(
+    # Step 0: Comprehensive project analysis
+    existing_code = invoke_agent(
         "Task tool → architecture-guardian",
-        "Analyze project structure and patterns"
+        "Analyze complete codebase, existing implementations, and patterns"
     )
     
-    tech_stack = invoke_agent(
+    dependencies = invoke_agent(
         "Task tool → dependency-resolver",
-        "Identify technology stack and dependencies"
+        "Map all dependencies and find existing similar features"
     )
     
-    doc_conventions = invoke_agent(
+    existing_docs = invoke_agent(
         "Task tool → documentation-writer",
-        "Check existing documentation structure"
+        "Audit all existing documentation and identify what already exists"
     )
     
-    # Step 1: Analyze requirements with project context
+    test_patterns = invoke_agent(
+        "Task tool → test-manager",
+        "Analyze existing test infrastructure and patterns"
+    )
+    
+    existing_work = invoke_agent(
+        "Task tool → project-manager",
+        "Check for existing related tasks and reusable components"
+    )
+    
+    # Step 1: Analyze requirements against existing implementation
     requirements = invoke_agent(
         "Task tool → requirement-analyzer",
-        f"Parse and structure requirements for: {feature_request} in context of {project_structure}"
+        f"""Analyze: {feature_request}
+        Existing code: {existing_code}
+        Existing features: {existing_work}
+        Identify what's already done vs what needs to be built"""
     )
     
     # Step 2: USER VALIDATION - Requirements
@@ -539,14 +602,16 @@ Feature documentation is complete when:
 
 ### Coordination Rules
 
-1. **ALWAYS analyze project structure first**
-2. **NEVER write documentation directly**
-3. **ALWAYS use Task tool to invoke agents**
-4. **Wait for each agent to complete before proceeding**
-5. **Ensure documentation matches project conventions**
-6. **Check for conflicts with existing code/docs**
-7. **Aggregate all agent outputs into final documentation**
-8. **Validate completeness before handoff to task-decomposer**
+1. **ALWAYS do comprehensive project analysis first (Phase 0)**
+2. **MUST identify what already exists before creating anything**
+3. **READ existing files before creating/updating**
+4. **NEVER write documentation directly**
+5. **ALWAYS use Task tool to invoke agents**
+6. **Build upon existing implementation, don't duplicate**
+7. **Ensure documentation matches project conventions**
+8. **Check for conflicts with existing code/docs**
+9. **Reuse existing components whenever possible**
+10. **Validate completeness before handoff to task-decomposer**
 
 ## Important: Agent-Only Operation
 
