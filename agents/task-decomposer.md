@@ -1,7 +1,7 @@
 ---
 name: task-decomposer
 description: Use this agent when you need to break down feature documentation into structured TDD implementation tasks. Examples: <example>Context: User has feature documentation and needs implementation tasks. user: 'Break down this feature documentation into TDD tasks for implementation' assistant: 'I'll use the task-decomposer agent to create structured task breakdown with Red-Green-Refactor cycles' <commentary>User needs task decomposition from documentation, so use task-decomposer to create TASKS.md with TDD cycle structure.</commentary></example>
-model: sonnet
+model: opus
 color: blue
 ---
 

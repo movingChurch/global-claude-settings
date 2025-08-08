@@ -1,7 +1,7 @@
 ---
 name: feature-documenter
 description: Use this agent when you need to create comprehensive feature documentation with complete file structure and organized content. Examples: <example>Context: User wants to document a new feature for development. user: 'Create complete documentation for simple ground management page feature' assistant: 'I'll use the feature-documenter agent to create comprehensive documentation structure with all required files' <commentary>User needs complete feature documentation, so use feature-documenter to create docs/features/NNN-feature-name/ structure with all documentation files.</commentary></example>
-model: sonnet
+model: opus
 color: indigo
 ---
 

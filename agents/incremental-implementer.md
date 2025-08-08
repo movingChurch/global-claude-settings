@@ -1,7 +1,7 @@
 ---
 name: incremental-implementer
 description: Use this agent when orchestrating incremental TDD implementation following structured task lists. Examples: <example>Context: Feature has structured tasks ready for TDD implementation. User: 'Implement the next task in the user authentication feature using TDD' Assistant: 'I'll coordinate the test-manager to create failing tests, then the code-implementer for minimal implementation, followed by the code-refactorer for improvements, ensuring proper Red-Green-Refactor cycles.'<commentary>Agent orchestrates multiple specialized agents for systematic TDD-based feature implementation.</commentary></example>
-model: sonnet
+model: opus
 color: green
 ---
 

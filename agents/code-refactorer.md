@@ -1,7 +1,7 @@
 ---
 name: code-refactorer
 description: Use this agent when you need systematic code refactoring while maintaining functionality. Examples: <example>Context: User needs to refactor code for better quality. user: 'Refactor this legacy code to improve readability and eliminate duplication' assistant: 'I'll use the code-refactorer agent to systematically improve the code quality while maintaining all functionality' <commentary>User needs code refactoring, so use code-refactorer to improve structure and eliminate code smells.</commentary></example>
-model: sonnet
+model: opus
 color: green
 ---
 

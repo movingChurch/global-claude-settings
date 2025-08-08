@@ -1,7 +1,7 @@
 ---
 name: project-validator
 description: Use this agent when orchestrating comprehensive project validation including task completion, test coverage, code quality, and architecture consistency. Examples: <example>Context: Feature development is complete and needs validation before release. User: 'Validate the user authentication feature for production readiness' Assistant: 'I'll coordinate validation across all agents - checking task completion via project-manager, test coverage via test-manager, code quality via code-validator, and architecture consistency via architecture-guardian to provide a comprehensive readiness assessment.'<commentary>Agent orchestrates comprehensive validation through multiple specialized agents to ensure complete project quality assessment.</commentary></example>
-model: sonnet
+model: opus
 color: red
 ---
 
