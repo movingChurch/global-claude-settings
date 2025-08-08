@@ -14,4 +14,8 @@ This orchestrator coordinates multiple agents to:
 - Assess dependency health
 - Confirm architecture consistency
 
-Generates comprehensive validation report with actionable items.
+Generates comprehensive validation report saved to `docs/VALIDATION-REPORT.md` with:
+- Executive summary with metrics
+- Detailed validation results
+- Actionable recommendations
+- Priority-based issue tracking

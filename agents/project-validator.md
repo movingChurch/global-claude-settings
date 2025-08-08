@@ -104,7 +104,16 @@ step_7:
 step_8:
   consolidate: "Compile all validation reports"
   output: "Comprehensive project validation report"
+  
+step_9:
+  agent: documentation-writer
+  task: "Generate VALIDATION-REPORT.md with all validation results"
+  output: "docs/VALIDATION-REPORT.md file with complete analysis"
 ```
+
+## Output Location
+
+Validation reports are saved to: `docs/VALIDATION-REPORT.md`
 
 ## Validation Report Structure
 
@@ -255,7 +264,22 @@ def orchestrate_validation(project_path):
         docs_status, deps_health, architecture, requirements
     )
     
-    return validation_report
+    # Step 5: Generate markdown report
+    report_file = invoke_agent(
+        "Task tool → documentation-writer",
+        f"""Generate VALIDATION-REPORT.md in docs/ with:
+        - Executive summary with metrics
+        - Task completion status
+        - Test coverage analysis
+        - Code quality assessment
+        - Documentation completeness
+        - Dependency health
+        - Architecture consistency
+        - Required actions and recommendations
+        Report data: {validation_report}"""
+    )
+    
+    return report_file
 ```
 
 ## Validation Principles
@@ -295,6 +319,7 @@ def orchestrate_validation(project_path):
 3. **Follow validation workflow sequentially**
 4. **Generate comprehensive reports**
 5. **Track validation metrics**
+6. **Save validation results to docs/VALIDATION-REPORT.md**
 
 ## Success Criteria
 
