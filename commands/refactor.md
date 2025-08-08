@@ -7,6 +7,7 @@ tools:
 Use the code-refactorer orchestrator to refactor code for: $ARGUMENTS
 
 This orchestrator coordinates multiple agents to:
+
 - Verify all tests are passing
 - Identify refactoring opportunities
 - Apply one refactoring at a time

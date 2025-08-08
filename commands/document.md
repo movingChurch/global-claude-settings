@@ -7,8 +7,9 @@ tools:
 Use the feature-documenter orchestrator to create complete feature documentation for: $ARGUMENTS
 
 This orchestrator coordinates multiple agents to:
+
 - Analyze requirements
-- Create technical specifications  
+- Create technical specifications
 - Generate API documentation
 - Write user guides
 - Document architecture decisions

@@ -11,7 +11,7 @@ document   → feature-documenter    # Create complete documentation
 decompose  → task-decomposer       # Break into TDD tasks
 implement  → incremental-implementer # Execute TDD implementation
 refactor   → code-refactorer        # Systematic refactoring
-validate   → project-validator      # Complete validation
+analyze    → project-analyzer       # Complete analysis
 ```
 
 ## 🎯 MANDATORY WORKFLOW: Document → Decompose → Implement
@@ -25,7 +25,7 @@ graph LR
     E --> F[implement]
     F --> G[TDD Implementation]
     G --> H[refactor]
-    H --> I[validate]
+    H --> I[analyze]
 
     style B fill:#9f9
     style D fill:#99f
@@ -94,12 +94,12 @@ Every feature MUST complete all 6 phases:
 
 #### Phase 5: VERIFY
 
-- Use: `validate` command (project-validator)
+- Use: `analyze` command (project-analyzer)
 - Output: Quality metrics, coverage report
 
 #### Phase 6: EVALUATE
 
-- Use: `project-validator`, `documentation-writer`
+- Use: `project-analyzer`, `documentation-writer`
 - Output: Lessons learned, improvements
 
 ## 🤖 13-Agent Architecture
@@ -110,7 +110,7 @@ Every feature MUST complete all 6 phases:
 - **task-decomposer**: Breaks docs into TDD task sequences
 - **incremental-implementer**: Executes TDD cycles from TASKS.md
 - **code-refactorer**: Systematic code quality improvements
-- **project-validator**: Complete project health validation
+- **project-analyzer**: Complete project health validation
 
 ### 👷 Workers (8) - Execute direct operations
 
@@ -182,7 +182,7 @@ Task → incremental-implementer: "Execute TASKS.md"
 Task → code-refactorer: "Improve code structure"
 
 # Step 5: Validate
-Task → project-validator: "Validate implementation"
+Task → project-analyzer: "Validate implementation"
 ```
 
 ## ✅ SYSTEM VALIDATION STATUS
@@ -196,7 +196,7 @@ Task → project-validator: "Validate implementation"
 ### Workflow Consistency ✓
 - 5 commands → 5 orchestrators mapping confirmed
 - TDD cycle enforcement in place
-- Documentation-first approach validated
+- Documentation-first approach analyzed
 - Quality gates functioning
 
 ## ⚠️ KEY REMINDERS

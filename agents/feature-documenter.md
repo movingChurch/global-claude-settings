@@ -83,11 +83,6 @@ Brief description of what this feature does and why it's needed.
 - External libraries
 - Other features
 - System requirements
-
-## Timeline
-- Documentation: [Date]
-- Implementation Start: [Date]
-- Expected Completion: [Date]
 ```
 
 ### SPECIFICATION.md Template

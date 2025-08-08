@@ -40,7 +40,7 @@ docs/features/NNN-feature-name/
 
 3. **Progress Management**
    - Use project-manager to update task status
-   - Use project-validator to track implementation quality
+   - Use project-analyzer to track implementation quality
    - Use documentation-writer to update docs
    - Support resumable implementation
    - Maintain state through agent coordination

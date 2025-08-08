@@ -7,6 +7,7 @@ tools:
 Use the task-decomposer orchestrator to break down documentation into executable TDD tasks for: $ARGUMENTS
 
 This orchestrator coordinates multiple agents to:
+
 - Analyze feature documentation
 - Create atomic, testable tasks
 - Generate TDD test scenarios
