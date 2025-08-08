@@ -118,6 +118,21 @@ green_phase:
     output: "Test success confirmation"
   
   step_4:
+    strategy: "Run linters and formatters for code standards"
+    task: "Apply linting and formatting to ensure code standards"
+    agent_selection:
+      - IF javascript: eslint-runner, prettier-formatter
+      - IF python: pylint-runner, black-formatter, isort-organizer
+      - IF go: gofmt-formatter, golint-runner, vet-checker
+      - IF rust: rustfmt-formatter, clippy-linter
+      - IF java: checkstyle-linter, spotless-formatter
+      - IF c_cpp: clang-format-formatter, cppcheck-linter
+      - DEFAULT: code-formatter, linter
+    parallel_execution: true
+    output: "Formatted code and linting report"
+    failure_handling: "Fix linting errors before proceeding"
+  
+  step_5:
     strategy: "Validate code quality with specialized validators"
     task: "Verify code quality and minimal implementation"
     agent_selection:
@@ -128,7 +143,7 @@ green_phase:
     parallel_validation: true
     output: "Quality validation report"
   
-  step_5:
+  step_6:
     strategy: "Update task status"
     task: "Update task status to GREEN complete"
     agent_selection:
@@ -162,6 +177,21 @@ refactor_phase:
     output: "Test success confirmation"
   
   step_3:
+    strategy: "Apply linting and formatting after refactoring"
+    task: "Ensure refactored code meets style and quality standards"
+    agent_selection:
+      - IF javascript: eslint-runner, prettier-formatter
+      - IF python: pylint-runner, black-formatter, isort-organizer
+      - IF go: gofmt-formatter, golint-runner, vet-checker
+      - IF rust: rustfmt-formatter, clippy-linter
+      - IF java: checkstyle-linter, spotless-formatter
+      - IF c_cpp: clang-format-formatter, cppcheck-linter
+      - DEFAULT: code-formatter, linter
+    parallel_execution: true
+    output: "Formatted code and linting compliance report"
+    requirement: "All linting issues must be resolved"
+  
+  step_4:
     strategy: "Multi-aspect quality validation"
     task: "Validate code quality improvements"
     agent_selection:
@@ -172,7 +202,7 @@ refactor_phase:
     parallel_validation: true
     output: "Quality validation report"
   
-  step_4:
+  step_5:
     strategy: "Documentation update based on changes"
     task: "Update code documentation if needed"
     agent_selection:
@@ -181,7 +211,7 @@ refactor_phase:
       - IF user_facing_changes: user-doc-writer, documentation-writer
     output: "Updated documentation"
   
-  step_5:
+  step_6:
     strategy: "Status update"
     task: "Update task status to REFACTOR complete"
     agent_selection:
@@ -371,10 +401,14 @@ cargo test test_function
 - [ ] Implementation file created
 - [ ] Test passes
 - [ ] No other tests broken
+- [ ] Code passes linting checks
+- [ ] Code is properly formatted
 - [ ] Minimal code (no over-engineering)
 
 ### REFACTOR Phase ✓
 - [ ] All tests still pass
+- [ ] Code passes linting checks after refactoring
+- [ ] Code formatting is consistent
 - [ ] Code is cleaner
 - [ ] Performance improved (if applicable)
 - [ ] Documentation updated
@@ -551,6 +585,13 @@ Agents are selected based on task requirements:
 - Clean Code: clean-code-expert, code-beautifier, naming-expert
 - Architecture: architecture-refactorer, design-pattern-expert, modularizer
 - Security: security-hardener, vulnerability-fixer, encryption-expert
+
+**Code Quality & Standards**:
+
+- Linting: eslint-runner, pylint-runner, golint-runner, clippy-linter, checkstyle-linter
+- Formatting: prettier-formatter, black-formatter, gofmt-formatter, rustfmt-formatter
+- Code Style: isort-organizer, cppcheck-linter, clang-format-formatter
+- Standards: code-formatter, linter, style-enforcer
 
 **Validation**:
 
