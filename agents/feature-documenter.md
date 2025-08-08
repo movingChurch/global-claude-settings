@@ -315,12 +315,31 @@ Description and code example.
 
 ## Agent-Based Workflow
 
+### Phase 0: Project Structure Analysis
+```yaml
+step_0a:
+  agent: architecture-guardian
+  task: "Analyze project structure, file organization, and existing patterns"
+  output: "Project structure analysis with conventions and patterns"
+
+step_0b:
+  agent: dependency-resolver
+  task: "Identify project dependencies, technology stack, and frameworks"
+  output: "Technology stack and dependency report"
+
+step_0c:
+  agent: documentation-writer
+  task: "Check existing documentation structure and patterns in docs/"
+  output: "Documentation conventions and existing structure"
+```
+
 ### Phase 1: Requirements Analysis and User Validation
 ```yaml
 step_1:
   agent: requirement-analyzer
-  task: "Analyze user request and extract requirements"
-  output: "Structured requirements document"
+  task: "Analyze user request and extract requirements based on project context"
+  input: "User request + Project structure analysis"
+  output: "Structured requirements document aligned with project"
 
 step_2:
   action: USER_VALIDATION
@@ -335,8 +354,9 @@ step_2:
 
 step_3:
   agent: architecture-guardian
-  task: "Design architectural approach based on approved requirements"
-  output: "Proposed architecture design"
+  task: "Design architectural approach based on approved requirements and existing project patterns"
+  input: "Approved requirements + Project structure analysis"
+  output: "Proposed architecture design compatible with existing codebase"
 
 step_4:
   action: USER_VALIDATION
@@ -355,18 +375,21 @@ step_4:
 ```yaml
 step_5:
   agent: documentation-writer
-  task: "Create feature folder structure docs/features/NNN-feature-name/"
-  output: "Feature folder with template files"
+  task: "Create feature folder structure docs/features/NNN-feature-name/ following project conventions"
+  input: "Project documentation structure"
+  output: "Feature folder with template files matching project style"
 
 step_6:
   agent: documentation-writer
-  task: "Write detailed specifications in SPECIFICATION.md"
-  output: "Complete specification document"
+  task: "Write detailed specifications in SPECIFICATION.md aligned with project patterns"
+  input: "Requirements + Project conventions"
+  output: "Complete specification document matching project style"
 
 step_7:
   agent: architecture-guardian
-  task: "Document architecture and design in DESIGN.md"
-  output: "Architecture design document"
+  task: "Document architecture and design in DESIGN.md using existing patterns"
+  input: "Architecture design + Existing codebase patterns"
+  output: "Architecture design document compatible with project"
 
 step_8:
   agent: test-manager
@@ -415,10 +438,26 @@ step_10:
 
 ```python
 def orchestrate_documentation(feature_request):
-    # Step 1: Analyze requirements
+    # Step 0: Analyze project structure first
+    project_structure = invoke_agent(
+        "Task tool → architecture-guardian",
+        "Analyze project structure and patterns"
+    )
+    
+    tech_stack = invoke_agent(
+        "Task tool → dependency-resolver",
+        "Identify technology stack and dependencies"
+    )
+    
+    doc_conventions = invoke_agent(
+        "Task tool → documentation-writer",
+        "Check existing documentation structure"
+    )
+    
+    # Step 1: Analyze requirements with project context
     requirements = invoke_agent(
         "Task tool → requirement-analyzer",
-        "Parse and structure requirements for: " + feature_request
+        f"Parse and structure requirements for: {feature_request} in context of {project_structure}"
     )
     
     # Step 2: USER VALIDATION - Requirements
@@ -500,11 +539,14 @@ Feature documentation is complete when:
 
 ### Coordination Rules
 
-1. **NEVER write documentation directly**
-2. **ALWAYS use Task tool to invoke agents**
-3. **Wait for each agent to complete before proceeding**
-4. **Aggregate all agent outputs into final documentation**
-5. **Validate completeness before handoff to task-decomposer**
+1. **ALWAYS analyze project structure first**
+2. **NEVER write documentation directly**
+3. **ALWAYS use Task tool to invoke agents**
+4. **Wait for each agent to complete before proceeding**
+5. **Ensure documentation matches project conventions**
+6. **Check for conflicts with existing code/docs**
+7. **Aggregate all agent outputs into final documentation**
+8. **Validate completeness before handoff to task-decomposer**
 
 ## Important: Agent-Only Operation
 
