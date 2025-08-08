@@ -30,17 +30,16 @@ docs/features/NNN-feature-name/
    - Ensure proper sequencing of agent calls
    - Create TASKS.md in docs/features/NNN-feature-name/ folder
 
-2. **Task Decomposition Workflow**
-   - Use requirement-analyzer to identify components
-   - Use test-manager for TDD test scenarios
-   - Use project-manager for task structure creation
-   - Use dependency-resolver for dependency mapping
-   - Use architecture-guardian for design validation
+2. **Dynamic Task Decomposition**
+   - Select agents based on documentation complexity
+   - Coordinate parallel analysis when possible
+   - Adapt workflow to project requirements
+   - Choose optimal agent combinations
 
 3. **Quality Assurance**
-   - Use test-manager to validate TDD compliance
-   - Use architecture-guardian to verify task completeness
-   - Ensure all tasks have proper documentation references
+   - Ensure TDD compliance through appropriate validation
+   - Verify task completeness and structure
+   - Validate all documentation references
 
 ## TDD Cycle Mapping
 
@@ -337,99 +336,132 @@ Verify:
 
 ## Agent-Based Task Generation
 
-### Phase 1: Component Analysis
+### Phase 1: Dynamic Component Analysis
 
 ```yaml
 step_1:
-  agent: requirement-analyzer
+  strategy: "Select agents based on documentation complexity"
   task: "Analyze documentation and identify implementable components"
-  input: "docs/features/NNN-feature-name/"
+  agent_selection:
+    - IF complex_requirements: requirement-analyzer, business-analyst
+    - IF system_design: architecture-guardian, system-architect
+    - IF data_heavy: database-optimizer, data-modeler
+    - IF api_focused: api-designer, interface-specialist
+  parallel_execution: true
   output: "Component list with dependencies"
 
 step_2:
-  agent: architecture-guardian
+  strategy: "Validate component structure"
   task: "Validate component architecture and dependencies"
-  input: "Component list"
+  agent_selection:
+    - IF microservices: microservices-expert, architecture-guardian
+    - IF monolithic: architecture-guardian, code-organizer
+    - IF distributed: distributed-systems-expert, network-specialist
   output: "Validated component hierarchy"
 ```
 
-### Phase 2: TDD Cycle Creation
+### Phase 2: Dynamic TDD Cycle Creation
 
 ```yaml
 step_3:
-  agent: test-manager
+  strategy: "Select test specialists based on component types"
   task: "Generate test scenarios for each component"
-  input: "Component list + TEST-CASES.md"
+  agent_selection:
+    - IF unit_tests: test-manager, test-automator
+    - IF integration_tests: integration-tester, test-manager
+    - IF performance_tests: performance-tester, load-tester
+    - IF security_tests: security-auditor, penetration-tester
+  parallel_by_component: true
   output: "Test scenarios for RED phase"
 
 step_4:
-  agent: project-manager
+  strategy: "Structure TDD cycles based on project methodology"
   task: "Structure Red-Green-Refactor cycles for components"
-  input: "Components + Test scenarios"
+  agent_selection:
+    - IF agile: agile-coach, project-manager
+    - IF traditional: project-manager, task-organizer
+    - IF kanban: kanban-specialist, flow-optimizer
   output: "TDD cycle structure"
 
 step_5:
-  agent: dependency-resolver
+  strategy: "Resolve dependencies based on system complexity"
   task: "Resolve task dependencies and ordering"
-  input: "TDD cycles"
+  agent_selection:
+    - IF complex_dependencies: dependency-resolver, graph-analyst
+    - IF simple_dependencies: task-sequencer, project-manager
+    - IF circular_dependencies: dependency-resolver, architecture-guardian
   output: "Ordered task sequence"
 ```
 
-### Phase 3: Task Documentation
+### Phase 3: Dynamic Task Documentation
 
 ```yaml
 step_6:
-  agent: project-manager
+  strategy: "Create task structure using appropriate methodology"
   task: "Create structured task list with TDD phases"
-  input: "Ordered TDD cycles"
+  agent_selection:
+    - IF complex_project: project-manager, task-decomposition-expert
+    - IF simple_project: task-organizer, project-manager
+    - IF ml_project: ml-engineer, data-scientist
   output: "Task structure with IDs and dependencies"
 
 step_7:
-  agent: documentation-writer
+  strategy: "Generate documentation based on project type"
   task: "Generate TASKS.md with documentation references"
-  input: "Task structure + Feature documentation"
+  agent_selection:
+    - IF technical_docs: documentation-writer, technical-writer
+    - IF user_docs: documentation-writer, ux-writer
+    - IF api_docs: api-documenter, documentation-writer
   output: "Complete TASKS.md file"
 
 step_8:
-  agent: test-manager
+  strategy: "Validate using appropriate quality checkers"
   task: "Validate TDD compliance of all tasks"
-  input: "TASKS.md"
+  agent_selection:
+    - IF strict_tdd: test-manager, tdd-enforcer
+    - IF flexible_tdd: test-manager, quality-assurance
+    - IF bdd: bdd-specialist, test-manager
   output: "Validation report"
 ```
 
 ## Orchestration Example
 
 ```python
-def orchestrate_task_decomposition(feature_folder):
+def orchestrate_task_decomposition(feature_folder, project_context):
     # Never write directly - always delegate
     
-    # Step 1: Analyze components
-    components = invoke_agent(
-        "Task tool → requirement-analyzer",
+    # Step 1: Dynamically analyze components
+    agents = select_agents_for_analysis(project_context)
+    components = parallel_invoke_agents(
+        agents,
         f"Identify components from {feature_folder}"
     )
     
-    # Step 2: Generate test scenarios
-    tests = invoke_agent(
-        "Task tool → test-manager",
+    # Step 2: Generate test scenarios based on component types
+    test_agents = select_test_agents(components)
+    tests = parallel_invoke_agents(
+        test_agents,
         f"Create test scenarios for: {components}"
     )
     
-    # Step 3: Structure TDD cycles
-    tdd_cycles = invoke_agent(
-        "Task tool → project-manager",
+    # Step 3: Structure TDD cycles using best methodology
+    methodology_agents = select_methodology_agents(project_context)
+    tdd_cycles = invoke_agents(
+        methodology_agents,
         f"Create Red-Green-Refactor cycles for: {components}"
     )
     
-    # Step 4: Resolve dependencies
-    ordered_tasks = invoke_agent(
-        "Task tool → dependency-resolver",
+    # Step 4: Resolve dependencies intelligently
+    dependency_agents = select_dependency_agents(tdd_cycles.complexity)
+    ordered_tasks = invoke_agents(
+        dependency_agents,
         f"Order tasks by dependencies: {tdd_cycles}"
     )
     
-    # Step 5: Create TASKS.md
-    tasks_file = invoke_agent(
-        "Task tool → documentation-writer",
+    # Step 5: Create TASKS.md with appropriate documentation
+    doc_agents = select_documentation_agents(project_context.type)
+    tasks_file = invoke_agents(
+        doc_agents,
         f"Generate TASKS.md from: {ordered_tasks}"
     )
     
@@ -438,14 +470,34 @@ def orchestrate_task_decomposition(feature_folder):
 
 ## Agent Dependencies
 
-### Required Agents
+### Dynamic Agent Selection
 
-- **requirement-analyzer**: Component identification
-- **test-manager**: Test scenario creation and TDD compliance validation
-- **project-manager**: Task organization and structure
-- **dependency-resolver**: Dependency analysis
-- **documentation-writer**: TASKS.md generation
-- **architecture-guardian**: Architecture validation
+Agents are selected based on project characteristics:
+
+**Requirements Analysis**:
+
+- Complex projects: requirement-analyzer, business-analyst, domain-expert
+- Simple projects: requirement-analyzer, task-organizer
+- Data projects: data-analyst, database-specialist
+
+**Test Generation**:
+
+- Unit testing: test-manager, test-automator
+- Integration: integration-tester, api-tester
+- Performance: performance-tester, load-tester
+- Security: security-auditor, penetration-tester
+
+**Task Organization**:
+
+- Agile: agile-coach, scrum-master, project-manager
+- Waterfall: project-manager, phase-coordinator
+- Kanban: kanban-specialist, flow-optimizer
+
+**Documentation**:
+
+- Technical: documentation-writer, technical-writer
+- API: api-documenter, swagger-specialist
+- User-facing: ux-writer, documentation-writer
 
 ### Coordination Rules
 

@@ -30,113 +30,162 @@ docs/features/NNN-feature-name/
    - Never write code directly - always use Task tool
    - Coordinate agent sequencing for TDD cycles
 
-2. **TDD Cycle Management**
-   - RED: Use test-manager to create failing tests
-   - GREEN: Use code-implementer for minimal implementation
-   - REFACTOR: Use code-refactorer for improvements
-   - Use test-manager to verify each phase
-   - Use architecture-guardian for design validation
-   - Use code-validator for quality checks
+2. **Dynamic TDD Cycle Management**
+   - RED: Select appropriate test creation agents
+   - GREEN: Choose optimal implementation agents
+   - REFACTOR: Coordinate refactoring specialists
+   - Verify each phase with suitable validators
+   - Adapt workflow to project requirements
 
 3. **Progress Management**
-   - Use project-manager to update task status
-   - Use project-analyzer to track implementation quality
-   - Use documentation-writer to update docs
+   - Update task status through appropriate agents
+   - Track implementation quality dynamically
+   - Maintain documentation synchronization
    - Support resumable implementation
    - Maintain state through agent coordination
 
 ## Agent-Based TDD Implementation
 
-### RED Phase Orchestration
+### RED Phase Dynamic Orchestration
 
 ```yaml
 red_phase:
   step_1:
-    agent: test-manager
+    strategy: "Select test creators based on test type"
     task: "Create failing test based on specifications"
-    input: "Task references from TASKS.md"
+    agent_selection:
+      - IF unit_test: test-manager, test-automator
+      - IF integration_test: integration-tester, api-tester
+      - IF performance_test: performance-tester, load-tester
+      - IF security_test: security-auditor, penetration-tester
+      - IF ui_test: ui-tester, frontend-tester
     output: "Test file with failing test"
   
   step_2:
-    agent: test-manager
+    strategy: "Verify test failure with appropriate runner"
     task: "Run test and verify it fails"
-    input: "Test file"
+    agent_selection:
+      - IF javascript: jest-runner, test-manager
+      - IF python: pytest-runner, test-manager
+      - IF go: go-test-runner, test-manager
+      - IF java: junit-runner, test-manager
     output: "Confirmation of test failure"
   
   step_3:
-    agent: project-manager
+    strategy: "Update status using project management agent"
     task: "Update task status to RED complete"
-    input: "Task ID"
+    agent_selection:
+      - IF agile: scrum-master, project-manager
+      - IF kanban: kanban-manager, project-manager
+      - DEFAULT: project-manager, task-tracker
     output: "Updated TASKS.md"
 ```
 
-### GREEN Phase Orchestration
+### GREEN Phase Dynamic Orchestration
 
 ```yaml
 green_phase:
   step_1:
-    agent: code-implementer
+    strategy: "Select implementer based on component type"
     task: "Generate minimal implementation to pass test"
-    input: "Test requirements + Design docs"
+    agent_selection:
+      - IF backend: backend-developer, code-implementer
+      - IF frontend: frontend-developer, react-developer
+      - IF database: database-developer, sql-pro
+      - IF api: api-developer, restful-architect
+      - IF algorithm: algorithm-specialist, code-implementer
+      - IF ml_model: ml-engineer, data-scientist
+    parallel_possible: true
     output: "Implementation code"
   
   step_2:
-    agent: architecture-guardian
+    strategy: "Validate architecture based on system type"
     task: "Validate implementation follows design patterns"
-    input: "Implementation + DESIGN.md"
+    agent_selection:
+      - IF microservices: microservices-architect, architecture-guardian
+      - IF monolithic: architecture-guardian, code-organizer
+      - IF serverless: serverless-architect, cloud-architect
+      - IF distributed: distributed-systems-expert, architecture-guardian
     output: "Architecture compliance report"
   
   step_3:
-    agent: test-manager
+    strategy: "Run tests with appropriate framework"
     task: "Run test and verify it passes"
-    input: "Implementation + Test"
+    agent_selection:
+      - IF unit_tests: test-manager, unit-tester
+      - IF integration_tests: integration-tester, test-manager
+      - IF e2e_tests: e2e-tester, test-automator
     output: "Test success confirmation"
   
   step_4:
-    agent: code-validator
+    strategy: "Validate code quality with specialized validators"
     task: "Verify code quality and minimal implementation"
-    input: "Implementation code"
+    agent_selection:
+      - IF security_critical: security-auditor, code-validator
+      - IF performance_critical: performance-analyzer, code-validator
+      - IF readability_focus: code-reviewer, code-validator
+      - DEFAULT: code-validator, quality-checker
+    parallel_validation: true
     output: "Quality validation report"
   
   step_5:
-    agent: project-manager
+    strategy: "Update task status"
     task: "Update task status to GREEN complete"
-    input: "Task ID"
+    agent_selection:
+      - DEFAULT: project-manager, task-tracker
     output: "Updated TASKS.md"
 ```
 
-### REFACTOR Phase Orchestration
+### REFACTOR Phase Dynamic Orchestration
 
 ```yaml
 refactor_phase:
   step_1:
-    agent: code-refactorer
+    strategy: "Select refactoring specialists based on optimization goals"
     task: "Orchestrate refactoring while maintaining tests"
-    input: "Current implementation + Optimization notes"
+    agent_selection:
+      - IF performance_optimization: performance-optimizer, code-refactorer
+      - IF readability_improvement: code-beautifier, clean-code-expert
+      - IF architecture_refactor: architecture-refactorer, design-pattern-expert
+      - IF security_hardening: security-refactorer, vulnerability-fixer
+      - IF debt_reduction: technical-debt-reducer, code-refactorer
     output: "Refactored code"
   
   step_2:
-    agent: test-manager
+    strategy: "Comprehensive test verification"
     task: "Verify all tests still pass after refactoring"
-    input: "Refactored code + All tests"
+    agent_selection:
+      - IF has_unit_tests: unit-tester, test-manager
+      - IF has_integration_tests: integration-tester, test-manager
+      - IF has_performance_tests: performance-tester, benchmark-runner
+    parallel_testing: true
     output: "Test success confirmation"
   
   step_3:
-    agent: code-validator
+    strategy: "Multi-aspect quality validation"
     task: "Validate code quality improvements"
-    input: "Refactored code"
+    agent_selection:
+      - FOR complexity: complexity-analyzer, code-validator
+      - FOR maintainability: maintainability-checker, code-validator
+      - FOR performance: performance-analyzer, profiler
+      - FOR security: security-scanner, vulnerability-checker
+    parallel_validation: true
     output: "Quality validation report"
   
   step_4:
-    agent: documentation-writer
+    strategy: "Documentation update based on changes"
     task: "Update code documentation if needed"
-    input: "Refactored code"
+    agent_selection:
+      - IF api_changes: api-documenter, documentation-writer
+      - IF internal_changes: code-documenter, documentation-writer
+      - IF user_facing_changes: user-doc-writer, documentation-writer
     output: "Updated documentation"
   
   step_5:
-    agent: project-manager
+    strategy: "Status update"
     task: "Update task status to REFACTOR complete"
-    input: "Task ID"
+    agent_selection:
+      - DEFAULT: project-manager, task-tracker
     output: "Updated TASKS.md"
 ```
 
@@ -389,68 +438,129 @@ refactor_breaks:
 ## Orchestration Example
 
 ```python
-def orchestrate_implementation():
+def orchestrate_implementation(project_context):
     # Read current task
     current_task = read_current_task_from_tasks_md()
     
     if current_task['phase'] == 'RED':
+        # Dynamically select test creation agents
+        test_agents = select_test_agents(
+            current_task['type'],
+            project_context
+        )
+        
         # Delegate test creation
-        test = invoke_agent(
-            "Task tool → test-manager",
+        test = parallel_invoke_agents(
+            test_agents,
             f"Create failing test for: {current_task['description']}"
         )
         
-        # Verify test fails
-        result = invoke_agent(
-            "Task tool → test-manager",
+        # Select test runner based on language/framework
+        runner_agents = select_test_runners(project_context.language)
+        result = invoke_agents(
+            runner_agents,
             "Run test and verify failure"
         )
         
     elif current_task['phase'] == 'GREEN':
-        # Delegate implementation
-        code = invoke_agent(
-            "Task tool → code-implementer",
+        # Select implementation agents based on component
+        impl_agents = select_implementation_agents(
+            current_task['component_type'],
+            project_context
+        )
+        
+        # Parallel implementation if possible
+        code = parallel_invoke_agents(
+            impl_agents,
             f"Implement minimal code for: {current_task['description']}"
         )
         
+        # Multi-aspect validation
+        validators = select_validators([
+            'architecture',
+            'quality',
+            'security' if project_context.security_critical else None,
+            'performance' if project_context.performance_critical else None
+        ])
+        
+        validation_results = parallel_invoke_agents(
+            validators,
+            "Validate implementation"
+        )
+        
         # Verify test passes
-        result = invoke_agent(
-            "Task tool → test-manager",
+        test_agents = select_test_runners(project_context.framework)
+        result = invoke_agents(
+            test_agents,
             "Run test and verify success"
         )
         
     elif current_task['phase'] == 'REFACTOR':
-        # Delegate refactoring
-        improved = invoke_agent(
-            "Task tool → code-refactorer",
+        # Select refactoring specialists
+        refactor_agents = select_refactoring_agents(
+            current_task['optimization_goals'],
+            project_context
+        )
+        
+        # Orchestrate refactoring
+        improved = invoke_agents(
+            refactor_agents,
             f"Refactor: {current_task['description']}"
         )
         
-        # Verify tests still pass
-        result = invoke_agent(
-            "Task tool → test-manager",
+        # Comprehensive test verification
+        all_test_agents = select_all_test_types(project_context)
+        result = parallel_invoke_agents(
+            all_test_agents,
             "Run all tests after refactoring"
         )
     
-    # Update task status
+    # Update task status with appropriate PM agent
+    pm_agent = select_project_management_agent(project_context.methodology)
     invoke_agent(
-        "Task tool → project-manager",
+        pm_agent,
         f"Mark task {current_task['id']} as complete"
     )
 ```
 
 ## Agent Dependencies
 
-### Required Agents for Implementation
-- **test-manager**: Creates and runs tests for all TDD phases
-- **code-implementer**: Generates implementation code
-- **code-refactorer**: Orchestrates refactoring improvements
-- **project-manager**: Updates task status and progress
-- **architecture-guardian**: Validates design compliance
-- **code-validator**: Checks code quality and standards
-- **documentation-writer**: Updates documentation as needed
+### Dynamic Agent Selection for Implementation
+
+Agents are selected based on task requirements:
+
+**Test Creation & Execution**:
+
+- Unit tests: test-manager, test-automator, unit-tester
+- Integration: integration-tester, api-tester, contract-tester
+- Performance: performance-tester, load-tester, stress-tester
+- Security: security-auditor, penetration-tester, vulnerability-scanner
+- UI/UX: ui-tester, accessibility-tester, browser-tester
+
+**Implementation**:
+
+- Backend: backend-developer, api-developer, database-developer
+- Frontend: frontend-developer, react-developer, vue-developer
+- Mobile: ios-developer, android-developer, react-native-developer
+- ML/AI: ml-engineer, data-scientist, model-trainer
+- Infrastructure: devops-engineer, cloud-architect, kubernetes-expert
+
+**Refactoring**:
+
+- Performance: performance-optimizer, algorithm-expert, caching-specialist
+- Clean Code: clean-code-expert, code-beautifier, naming-expert
+- Architecture: architecture-refactorer, design-pattern-expert, modularizer
+- Security: security-hardener, vulnerability-fixer, encryption-expert
+
+**Validation**:
+
+- Code Quality: code-validator, linter, complexity-analyzer
+- Architecture: architecture-guardian, design-validator, pattern-checker
+- Security: security-scanner, dependency-checker, vulnerability-analyzer
+- Performance: performance-profiler, benchmark-runner, memory-analyzer
 
 ### Coordination Rules
+
 1. **NEVER write code or tests directly**
 2. **ALWAYS use Task tool to invoke agents**
 3. **Follow TDD phases strictly through agents**

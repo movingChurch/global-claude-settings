@@ -1,213 +1,107 @@
 # 🚀 CLAUDE CODE DEVELOPMENT SYSTEM
 
-## ⚡ CRITICAL: Orchestrator-First Development
+## ⚡ Intelligent Orchestrator System
 
-**NEVER work directly. ALWAYS use orchestrators through Task tool.**
+**5 orchestrators dynamically select from 100+ specialized agents based on your needs.**
 
-### 5 Core Orchestrator Commands
+### Core Commands
 
 ```bash
-document   → feature-documenter    # Create complete documentation
-decompose  → task-decomposer       # Break into TDD tasks
-implement  → incremental-implementer # Execute TDD implementation
-refactor   → code-refactorer        # Systematic refactoring
-analyze    → project-analyzer       # Complete analysis
+document   → feature-documenter      # Creates documentation
+decompose  → task-decomposer        # Breaks into tasks
+implement  → incremental-implementer # Builds with testing
+refactor   → code-refactorer        # Improves code quality
+analyze    → project-analyzer       # Analyzes project
 ```
 
-## 🎯 MANDATORY WORKFLOW: Document → Decompose → Implement
+## 🧠 How It Works
+
+1. **You describe what you need** - Any programming task
+2. **Orchestrator analyzes requirements** - Understands context
+3. **Selects optimal agents** - From 100+ specialists
+4. **Executes in parallel when possible** - Maximizes efficiency
+5. **Delivers results** - Complete solution
+
+## 📁 Documentation Structure
+
+```
+docs/features/NNN-feature-name/
+├── README.md           
+├── SPECIFICATION.md    
+├── DESIGN.md          
+├── INTERFACE.md       
+├── TEST-CASES.md      
+├── EXAMPLES.md        
+└── TASKS.md           
+```
+
+## 🎯 Workflow
 
 ```mermaid
 graph LR
-    A[User Request] --> B[document]
-    B --> C[docs/features/NNN/]
-    C --> D[decompose]
-    D --> E[NNN/TASKS.md]
-    E --> F[implement]
-    F --> G[TDD Implementation]
-    G --> H[refactor]
-    H --> I[analyze]
+    A[Your Request] --> B[Orchestrator]
+    B --> C[Analyzes Task]
+    C --> D[Selects Agents]
+    D --> E[Executes]
+    E --> F[Solution]
 
     style B fill:#9f9
     style D fill:#99f
     style F fill:#f99
 ```
 
-### 📁 Documentation Structure
+## 📋 Development Process
 
-```
-docs/features/NNN-feature-name/
-├── README.md           # Feature overview
-├── SPECIFICATION.md    # Requirements
-├── DESIGN.md          # Architecture
-├── INTERFACE.md       # APIs
-├── TEST-CASES.md      # TDD scenarios
-├── EXAMPLES.md        # Usage examples
-└── TASKS.md           # TDD implementation tasks
-```
+### Document → Decompose → Implement
 
-## 🛑 ENFORCEMENT RULES - NO EXCEPTIONS
+1. **Document** - Create comprehensive documentation
+2. **Decompose** - Break into manageable tasks
+3. **Implement** - Build with appropriate testing
+4. **Refactor** - Optimize and improve
+5. **Analyze** - Validate and verify
 
-### You MUST
+## 🛑 Simple Rules
 
-1. **ALWAYS** use orchestrators via Task tool - NEVER work directly
-2. **ALWAYS** create documentation before any code
-3. **ALWAYS** decompose into TDD tasks before implementation
-4. **ALWAYS** follow Red → Green → Refactor cycle
-5. **NEVER** write code without failing test first
-6. **NEVER** skip orchestrator invocation
+1. **Always use orchestrators** - They handle complexity
+2. **Describe clearly** - What you want to achieve
+3. **Trust the system** - It selects the right agents
+4. **Focus on outcomes** - Not implementation details
 
-### Automatic Rejection ⛔
-
-- Direct code writing → REJECT (use incremental-implementer)
-- Code before documentation → REJECT (use feature-documenter first)
-- Implementation without tests → REJECT (TDD violations)
-- Tests after code → REJECT (TDD violations)
-- Coverage below 80% → REJECT (quality gate failure)
-- Bypassing orchestrators → REJECT (architecture violation)
-- Invalid agent references → REJECT (system integrity)
-
-## 📋 DDRIVE METHODOLOGY
-
-### Design-Document-Review-Implement-Verify-Evaluate
-
-Every feature MUST complete all 6 phases:
-
-#### Phase 1: DESIGN
-
-- Use: `requirement-analyzer`, `architecture-guardian`
-- Output: Requirements, architecture, interfaces
-
-#### Phase 2: DOCUMENT  
-
-- Use: `document` command (feature-documenter)
-- Output: Complete feature documentation
-
-#### Phase 3: REVIEW
-
-- Use: `code-validator`, `test-manager`
-- Output: Validated design and test strategy
-
-#### Phase 4: IMPLEMENT
-
-- Use: `decompose` → `implement` commands
-- Output: TDD implementation with tests
-
-#### Phase 5: VERIFY
-
-- Use: `analyze` command (project-analyzer)
-- Output: Quality metrics, coverage report
-
-#### Phase 6: EVALUATE
-
-- Use: `project-analyzer`, `documentation-writer`
-- Output: Lessons learned, improvements
-
-## 🤖 13-Agent Architecture
-
-### 🎭 Orchestrators (5) - Coordinate via Task tool only
-
-- **feature-documenter**: Creates complete docs/features/NNN/ structure
-- **task-decomposer**: Breaks docs into TDD task sequences
-- **incremental-implementer**: Executes TDD cycles from TASKS.md
-- **code-refactorer**: Systematic code quality improvements
-- **project-analyzer**: Complete project health validation
-
-### 👷 Workers (8) - Execute direct operations
-
-**Foundation Workers:**
-- **requirement-analyzer**: Converts requirements to structured tasks
-- **architecture-guardian**: Guards system architecture integrity  
-- **project-manager**: Manages tasks/sprints with Taskmaster-style NLP
-- **dependency-resolver**: Package dependencies and security
-
-**Implementation Workers:**
-- **code-implementer**: All code writing and optimization
-- **test-manager**: TDD enforcement, test generation, execution
-- **code-validator**: Quality standards and readability validation
-- **documentation-writer**: All documentation creation and maintenance
-
-## 💻 TDD Implementation Process
-
-### Red-Green-Refactor Cycle
-
-```
-FOR EACH task in TASKS.md:
-  1. RED: Write failing test (test-manager)
-  2. GREEN: Minimal code to pass (code-implementer)
-  3. REFACTOR: Improve structure (code-refactorer)
-  4. VERIFY: All tests pass (test-manager)
-```
-
-### Task Structure in TASKS.md
-
-```markdown
-## Task 1: [Feature Name]
-- [ ] Write test for X
-- [ ] Implement X minimally
-- [ ] Refactor if needed
-- [ ] Verify all tests pass
-```
-
-## 📊 Quality Standards
-
-### Code Principles
-
-- **Readability First**: Clear over clever
-- **Single Responsibility**: One function, one purpose
-- **Test Coverage**: Minimum 80%
-- **Small Commits**: Atomic, focused changes
-
-### Commit Requirements
-
-- All tests passing
-- No warnings/errors
-- Clear message
-- Single logical change
-
-## 🔄 Practical Workflow Example
-
-User: "Add user authentication"
+## 💡 Examples
 
 ```bash
-# Step 1: Document
-Task → feature-documenter: "Create auth documentation"
+# Just describe what you need
+User: "Create a memory allocator"
+→ Orchestrator understands: low-level, performance-critical
+→ Selects appropriate specialists
+→ Delivers optimized allocator
 
-# Step 2: Decompose  
-Task → task-decomposer: "Generate TDD tasks from docs"
+User: "Build ML training pipeline"  
+→ Orchestrator understands: data processing, model training
+→ Selects ML specialists
+→ Delivers complete pipeline
 
-# Step 3: Implement
-Task → incremental-implementer: "Execute TASKS.md"
-
-# Step 4: Refactor
-Task → code-refactorer: "Improve code structure"
-
-# Step 5: Validate
-Task → project-analyzer: "Validate implementation"
+User: "Implement authentication"
+→ Orchestrator understands: security-critical
+→ Selects security experts
+→ Delivers secure implementation
 ```
 
-## ✅ SYSTEM VALIDATION STATUS
+## ⚡ Key Benefits
 
-### Architecture Verified ✓
-- All 13 agents properly configured
-- Tool patterns correctly assigned (orchestrators vs workers)  
-- No circular dependencies or invalid references
-- Clear workflow integration established
+- **Automatic agent selection** - No need to specify
+- **Domain adaptation** - Works for any programming task
+- **Parallel execution** - Fast and efficient
+- **Best practices** - Automatically applied
+- **Quality assurance** - Built-in validation
 
-### Workflow Consistency ✓
-- 5 commands → 5 orchestrators mapping confirmed
-- TDD cycle enforcement in place
-- Documentation-first approach analyzed
-- Quality gates functioning
+## ✅ Remember
 
-## ⚠️ KEY REMINDERS
-
-1. **Orchestrators coordinate everything** - You just invoke them
-2. **Documentation drives development** - No docs, no code
-3. **Tests drive implementation** - No test, no code
-4. **One task at a time** - Sequential TDD cycles
-5. **Validate constantly** - Quality gates at each phase
-6. **Never bypass the system** - Always use proper channels
+- **Describe your goal, not the method**
+- **Orchestrators figure out the details**
+- **The system adapts to your needs**
+- **100+ specialists work behind the scenes**
 
 ---
 
-**Remember**: When in doubt, use an orchestrator. The system is designed to handle complexity through proper coordination.
+**Just tell me what you need. The orchestrators handle everything else.**

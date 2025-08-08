@@ -55,92 +55,156 @@ You are an orchestrator that analyzes and reports on the current state of a proj
 
 ## Validation Workflow
 
-### Phase 1: Project Analysis
+### Phase 1: Dynamic Project Analysis
 
 ```yaml
 step_1:
-  agent: general-purpose
+  strategy: "Select analyzers based on project type and complexity"
   task: "Analyze project structure and identify all implemented features, modules, and components"
+  agent_selection:
+    - IF web_app: frontend-analyzer, backend-analyzer, api-analyzer
+    - IF mobile_app: ios-analyzer, android-analyzer, mobile-api-analyzer
+    - IF ml_project: ml-analyzer, data-pipeline-analyzer, model-analyzer
+    - IF microservices: service-analyzer, api-gateway-analyzer, message-queue-analyzer
+    - DEFAULT: general-purpose, code-explorer, feature-identifier
+  parallel_analysis: true
   output: "Feature inventory and project structure analysis"
   
 step_2:
-  agent: test-manager
+  strategy: "Comprehensive test analysis with specialized agents"
   task: "Analyze test coverage and test quality metrics across all features"
+  agent_selection:
+    - FOR unit_tests: unit-test-analyzer, coverage-reporter
+    - FOR integration_tests: integration-test-analyzer, api-test-reviewer
+    - FOR e2e_tests: e2e-test-analyzer, ui-test-reviewer
+    - FOR performance_tests: performance-test-analyzer, load-test-reviewer
+    - DEFAULT: test-manager, test-coverage-analyzer
+  parallel_execution: true
   output: "Test coverage report with gaps identified"
 ```
 
-### Phase 2: Quality Validation
+### Phase 2: Dynamic Quality Validation
 
 ```yaml
 step_3:
-  agent: code-validator
+  strategy: "Multi-aspect code quality validation"
   task: "Validate code quality, standards compliance, and readability"
+  agent_selection:
+    - FOR code_standards: code-validator, linter, style-checker
+    - FOR complexity: complexity-analyzer, cyclomatic-calculator
+    - FOR readability: readability-scorer, naming-validator
+    - FOR security: security-scanner, vulnerability-checker
+    - FOR performance: performance-analyzer, bottleneck-detector
+  parallel_validation: true
   output: "Code quality validation report"
   
 step_4:
-  agent: documentation-writer
+  strategy: "Documentation validation with specialized reviewers"
   task: "Verify documentation completeness and accuracy"
+  agent_selection:
+    - IF api_docs: api-doc-validator, swagger-validator
+    - IF user_docs: user-doc-reviewer, documentation-writer
+    - IF code_docs: code-doc-analyzer, docstring-validator
+    - IF architecture_docs: architecture-doc-reviewer, diagram-validator
   output: "Documentation sync status report"
 ```
 
-### Phase 3: System Architecture & Dependencies
+### Phase 3: Dynamic System Architecture & Dependencies
 
 ```yaml
 step_5:
-  agent: dependency-resolver
+  strategy: "Dependency analysis with package-specific experts"
   task: "Analyze all project dependencies, their versions, security status, and dependency tree"
+  agent_selection:
+    - IF npm_project: npm-auditor, node-dependency-analyzer
+    - IF python_project: pip-analyzer, conda-resolver
+    - IF java_project: maven-analyzer, gradle-expert
+    - IF go_project: go-mod-analyzer, vendor-checker
+    - FOR security: dependency-scanner, cve-checker, license-validator
+  parallel_scanning: true
   output: "Complete dependency analysis report"
   
 step_6:
-  agent: architecture-guardian
+  strategy: "Architecture analysis based on system style"
   task: "Analyze system architecture, module relationships, design patterns, and component interactions"
+  agent_selection:
+    - IF microservices: microservices-analyzer, service-mesh-expert
+    - IF monolithic: monolith-analyzer, layer-validator
+    - IF serverless: serverless-analyzer, function-mapper
+    - IF event_driven: event-flow-analyzer, message-pattern-validator
+    - FOR patterns: pattern-detector, design-pattern-analyzer
   output: "Architecture analysis report with component diagram"
 ```
 
-### Phase 4: Feature & Integration Analysis
+### Phase 4: Dynamic Feature & Integration Analysis
 
 ```yaml
 step_7:
-  agent: general-purpose
+  strategy: "Feature analysis with domain-specific experts"
   task: "Analyze feature implementation status, integration points, and API contracts"
+  agent_selection:
+    - FOR api_analysis: api-analyzer, contract-validator, endpoint-mapper
+    - FOR integration: integration-analyzer, middleware-expert, connector-validator
+    - FOR features: feature-analyzer, capability-mapper, completion-tracker
+    - FOR database: database-analyzer, schema-validator, query-optimizer
+    - DEFAULT: general-purpose, system-analyzer
+  parallel_feature_analysis: true
   output: "Feature implementation and integration analysis"
   
 step_8:
-  consolidate: "Compile all analysis reports into comprehensive project briefing"
-  output: "Complete project status briefing"
+  strategy: "Intelligent report consolidation"
+  task: "Compile all analysis reports into comprehensive project briefing"
+  agent_selection:
+    - report-compiler, data-aggregator, insight-generator
+  synthesis_approach: "Merge parallel results, identify patterns, generate insights"
+  output: "Complete project status briefing with actionable insights"
 ```
 
-### Phase 5: Report Generation
+### Phase 5: Dynamic Report Generation
 
 ```yaml
 step_9:
-  agent: documentation-writer
+  strategy: "Intelligent summary generation"
   task: "Read existing docs/analysis/SUMMARY.md if exists and update with new results"
+  agent_selection:
+    - summary-writer, trend-analyzer, change-detector
+  approach: "Compare with historical data, highlight changes, identify trends"
   output: "Updated summary with timestamp and changes"
   
 step_10:
-  agent: documentation-writer
+  strategy: "Test report generation with coverage experts"
   task: "Read/update docs/analysis/TESTS.md with coverage metrics"
+  agent_selection:
+    - test-reporter, coverage-analyzer, gap-identifier
   output: "Test coverage analysis with trends"
   
 step_11:
-  agent: documentation-writer
+  strategy: "Quality report with multiple perspectives"
   task: "Read/update docs/analysis/QUALITY.md with code quality metrics"
+  agent_selection:
+    - quality-reporter, metric-calculator, improvement-tracker
   output: "Code quality assessment with improvements"
   
 step_12:
-  agent: documentation-writer
+  strategy: "Dependency health reporting"
   task: "Read/update docs/analysis/DEPENDENCIES.md with dependency health"
+  agent_selection:
+    - dependency-reporter, security-analyst, update-recommender
   output: "Dependency status and security analysis"
   
 step_13:
-  agent: documentation-writer
+  strategy: "Architecture consistency reporting"
   task: "Read/update docs/analysis/ARCHITECTURE.md with consistency checks"
+  agent_selection:
+    - architecture-reporter, violation-detector, pattern-validator
   output: "Architecture validation with violations"
   
 step_14:
-  agent: documentation-writer
+  strategy: "Action item prioritization"
   task: "Read/update docs/analysis/ACTIONS.md with required actions"
+  agent_selection:
+    - action-prioritizer, risk-assessor, recommendation-engine
+  approach: "Prioritize by impact, urgency, and effort"
   output: "Prioritized action items and recommendations"
 ```
 
@@ -280,57 +344,84 @@ long_term:
 ## Orchestration Example
 
 ```python
-def orchestrate_analysis(project_path):
-    # Step 1: Analyze project structure
-    feature_analysis = invoke_agent(
-        "Task tool → general-purpose",
+def orchestrate_analysis(project_path, project_context):
+    # Step 1: Dynamic project structure analysis
+    structure_agents = select_structure_analyzers(project_context.type)
+    feature_analysis = parallel_invoke_agents(
+        structure_agents,
         f"Analyze project features and structure in {project_path}"
     )
     
-    test_status = invoke_agent(
-        "Task tool → test-manager",
+    test_agents = select_test_analyzers(project_context.test_frameworks)
+    test_status = parallel_invoke_agents(
+        test_agents,
         f"Validate test coverage for {project_path}"
     )
     
-    # Step 2: Validate quality
-    code_quality = invoke_agent(
-        "Task tool → code-validator",
+    # Step 2: Multi-dimensional quality validation
+    quality_agents = select_quality_validators([
+        'code_standards',
+        'complexity',
+        'security',
+        'performance'
+    ])
+    code_quality = parallel_invoke_agents(
+        quality_agents,
         f"Validate code quality in {project_path}"
     )
     
-    docs_status = invoke_agent(
-        "Task tool → documentation-writer",
+    doc_agents = select_documentation_validators(project_context.doc_types)
+    docs_status = parallel_invoke_agents(
+        doc_agents,
         f"Validate documentation for {project_path}"
     )
     
-    # Step 3: System health
-    deps_health = invoke_agent(
-        "Task tool → dependency-resolver",
+    # Step 3: System health with specialized analyzers
+    dep_agents = select_dependency_analyzers(project_context.package_manager)
+    deps_health = parallel_invoke_agents(
+        dep_agents,
         f"Validate dependencies in {project_path}"
     )
     
-    architecture = invoke_agent(
-        "Task tool → architecture-guardian",
+    arch_agents = select_architecture_analyzers(project_context.architecture_style)
+    architecture = parallel_invoke_agents(
+        arch_agents,
         f"Validate architecture consistency in {project_path}"
     )
     
-    # Step 4: Feature and integration analysis
-    integration_analysis = invoke_agent(
-        "Task tool → general-purpose",
+    # Step 4: Dynamic feature and integration analysis
+    integration_agents = select_integration_analyzers([
+        'api_contracts',
+        'service_communication',
+        'data_flow',
+        'event_streams'
+    ])
+    integration_analysis = parallel_invoke_agents(
+        integration_agents,
         f"Analyze feature integrations and APIs in {project_path}"
     )
     
-    # Compile project briefing
-    project_briefing = compile_analysis_results(
-        feature_analysis, test_status, code_quality,
-        docs_status, deps_health, architecture, integration_analysis
+    # Intelligent compilation of results
+    compiler_agents = select_report_compilers()
+    project_briefing = invoke_agents(
+        compiler_agents,
+        "Compile and synthesize all analysis results",
+        inputs={
+            'feature_analysis': feature_analysis,
+            'test_status': test_status,
+            'code_quality': code_quality,
+            'docs_status': docs_status,
+            'deps_health': deps_health,
+            'architecture': architecture,
+            'integration_analysis': integration_analysis
+        }
     )
     
-    # Step 5: Generate/Update validation reports
-    # Each file is read first if exists, then updated with new data
+    # Step 5: Dynamic report generation with specialized writers
+    report_agents = select_report_generators(project_context.reporting_needs)
     
-    summary = invoke_agent(
-        "Task tool → documentation-writer",
+    summary = invoke_agents(
+        ['summary-writer', 'trend-analyzer'],
         f"""First check if docs/analysis/SUMMARY.md exists and read it.
         Then update with new project analysis:
         Timestamp: {timestamp}
@@ -338,8 +429,11 @@ def orchestrate_analysis(project_path):
         Compare with previous analysis if available."""
     )
     
+    # Select appropriate documentation agent
+    doc_agent = select_agent_for_task("documentation_update")
+    
     tests = invoke_agent(
-        "Task tool → documentation-writer",
+        f"Task tool → {doc_agent}",
         f"""First check if docs/analysis/TESTS.md exists and read it.
         Then update test coverage metrics:
         {test_status}
@@ -347,7 +441,7 @@ def orchestrate_analysis(project_path):
     )
     
     quality = invoke_agent(
-        "Task tool → documentation-writer",
+        f"Task tool → {doc_agent}",
         f"""First check if docs/analysis/QUALITY.md exists and read it.
         Then update code quality assessment:
         {code_quality}
@@ -355,7 +449,7 @@ def orchestrate_analysis(project_path):
     )
     
     deps = invoke_agent(
-        "Task tool → documentation-writer",
+        f"Task tool → {doc_agent}",
         f"""First check if docs/analysis/DEPENDENCIES.md exists and read it.
         Then update dependency health:
         {deps_health}
@@ -363,7 +457,7 @@ def orchestrate_analysis(project_path):
     )
     
     arch = invoke_agent(
-        "Task tool → documentation-writer",
+        f"Task tool → {doc_agent}",
         f"""First check if docs/analysis/ARCHITECTURE.md exists and read it.
         Then update architecture consistency:
         {architecture}
@@ -371,7 +465,7 @@ def orchestrate_analysis(project_path):
     )
     
     actions = invoke_agent(
-        "Task tool → documentation-writer",
+        f"Task tool → {doc_agent}",
         f"""First check if docs/analysis/ACTIONS.md exists and read it.
         Then update required actions:
         Priority items from all validations
@@ -413,14 +507,42 @@ def orchestrate_analysis(project_path):
 
 ## Agent Dependencies
 
-### Required Agents
+### Dynamic Agent Selection
 
-- **general-purpose**: Feature and integration analysis
-- **test-manager**: Test coverage analysis
-- **code-validator**: Code quality analysis
-- **documentation-writer**: Documentation status
-- **dependency-resolver**: Dependency analysis
-- **architecture-guardian**: Architecture analysis
+Agents are selected based on project characteristics:
+
+**Project Structure Analysis**:
+
+- Web apps: frontend-analyzer, backend-analyzer, api-analyzer, database-analyzer
+- Mobile apps: ios-analyzer, android-analyzer, mobile-api-analyzer
+- ML projects: ml-analyzer, data-pipeline-analyzer, model-analyzer
+- Microservices: service-analyzer, api-gateway-analyzer, message-queue-analyzer
+
+**Test Analysis**:
+
+- Unit tests: unit-test-analyzer, coverage-reporter, mutation-tester
+- Integration: integration-test-analyzer, api-test-reviewer, contract-tester
+- E2E: e2e-test-analyzer, ui-test-reviewer, user-journey-validator
+- Performance: performance-test-analyzer, load-test-reviewer, stress-tester
+
+**Quality Validation**:
+
+- Code: code-validator, linter, complexity-analyzer, smell-detector
+- Security: security-scanner, vulnerability-checker, owasp-validator
+- Performance: performance-analyzer, bottleneck-detector, memory-profiler
+- Documentation: doc-validator, api-doc-checker, diagram-validator
+
+**System Analysis**:
+
+- Dependencies: dependency-resolver, security-auditor, license-checker
+- Architecture: architecture-guardian, pattern-validator, layer-checker
+- Integration: integration-analyzer, api-contract-validator, middleware-expert
+
+**Report Generation**:
+
+- Summary: summary-writer, trend-analyzer, change-detector
+- Metrics: metric-calculator, kpi-tracker, improvement-measurer
+- Actions: action-prioritizer, risk-assessor, recommendation-engine
 
 ### Coordination Rules
 
