@@ -104,16 +104,68 @@ step_7:
 step_8:
   consolidate: "Compile all validation reports"
   output: "Comprehensive project validation report"
-  
+```
+
+### Phase 5: Report Generation
+```yaml
 step_9:
   agent: documentation-writer
-  task: "Generate VALIDATION-REPORT.md with all validation results"
-  output: "docs/VALIDATION-REPORT.md file with complete analysis"
+  task: "Read existing docs/validation/SUMMARY.md if exists and update with new results"
+  output: "Updated summary with timestamp and changes"
+  
+step_10:
+  agent: documentation-writer
+  task: "Read/update docs/validation/TASKS.md with task completion status"
+  output: "Task status report with progress tracking"
+  
+step_11:
+  agent: documentation-writer
+  task: "Read/update docs/validation/TESTS.md with coverage metrics"
+  output: "Test coverage analysis with trends"
+  
+step_12:
+  agent: documentation-writer
+  task: "Read/update docs/validation/QUALITY.md with code quality metrics"
+  output: "Code quality assessment with improvements"
+  
+step_13:
+  agent: documentation-writer
+  task: "Read/update docs/validation/DEPENDENCIES.md with dependency health"
+  output: "Dependency status and security analysis"
+  
+step_14:
+  agent: documentation-writer
+  task: "Read/update docs/validation/ARCHITECTURE.md with consistency checks"
+  output: "Architecture validation with violations"
+  
+step_15:
+  agent: documentation-writer
+  task: "Read/update docs/validation/ACTIONS.md with required actions"
+  output: "Prioritized action items and recommendations"
 ```
 
 ## Output Location
 
-Validation reports are saved to: `docs/VALIDATION-REPORT.md`
+Validation reports are saved to: `docs/validation/`
+
+### File Structure
+```
+docs/validation/
+├── SUMMARY.md          # Executive summary with metrics
+├── TASKS.md           # Task completion status and progress
+├── TESTS.md           # Test coverage analysis and trends
+├── QUALITY.md         # Code quality metrics and issues
+├── DEPENDENCIES.md    # Dependency health and security
+├── ARCHITECTURE.md    # Architecture consistency checks
+└── ACTIONS.md         # Required actions and recommendations
+```
+
+### Update Strategy
+1. Check if file exists
+2. Read existing content if present
+3. Compare with new validation results
+4. Update with changes and timestamp
+5. Preserve historical data for trend analysis
 
 ## Validation Report Structure
 
@@ -264,22 +316,75 @@ def orchestrate_validation(project_path):
         docs_status, deps_health, architecture, requirements
     )
     
-    # Step 5: Generate markdown report
-    report_file = invoke_agent(
+    # Step 5: Generate/Update validation reports
+    # Each file is read first if exists, then updated with new data
+    
+    summary = invoke_agent(
         "Task tool → documentation-writer",
-        f"""Generate VALIDATION-REPORT.md in docs/ with:
-        - Executive summary with metrics
-        - Task completion status
-        - Test coverage analysis
-        - Code quality assessment
-        - Documentation completeness
-        - Dependency health
-        - Architecture consistency
-        - Required actions and recommendations
-        Report data: {validation_report}"""
+        f"""First check if docs/validation/SUMMARY.md exists and read it.
+        Then update with new validation summary:
+        Timestamp: {timestamp}
+        Metrics: {validation_report['summary']}
+        Compare with previous results if available."""
     )
     
-    return report_file
+    tasks = invoke_agent(
+        "Task tool → documentation-writer",
+        f"""First check if docs/validation/TASKS.md exists and read it.
+        Then update task completion status:
+        {task_status}
+        Show progress changes from previous validation."""
+    )
+    
+    tests = invoke_agent(
+        "Task tool → documentation-writer",
+        f"""First check if docs/validation/TESTS.md exists and read it.
+        Then update test coverage metrics:
+        {test_status}
+        Include coverage trends over time."""
+    )
+    
+    quality = invoke_agent(
+        "Task tool → documentation-writer",
+        f"""First check if docs/validation/QUALITY.md exists and read it.
+        Then update code quality assessment:
+        {code_quality}
+        Track quality improvements or regressions."""
+    )
+    
+    deps = invoke_agent(
+        "Task tool → documentation-writer",
+        f"""First check if docs/validation/DEPENDENCIES.md exists and read it.
+        Then update dependency health:
+        {deps_health}
+        Note any new vulnerabilities or updates."""
+    )
+    
+    arch = invoke_agent(
+        "Task tool → documentation-writer",
+        f"""First check if docs/validation/ARCHITECTURE.md exists and read it.
+        Then update architecture consistency:
+        {architecture}
+        Document any new violations or fixes."""
+    )
+    
+    actions = invoke_agent(
+        "Task tool → documentation-writer",
+        f"""First check if docs/validation/ACTIONS.md exists and read it.
+        Then update required actions:
+        Priority items from all validations
+        Mark completed actions from previous report."""
+    )
+    
+    return {
+        'summary': summary,
+        'tasks': tasks,
+        'tests': tests,
+        'quality': quality,
+        'dependencies': deps,
+        'architecture': arch,
+        'actions': actions
+    }
 ```
 
 ## Validation Principles
@@ -319,7 +424,9 @@ def orchestrate_validation(project_path):
 3. **Follow validation workflow sequentially**
 4. **Generate comprehensive reports**
 5. **Track validation metrics**
-6. **Save validation results to docs/VALIDATION-REPORT.md**
+6. **Save validation results to docs/validation/ folder**
+7. **Always read existing files before updating**
+8. **Preserve historical data for trend analysis**
 
 ## Success Criteria
 
