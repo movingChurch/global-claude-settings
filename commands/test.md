@@ -68,30 +68,35 @@ I'll follow these detailed steps:
 I can set up and configure:
 
 ### Test Runners & Frameworks
+
 - **Jest** - Zero-config testing with built-in mocking
 - **Vitest** - Fast Vite-native test runner
 - **Mocha/Chai** - Flexible testing with assertion libraries
 - **Jasmine** - Behavior-driven testing framework
 
 ### UI Testing Libraries
+
 - **React Testing Library** - Simple and complete React DOM testing
 - **Vue Test Utils** - Official Vue.js testing utilities
 - **Angular Testing Utilities** - TestBed and component testing
 - **Enzyme** - JavaScript testing utility for React
 
 ### E2E Testing Tools
+
 - **Cypress** - Fast, easy and reliable browser testing
 - **Playwright** - Cross-browser automation with modern capabilities
 - **Puppeteer** - Chrome DevTools Protocol automation
 - **WebdriverIO** - Cross-platform testing framework
 
 ### API Testing Tools
+
 - **Supertest** - HTTP assertions for Node.js
 - **Pactum** - REST API testing toolkit
 - **MSW (Mock Service Worker)** - API mocking library
 - **Postman/Newman** - API testing and automation
 
 ### Specialized Testing
+
 - **Storybook** - Component testing and documentation
 - **Testing-library family** - Simple and complete testing utilities
 - **Jest DOM** - Custom Jest matchers for DOM testing
@@ -100,12 +105,14 @@ I can set up and configure:
 ## Testing Techniques & Methodologies
 
 ### Test-Driven Development (TDD)
+
 - **Red-Green-Refactor cycle** - Write failing test, make it pass, improve code
 - **Behavior-driven development (BDD)** - Given-When-Then specification
 - **Outside-in TDD** - Start with acceptance tests, work inward
 - **Unit-first TDD** - Begin with smallest units, build up
 
 ### Testing Strategies
+
 - **Snapshot testing** - Capture component/function output for regression detection
 - **Property-based testing** - Generate test cases with random inputs
 - **Parameterized tests** - Test multiple scenarios with data tables
@@ -115,6 +122,7 @@ I can set up and configure:
 - **Fuzz testing** - Random input testing for edge case discovery
 
 ### Performance & Load Testing
+
 - **Unit performance benchmarks** - Function execution time measurement
 - **Integration load testing** - API endpoint stress testing
 - **Browser performance testing** - Core Web Vitals and rendering metrics
@@ -123,12 +131,14 @@ I can set up and configure:
 ## Advanced Mocking Strategies
 
 ### Function & Module Mocking
+
 - **Jest mocks** - `jest.fn()`, `jest.spyOn()`, `jest.mock()`
 - **Sinon.js** - Spies, stubs, and mocks for any framework
 - **Module interception** - Mock entire modules or specific exports
 - **Dependency injection** - Constructor and parameter mocking
 
 ### Network & External Service Mocking
+
 - **HTTP request mocking** - `msw`, `nock`, `fetch-mock`
 - **Database mocking** - In-memory databases, test containers
 - **File system mocking** - `mock-fs` for file operations
@@ -137,6 +147,7 @@ I can set up and configure:
 - **Service worker mocking** - MSW for network layer interception
 
 ### Advanced Mocking Patterns
+
 - **Factory pattern mocking** - Reusable mock object creation
 - **Builder pattern mocks** - Fluent mock configuration
 - **Partial mocking** - Mock specific methods while keeping others real
@@ -146,6 +157,7 @@ I can set up and configure:
 ## Test Quality & Maintenance
 
 ### Coverage & Metrics
+
 - **Line coverage** - Percentage of code lines executed
 - **Branch coverage** - All conditional paths tested
 - **Function coverage** - All functions called during tests
@@ -153,6 +165,7 @@ I can set up and configure:
 - **Path coverage** - All possible execution paths tested
 
 ### Test Maintenance
+
 - **Test organization** - Logical grouping and naming conventions
 - **Shared test utilities** - Reusable helpers and assertions
 - **Test data management** - Fixtures, builders, and factories
