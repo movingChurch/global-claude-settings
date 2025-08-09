@@ -35,7 +35,7 @@ User: "Document the API"
 Assistant: Uses Task tool → documentation-writer agent
 ```
 
-## 🔧 Available Agents (80+ Specialists)
+## 🔧 Available Agents (84 Specialists)
 
 ### Core Development
 
@@ -49,12 +49,12 @@ Assistant: Uses Task tool → documentation-writer agent
 
 ### Architecture & Design
 
+- **architect-review** - Reviews code changes for architectural consistency and patterns
 - **architecture-guardian** - System design validation
 - **backend-architect** - API and microservice design
 - **frontend-developer** - React components and UI
 - **ui-ux-designer** - Interface design and wireframes
-- **database-optimizer** - Query optimization and schemas
-- **database-optimization** - Database performance tuning
+- **database-optimizer** - Query optimization, indexing, and performance tuning
 - **database-admin** - Database operations and management
 
 ### Security & Performance
@@ -71,8 +71,7 @@ Assistant: Uses Task tool → documentation-writer agent
 - **ml-engineer** - ML pipeline implementation
 - **mlops-engineer** - ML model deployment
 - **prompt-engineer** - AI prompt optimization
-- **data-scientist** - Data analysis and insights
-- **data-analyst** - Quantitative analysis and insights
+- **data-analyst** - Quantitative analysis, statistical insights, and SQL operations
 - **data-engineer** - ETL pipelines and data infrastructure
 
 ### DevOps & Infrastructure
@@ -98,8 +97,7 @@ Assistant: Uses Task tool → documentation-writer agent
 
 ### Research & Content
 
-- **research-orchestrator** - Comprehensive research coordination
-- **research-coordinator** - Strategic research planning
+- **research-orchestrator** - Comprehensive research coordination and strategic planning
 - **research-synthesizer** - Research consolidation
 - **academic-researcher** - Scholarly sources and papers
 - **technical-researcher** - Code analysis and evaluation
@@ -111,17 +109,18 @@ Assistant: Uses Task tool → documentation-writer agent
 
 ### Specialized Tools
 
+- **agent-expert** - Agent system optimization
+- **agent-overview** - Multi-agent research system coordination and workflow management
+- **command-expert** - CLI tool development
 - **cultural-translator** - Natural language translation
-- **requirement-analyzer** - Requirements clarification
-- **query-clarifier** - Research query analysis
-- **research-brief-generator** - Research planning
-- **task-decomposition-expert** - Complex task breakdown
+- **mcp-deployment-orchestrator** - MCP production deployment
 - **mcp-expert** - MCP integration
 - **mcp-registry-navigator** - MCP server discovery
-- **mcp-deployment-orchestrator** - MCP production deployment
-- **command-expert** - CLI tool development
-- **agent-expert** - Agent system optimization
 - **project-supervisor-orchestrator** - Multi-agent workflow management
+- **query-clarifier** - Research query analysis
+- **requirement-analyzer** - Requirements clarification
+- **research-brief-generator** - Research planning
+- **task-decomposition-expert** - Complex task breakdown
 
 ### Business & Integration
 
@@ -158,24 +157,21 @@ Assistant: Uses Task tool → documentation-writer agent
 - **api-documenter** - OpenAPI/Swagger documentation
 - **graphql-architect** - GraphQL schema design
 
-## 📋 Available Commands (30+ Operations)
+## 📋 Available Commands (30 Operations)
 
 ### Project Setup & Management
 
 - **init-project** - Initialize new project structure
 - **add-package** - Add dependencies to project
 - **ci-setup** - Configure CI/CD pipelines
-- **setup-linting** - Setup code linting rules
 - **setup-formatting** - Configure code formatters
 - **create-worktrees** - Git worktree management
-- **initref** - Initialize reference documentation
 
 ### Code Quality & Review
 
 - **code-review** - Comprehensive code review
-- **lint** - Run linting checks
-- **test** - Execute test suites
-- **write-tests** - Create test cases
+- **lint** - Setup and run linting checks with fixes
+- **test** - Comprehensive test creation and execution
 - **debug** - Debug applications and issues
 - **code-to-task** - Convert code to actionable tasks
 
@@ -190,8 +186,7 @@ Assistant: Uses Task tool → documentation-writer agent
 
 ### Refactoring & Optimization
 
-- **refactor** - Code refactoring operations
-- **refactor-code** - Advanced refactoring
+- **refactor** - Comprehensive code refactoring with modern patterns
 - **typescript-migrate** - TypeScript migration
 - **optimize-database-performance** - Database optimization
 - **ultra-think** - Deep analysis and planning
