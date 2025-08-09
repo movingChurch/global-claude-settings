@@ -207,26 +207,111 @@ Assistant: Uses Task tool → documentation-writer agent
 - **add-changelog** - Changelog generation
 - **npm-scripts** - Package script management
 
+## 🔄 COMMAND-FIRST APPROACH: Use Pre-Built Workflows
+
+**USE COMMANDS WHEN AVAILABLE - DON'T IMPLEMENT MANUALLY**
+
+Commands are pre-built, tested workflows that handle common development tasks. They provide structured approaches with best practices built-in. Always check for available commands before implementing tasks manually.
+
+### 📋 When to Use Commands vs Agents
+
+**Use Commands For:**
+- Common development workflows (testing, deployment, refactoring)
+- Multi-step processes with established patterns
+- Tasks requiring specific tool configurations
+- Project setup and initialization
+- Code quality and review processes
+
+**Use Agents For:**
+- Custom implementation work
+- Domain-specific expertise
+- Content creation and analysis
+- Specialized technical tasks
+- Complex problem-solving
+
+### ⚡ Commands Provide Structured Workflows
+
+Commands encapsulate entire workflows with:
+- **Standardized processes** - Consistent execution every time
+- **Best practices** - Proven approaches built-in
+- **Error handling** - Robust failure recovery
+- **Tool integration** - Proper configuration of tools
+- **Quality gates** - Validation at each step
+
+### 💡 Command Usage Examples
+
+```bash
+# Instead of manually setting up tests
+User: "Add tests to this component"
+Assistant: Uses /test command → Comprehensive test setup with TDD
+
+# Instead of manual code review
+User: "Review my changes"
+Assistant: Uses /code-review command → Full review workflow
+
+# Instead of manual refactoring
+User: "Modernize this codebase"
+Assistant: Uses /refactor command → Systematic refactoring process
+
+# Instead of manual project setup
+User: "Create a new React project"
+Assistant: Uses /init-project command → Complete project initialization
+
+# Instead of manual CI setup
+User: "Setup continuous integration"
+Assistant: Uses /ci-setup command → Full CI/CD pipeline configuration
+```
+
+### 📁 Command Location and Discovery
+
+All commands are located in `/Users/undo/.claude/commands/` and include:
+
+- **Setup Commands** - Project initialization and configuration
+- **Quality Commands** - Linting, testing, and code review
+- **Git Commands** - Version control workflows
+- **Architecture Commands** - Design and documentation
+- **Analysis Commands** - Codebase insights and reporting
+
+### 🎯 Command-First Decision Matrix
+
+**Always ask:** "Is there a command for this?"
+
+1. **Check commands first** - Browse available commands
+2. **Use command if available** - Execute structured workflow
+3. **Use agent if no command** - Delegate to domain expert
+4. **Never implement manually** - Always use tools/agents
+
+### ✅ Command Benefits
+
+- **Consistency** - Same process every time
+- **Completeness** - All steps included
+- **Quality** - Best practices enforced
+- **Speed** - Faster than manual implementation
+- **Reliability** - Tested workflows
+
 ## 🛑 CRITICAL RULES
 
-1. **NEVER work manually** - Always use agents via Task tool
-2. **Choose the right specialist** - Match task to agent expertise  
-3. **Trust the experts** - Agents are domain specialists
-4. **Use multiple agents** - For complex multi-faceted tasks
-5. **Agent-first mindset** - Default to using agents
+1. **COMMAND-FIRST** - Check for available commands before implementing
+2. **NEVER work manually** - Always use commands or agents
+3. **Choose the right tool** - Commands for workflows, agents for expertise
+4. **Trust the systems** - Commands and agents are domain specialists
+5. **Use multiple tools** - Combine commands and agents as needed
+6. **Structured approach** - Commands → Agents → Never manual
 
 ## ✅ Remember
 
-- **Every task should use an agent** - Implementation, testing, docs, analysis
-- **Agents are experts** - They know best practices and patterns
-- **Task tool is your interface** - How you access agent expertise
-- **Quality is guaranteed** - Agents follow professional standards
+- **Commands first, then agents** - Use structured workflows when available
+- **Every task uses tools** - Commands for workflows, agents for expertise  
+- **Commands are tested workflows** - Proven processes with best practices
+- **Agents are domain experts** - Deep knowledge and specialized skills
+- **Quality is guaranteed** - Both systems follow professional standards
+- **Never implement manually** - Always use the provided tools
 
 ---
 
-**ALWAYS USE AGENTS. THEY ARE THE EXPERTS.**
+## COMMANDS → AGENTS → NEVER MANUAL
 
-# important-instruction-reminders
+## Important Instruction Reminders
 
 Do what has been asked; nothing more, nothing less.
 NEVER create files unless they're absolutely necessary for achieving your goal.
