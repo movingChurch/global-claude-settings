@@ -56,24 +56,23 @@ Identify the task type and requirements
 
 ### Step 2: Select Agent
 
-**Use the `/agents` command to find the right specialist:**
+**Agent Discovery Methods:**
 
-```bash
-/agents
-```
-
-This command lists all available agents with their descriptions, helping you:
-
-1. See all 35 specialist agents and their expertise
-2. Match task requirements to agent capabilities
-3. Select the most appropriate specialist
+1. **Check agent files directly**: Read descriptions from `~/.claude/agents/*.md`
+2. **Search by expertise**: Match task keywords with agent descriptions
+3. **Use agent categories**: Development, Infrastructure, AI/ML, Research, Specialized
 
 **Selection Process:**
 
-1. Run `/agents` to view all available specialists
-2. Find agents whose description matches the task
-3. Choose the most specific specialist for the task
+1. Identify task domain and required expertise
+2. Search agent descriptions for best match:
+   - Language-specific: python-pro, javascript-pro, c-pro, etc.
+   - Domain-specific: frontend-developer, backend-architect, etc.
+   - Task-specific: test-manager, security-auditor, etc.
+3. Choose most specific specialist for the task
 4. If unclear, use `code-implementer` as fallback
+
+**Note**: Users can run `/agents` in Claude Code CLI to see available agents
 
 ### Step 3: Delegate via Task Tool
 
