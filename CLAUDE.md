@@ -22,7 +22,7 @@
 - Trust agent expertise completely
 - Monitor and coordinate agent execution
 
-## SPECIALIST AGENTS (35 Total)
+## SPECIALIST AGENTS (36 Total)
 
 ### Development Agents
 
@@ -45,8 +45,8 @@
 ### Specialized Domains
 
 - **Integration**: `payment-integration`, `api-documenter`
-- **Advisory**: `legal-advisor`, `hackathon-ai-strategist`
-- **Content**: `podcast-transcriber`
+- **Advisory**: `legal-advisor`, `hackathon-ai-strategist`, `guideline-writer`
+- **Content**: `podcast-transcriber`, `architecture-writer`
 
 ## ORCHESTRATION WORKFLOW
 
@@ -88,6 +88,7 @@ Invoke the selected agent with:
 
 1. **Check for Project Documentation:**
    - `/documents/architecture/` - System design, technical decisions
+   - `/documents/design/` - Human-created design content and planning
    - `/documents/guidelines/` - Project-specific conventions and standards
    - `/documents/tasks/###-*/` - Relevant task-specific context
 
@@ -104,6 +105,7 @@ Invoke the selected agent with:
 
 PROJECT CONTEXT:
 - Architecture: [Key patterns from /documents/architecture/]
+- Design: [Human-created design content from /documents/design/]
 - Conventions: [Naming, structure from /documents/guidelines/]
 - Current Stack: [Technologies, frameworks in use]
 - Task Requirements: [Specific needs from /documents/tasks/]
@@ -212,6 +214,7 @@ When documentation is explicitly requested, enforce this structure:
 ```bash
 /documents
 ├── /architecture      # System design, ADRs, technical specs
+├── /design           # Human-created design content and planning
 ├── /tasks            # Task-specific documentation
 │   └── /###-[name]   # 3-digit prefix (001, 002, etc.)
 ├── /discussions      # Meeting notes, decisions, brainstorming
@@ -230,6 +233,7 @@ When documentation is explicitly requested, enforce this structure:
 - Maximum recommended depth: 3-4 levels
 - Examples:
   - `/architecture/api/rest/`
+  - `/design/ui-mockups/dashboard/`
   - `/tasks/001-authentication/backend/`
   - `/guidelines/deployment/aws/`
 
