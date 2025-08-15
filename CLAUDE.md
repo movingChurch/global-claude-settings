@@ -56,24 +56,24 @@ Identify the task type and requirements
 
 ### Step 2: Select Agent
 
-Match task to the most qualified specialist:
+**Use the `/agents` command to find the right specialist:**
 
-- Python Development → `python-pro`
-- JavaScript/TypeScript → `javascript-pro`
-- C++ Development → `cpp-pro`
-- C Development → `c-pro`
-- SQL/Database → `sql-pro` or `database-optimizer`
-- React/Frontend → `frontend-developer` or `react-performance-optimization`
-- Backend Architecture → `backend-architect`
-- GraphQL APIs → `graphql-architect`
-- iOS/Swift → `ios-developer`
-- Testing/QA → `test-manager`
-- Security Review → `security-auditor` or `api-security-audit`
-- Research Tasks → `research-orchestrator`
-- AI/ML Tasks → `ai-engineer` or `ml-engineer`
-- Infrastructure → `devops-troubleshooter` or `cloud-architect`
-- Documentation → `documentation-writer`
-- General Coding (when language unclear) → `code-implementer`
+```bash
+/agents
+```
+
+This command lists all available agents with their descriptions, helping you:
+
+1. See all 35 specialist agents and their expertise
+2. Match task requirements to agent capabilities
+3. Select the most appropriate specialist
+
+**Selection Process:**
+
+1. Run `/agents` to view all available specialists
+2. Find agents whose description matches the task
+3. Choose the most specific specialist for the task
+4. If unclear, use `code-implementer` as fallback
 
 ### Step 3: Delegate via Task Tool
 
@@ -81,19 +81,44 @@ Invoke the selected agent with:
 
 - Complete task description and requirements
 - **MANDATORY: Include ALL relevant development policies from this document**
+- **MANDATORY: Include relevant project context from /documents folder**
 - Specific quality gates and success criteria
 - Expected deliverables and constraints
 
-**Policy Transmission Template:**
+**Context Injection Requirements:**
+
+1. **Check for Project Documentation:**
+   - `/documents/architecture/` - System design, technical decisions
+   - `/documents/guidelines/` - Project-specific conventions and standards
+   - `/documents/tasks/###-*/` - Relevant task-specific context
+
+2. **Gather Relevant Context:**
+   - Project naming conventions from guidelines
+   - Existing architecture patterns from architecture docs
+   - Current task requirements from task documents
+   - Technology stack and dependencies
+
+**Enhanced Transmission Template:**
 
 ```bash
-"Implement [task] following these MANDATORY policies:
+"Implement [task] with the following context:
+
+PROJECT CONTEXT:
+- Architecture: [Key patterns from /documents/architecture/]
+- Conventions: [Naming, structure from /documents/guidelines/]
+- Current Stack: [Technologies, frameworks in use]
+- Task Requirements: [Specific needs from /documents/tasks/]
+
+MANDATORY POLICIES:
 1. CORE PHILOSOPHY: Readability first, separate machine/human responsibilities
-2. NAMING: Follow pre-defined conventions strictly
+2. NAMING: [Insert project-specific conventions from guidelines]
 3. SIMPLICITY: Single responsibility, max 2 nesting levels, YAGNI
 4. ROBUSTNESS: Explicit error handling, strong typing
 5. QUALITY GATES: >80% coverage, zero critical issues, all linters pass
-6. PROJECT STRUCTURE: Follow pre-defined intuitive structure"
+6. PROJECT STRUCTURE: [Insert actual structure from architecture docs]
+
+DELIVERABLES:
+[Specific outputs expected based on task documentation]"
 ```
 
 ### Step 4: Monitor Execution
@@ -236,7 +261,7 @@ If tempted to work directly:
 
 **Default Selection Priority**:
 
-1. Language-specific expert (python-pro, javascript-pro, etc.)
+1. Language-specific expert (javascript-pro for JS/TS, python-pro for Python, etc.)
 2. Domain-specific expert (frontend-developer, backend-architect, etc.)
 3. General implementer only when language/domain unclear → `code-implementer`
 
