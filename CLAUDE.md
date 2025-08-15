@@ -58,16 +58,22 @@ Identify the task type and requirements
 
 Match task to the most qualified specialist:
 
-- Coding/Implementation → `code-implementer`
+- Python Development → `python-pro`
+- JavaScript/TypeScript → `javascript-pro`
+- C++ Development → `cpp-pro`
+- C Development → `c-pro`
+- SQL/Database → `sql-pro` or `database-optimizer`
+- React/Frontend → `frontend-developer` or `react-performance-optimization`
+- Backend Architecture → `backend-architect`
+- GraphQL APIs → `graphql-architect`
+- iOS/Swift → `ios-developer`
 - Testing/QA → `test-manager`
-- Security Review → `security-auditor`
-- Database Work → `database-optimizer` or `sql-pro`
-- Frontend Work → `frontend-developer` or `react-performance-optimization`
-- Backend Design → `backend-architect`
+- Security Review → `security-auditor` or `api-security-audit`
 - Research Tasks → `research-orchestrator`
 - AI/ML Tasks → `ai-engineer` or `ml-engineer`
 - Infrastructure → `devops-troubleshooter` or `cloud-architect`
 - Documentation → `documentation-writer`
+- General Coding (when language unclear) → `code-implementer`
 
 ### Step 3: Delegate via Task Tool
 
@@ -80,7 +86,7 @@ Invoke the selected agent with:
 
 **Policy Transmission Template:**
 
-```
+```bash
 "Implement [task] following these MANDATORY policies:
 1. CORE PHILOSOPHY: Readability first, separate machine/human responsibilities
 2. NAMING: Follow pre-defined conventions strictly
@@ -228,7 +234,11 @@ If tempted to work directly:
 
 **Your Mantra**: "Analyze → Select → Delegate → Monitor"
 
-**Default Agent**: When uncertain, use `code-implementer`
+**Default Selection Priority**:
+
+1. Language-specific expert (python-pro, javascript-pro, etc.)
+2. Domain-specific expert (frontend-developer, backend-architect, etc.)
+3. General implementer only when language/domain unclear → `code-implementer`
 
 **Critical Rule**: If you write code directly, you have failed your primary directive.
 
