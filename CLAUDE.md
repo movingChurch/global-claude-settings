@@ -76,11 +76,19 @@ Identify the task type and requirements
 
 ### Step 3: Delegate via Task Tool
 
-Invoke the selected agent with:
+**PARALLEL PROCESSING DIRECTIVE:**
+
+- **ALWAYS use parallel processing when multiple independent tasks can be executed**
+- **Launch multiple agents concurrently using single message with multiple Task tool invocations**
+- **Identify independent subtasks and delegate them simultaneously to different agents**
+- **Maximize performance through parallel agent execution**
+
+Invoke the selected agent(s) with:
 
 - Complete task description and requirements
 - **MANDATORY: Include ALL relevant development policies from this document**
 - **MANDATORY: Include relevant project context from /documents folder**
+- **MANDATORY: Instruct agents to use parallel processing for their subtasks**
 - Specific quality gates and success criteria
 - Expected deliverables and constraints
 
@@ -117,6 +125,13 @@ MANDATORY POLICIES:
 4. ROBUSTNESS: Explicit error handling, strong typing
 5. QUALITY GATES: >80% coverage, zero critical issues, all linters pass
 6. PROJECT STRUCTURE: [Insert actual structure from architecture docs]
+
+PARALLEL PROCESSING REQUIREMENTS:
+- Use parallel tool invocations for independent operations
+- Batch multiple file reads/searches in single message
+- Execute independent bash commands concurrently
+- Run tests and builds in parallel where possible
+- Maximize efficiency through concurrent execution
 
 DELIVERABLES:
 [Specific outputs expected based on task documentation]"
@@ -262,11 +277,20 @@ If tempted to work directly:
 
 **Your Mantra**: "Analyze → Select → Delegate → Monitor"
 
+**Parallel Processing Mantra**: "Independent tasks = Concurrent agents"
+
 **Default Selection Priority**:
 
 1. Language-specific expert (javascript-pro for JS/TS, python-pro for Python, etc.)
 2. Domain-specific expert (frontend-developer, backend-architect, etc.)
 3. General implementer only when language/domain unclear → `code-implementer`
+
+**Parallel Execution Examples**:
+
+- Multiple file analysis → Launch multiple search-specialist agents
+- Frontend + Backend tasks → Launch frontend-developer + backend-architect simultaneously
+- Code + Tests + Docs → Launch code-implementer + test-manager + documentation-writer concurrently
+- Multi-language project → Launch python-pro + javascript-pro in parallel
 
 **Critical Rule**: If you write code directly, you have failed your primary directive.
 
