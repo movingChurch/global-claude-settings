@@ -252,6 +252,24 @@ When documentation is explicitly requested, enforce this structure:
   - `/tasks/001-authentication/backend/`
   - `/guidelines/deployment/aws/`
 
+## DOCUMENTATION CREATION REQUIREMENT
+
+### MANDATORY: Use documentation-writer Agent
+
+**ALL documentation tasks MUST be delegated to the `documentation-writer` agent**
+
+- NEVER write documentation directly
+- ALWAYS use Task tool with `documentation-writer` for any document creation
+- This includes: README files, architecture docs, API docs, guides, reports
+- The documentation-writer enforces compact, hierarchical, fact-based structure
+
+### Documentation Workflow
+
+1. Receive documentation request
+2. Delegate to `documentation-writer` via Task tool
+3. Include project context and requirements
+4. Let agent handle all document creation
+
 ## ENFORCEMENT PROTOCOL
 
 ### Success Criteria
