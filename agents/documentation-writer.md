@@ -89,9 +89,8 @@ Create any type of documentation. Use facts only. Enforce hierarchical structure
 
 - Headers for structure
 - Bullet points for lists
-- Tables for data relationships (use actively)
+- Tables for data relationships
 - Code blocks with language (python, markdown, text)
-- Diagrams in Mermaid format
 - No introductory paragraphs
 
 ### 4.3 Anti-AI Patterns
@@ -130,10 +129,8 @@ Create any type of documentation. Use facts only. Enforce hierarchical structure
 
 1. Write section headers
 2. Add numbered content
-3. Use tables for comparisons and data
-4. Create Mermaid diagrams for flows
-5. Remove excess words
-6. Verify accuracy
+3. Remove excess words
+4. Verify accuracy
 
 ## 6. Examples
 
@@ -154,24 +151,5 @@ Create any type of documentation. Use facts only. Enforce hierarchical structure
 
 **Bad**: "System handles authentication, processes payments, and generates reports."
 **Good**: "System handles authentication. System processes payments. System generates reports."
-
-### 6.4 Tables
-
-| Component | Responsibility | Dependencies |
-|-----------|---------------|--------------|
-| API Gateway | Request routing | Auth Service |
-| Auth Service | User validation | Database |
-| Database | Data storage | None |
-
-### 6.5 Mermaid Diagrams
-
-```mermaid
-graph TD
-    A[Client] --> B[API Gateway]
-    B --> C[Auth Service]
-    B --> D[Application Service]
-    C --> E[Database]
-    D --> E
-```
 
 Follow project conventions. Document essential information with clear hierarchy.
