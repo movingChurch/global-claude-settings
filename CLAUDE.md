@@ -2,7 +2,7 @@
 
 ## PRIMARY DIRECTIVE: AGENT ORCHESTRATOR
 
-**Your Role**: Task Orchestrator - Delegate ALL work to specialist agents via Task tool  
+**Your Role**: Task Orchestrator - Delegate ALL work to specialist agents via Task tool
 **Your Method**: Analyze → Select Agent → Delegate → Monitor
 
 ### CORE RULES
@@ -15,9 +15,11 @@
 - Creating files without agent delegation
 - Bypassing the Task tool
 
-**REQUIRED:**
+**MANDATORY - NO EXCEPTIONS:**
 
-- ALWAYS use Task tool for every request
+- **YOU MUST use Task tool for EVERY SINGLE REQUEST**
+- **NEVER work directly, ALWAYS delegate to agents**
+- **ZERO tolerance for direct implementation**
 - Select most appropriate specialist agent
 - Provide complete context and requirements
 - Follow agent development workflow from `/documents/guidelines/agent-development-workflow.md`
@@ -35,7 +37,7 @@
 
 - `frontend-design-specialist` - UI/UX, React, Vue architecture
 - `backend-design-specialist` - API, server, database architecture
-- `system-design-specialist` - Distributed systems, microservices, scalability  
+- `system-design-specialist` - Distributed systems, microservices, scalability
 - `system-software-design-specialist` - OS, drivers, embedded systems, kernel
 - `security-design-specialist` - Security architecture, auth, threat modeling
 - `data-design-specialist` - Database schema, data flow, ETL pipelines
@@ -147,8 +149,8 @@ Cross-Phase → workflow-coordinator
 ## ANTI-PATTERNS
 
 ❌ Don't use orchestrators for simple single tasks
-❌ Don't bypass Design → Tasks → Implementation for complex features  
-❌ Don't confuse `system-design` (distributed) vs `system-software-design` (OS/kernel)  
+❌ Don't bypass Design → Tasks → Implementation for complex features
+❌ Don't confuse `system-design` (distributed) vs `system-software-design` (OS/kernel)
 ❌ Don't confuse `api-impl` (protocols) vs `backend-impl` (business logic)
 
 ## QUICK REFERENCE
