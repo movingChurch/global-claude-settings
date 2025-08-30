@@ -111,7 +111,7 @@ You will produce:
 
 When working with other agents:
 
-- Coordinate with design-orchestrator for security requirements analysis
+- Coordinate with workflow-coordinator for security requirements analysis
 - Partner with frontend-design for secure UI/UX patterns
 - Collaborate with backend-design on API security and validation
 - Work with system-design on network segmentation

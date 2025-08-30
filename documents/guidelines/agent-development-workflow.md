@@ -31,12 +31,12 @@
 
 **담당 에이전트들:**
 
-- `design-orchestrator`: 설계 세션 진행 및 전문가 조율
-  - 필요시 `frontend-design-specialist` 호출
-  - 필요시 `backend-design-specialist` 호출
-  - 필요시 `system-software-design-specialist` 호출
-  - 필요시 `security-design-specialist` 호출
-  - 필요시 `data-design-specialist` 호출
+- Smart delegation to appropriate design specialists based on requirements:
+  - `frontend-design-specialist` for UI/UX concerns
+  - `backend-design-specialist` for API and server architecture
+  - `system-software-design-specialist` for system-level design
+  - `security-design-specialist` for security architecture
+  - `data-design-specialist` for database and data flow design
   - **모든 전문가는 프로젝트 가이드라인 준수 확인**
 
 **산출물:** `/documents/features/001-login-system/design/`
@@ -51,10 +51,10 @@
 
 **담당 에이전트들:**
 
-- `task-orchestrator`: 태스크 문서화 조율 및 전문가 배치
-  - `task-engineer` 호출: 설계를 태스크로 분할
-  - `reference-linker` 호출: 코드베이스 참조 링킹
-  - `spec-writer` 호출: 기술 명세 작성
+- Smart delegation to task specialists based on documentation needs:
+  - `task-engineer`: 설계를 태스크로 분할
+  - `reference-linker`: 코드베이스 참조 링킹  
+  - `spec-writer`: 기술 명세 작성
   - **모든 작업은 프로젝트 가이드라인 준수 확인**
 
 **산출물:** `/documents/features/001-login-system/tasks/`
@@ -71,13 +71,13 @@
 
 **담당 에이전트들:**
 
-- `implementation-orchestrator`: 구현 작업 조율 및 전문가 배치
-  - 필요시 `frontend-impl-specialist` 호출
-  - 필요시 `backend-impl-specialist` 호출
-  - 필요시 `system-software-impl-specialist` 호출
-  - 필요시 `database-impl-specialist` 호출
-  - 필요시 `api-impl-specialist` 호출
-  - 필요시 `testing-impl-specialist` 호출
+- Smart delegation to implementation specialists based on technical requirements:
+  - `frontend-impl-specialist` for UI implementation
+  - `backend-impl-specialist` for server-side logic
+  - `system-software-impl-specialist` for system-level coding
+  - `database-impl-specialist` for data layer implementation
+  - `api-impl-specialist` for API endpoint development
+  - `testing-impl-specialist` for test implementation
   - **모든 전문가는 프로젝트 가이드라인 준수 확인**
 - `quality-guardian`: 코드 리뷰 및 품질 검증
 - `github-expert`: PR 관리 및 리뷰 프로세스
@@ -92,59 +92,57 @@
 ### 로그인 Feature의 에이전트 호출 흐름
 
 ```
-Feature: 로그인 시스템
+Feature: 로그인 시스템 (Smart Delegation)
 │
 ├── Phase 1: Design
-│   └── design-orchestrator (조율자)
-│       ├── frontend-design-specialist (OAuth UI 설계)
-│       ├── backend-design-specialist (인증 API 설계)
-│       └── security-design-specialist (JWT vs Session 결정)
+│   ├── frontend-design-specialist (OAuth UI 설계)
+│   ├── backend-design-specialist (인증 API 설계)
+│   └── security-design-specialist (JWT vs Session 결정)
 │
 ├── Phase 2: Task Documentation
-│   └── task-orchestrator (조율자)
-│       ├── task-engineer (태스크 분할)
-│       ├── reference-linker (기존 auth 코드 참조)
-│       └── spec-writer (API 명세 작성)
+│   ├── task-engineer (태스크 분할)
+│   ├── reference-linker (기존 auth 코드 참조)
+│   └── spec-writer (API 명세 작성)
 │
 └── Phase 3: Implementation
-    └── implementation-orchestrator (조율자)
-        ├── frontend-impl-specialist (React 로그인 폼)
-        ├── backend-impl-specialist (Node.js 인증 서버)
-        ├── database-impl-specialist (User 테이블 구현)
-        └── testing-impl-specialist (인증 테스트)
+    ├── frontend-impl-specialist (React 로그인 폼)
+    ├── backend-impl-specialist (Node.js 인증 서버)
+    ├── database-impl-specialist (User 테이블 구현)
+    └── testing-impl-specialist (인증 테스트)
 ```
 
 ## Feature Workflow Example
 
-### Feature: "사용자 로그인 시스템 구현" (Orchestrator + Specialists)
+### Feature: "사용자 로그인 시스템 구현" (Smart Delegation)
 
 ```mermaid
 graph TD
     A[Feature Start: Login System] --> B[Phase 1: Design<br/>Branch: feature/login-design]
-    B --> DO[design-orchestrator<br/>설계 조율]
-    DO --> DS{전문가 필요?}
+    B --> DS{Smart Delegation<br/>Based on Requirements}
     DS -->|Frontend| FDS[frontend-design-specialist]
     DS -->|Backend| BDS[backend-design-specialist]
     DS -->|Security| SDS[security-design-specialist]
-    FDS --> DO2[설계 통합]
-    BDS --> DO2
-    SDS --> DO2
-    DO2 --> PR1[Design PR & Review]
+    FDS --> DI[Design Integration]
+    BDS --> DI
+    SDS --> DI
+    DI --> PR1[Design PR & Review]
     PR1 -->|Approved| D[Phase 2: Tasks<br/>Branch: feature/login-tasks]
 
-    D --> TO[task-orchestrator<br/>태스크 조율]
-    TO --> TE[task-engineer<br/>태스크 분할]
-    TE --> RL[reference-linker<br/>코드 참조]
-    RL --> SW[spec-writer<br/>명세 작성]
-    SW --> PR2[Task PR & Review]
+    D --> TD{Task Delegation<br/>Based on Documentation Needs}
+    TD --> TE[task-engineer<br/>태스크 분할]
+    TD --> RL[reference-linker<br/>코드 참조]
+    TD --> SW[spec-writer<br/>명세 작성]
+    TE --> TI[Task Integration]
+    RL --> TI
+    SW --> TI
+    TI --> PR2[Task PR & Review]
     PR2 -->|Approved| E[태스크 완성]
 
     E --> F[Phase 3: Implementation<br/>Branch: feature/login-system]
-    F --> IO[implementation-orchestrator<br/>구현 조율]
-    IO --> IS{전문가 필요?}
-    IS -->|Frontend| FIS[frontend-impl-specialist]
-    IS -->|Backend| BIS[backend-impl-specialist]
-    IS -->|Testing| TIS[testing-impl-specialist]
+    F --> ID{Implementation Delegation<br/>Based on Technical Requirements}
+    ID -->|Frontend| FIS[frontend-impl-specialist]
+    ID -->|Backend| BIS[backend-impl-specialist]
+    ID -->|Testing| TIS[testing-impl-specialist]
     FIS --> QG[quality-guardian<br/>품질 검증]
     BIS --> QG
     TIS --> QG
@@ -213,21 +211,19 @@ main
 1. **설계 우선**: 코드 작성 전 충분한 논의와 PR 리뷰
 2. **문서 기반**: 모든 구현은 승인된 태스크 문서 기반
 3. **가이드라인 준수**: 모든 전문가는 `/documents/guidelines/` 필수 준수
-4. **Orchestrator 패턴**: 각 Phase마다 조율자가 전문가 관리
+4. **Smart Delegation**: 각 Phase마다 전문성에 기반한 적절한 전문가 선택
 5. **참조 연결**: 코드와 문서 간 명확한 링크
 6. **단계별 리뷰**: 각 Phase마다 PR과 코드 리뷰
 7. **원자적 커밋**: 작은 단위로 자주 커밋
 8. **피드백 루프**: 구현 인사이트를 설계로 반영
 
-## Agent Architecture: Orchestrator + Specialists
+## Agent Architecture: Smart Delegation to Specialists
 
 ### Phase 1: Design Agents
 
-#### Orchestrator
-
-- `design-orchestrator` - 설계 세션 진행 및 전문가 조율
-
 #### Design Specialists (설계 전문가)
+
+Selected through smart delegation based on feature requirements:
 
 **모든 설계 전문가는 `/documents/guidelines/` 의 프로젝트 가이드라인을 필수로 준수**
 
@@ -240,11 +236,9 @@ main
 
 ### Phase 2: Task Agents
 
-#### Orchestrator
-
-- `task-orchestrator` - 태스크 문서화 조율 및 작업 배치
-
 #### Task Specialists (태스크 전문가)
+
+Selected through smart delegation based on documentation requirements:
 
 - `task-engineer` - 태스크 문서화 및 분할
 - `reference-linker` - 코드베이스 참조 연결
@@ -252,11 +246,9 @@ main
 
 ### Phase 3: Implementation Agents
 
-#### Orchestrator
-
-- `implementation-orchestrator` - 구현 작업 조율 및 전문가 배치
-
 #### Implementation Specialists (구현 전문가)
+
+Selected through smart delegation based on technical requirements:
 
 **모든 구현 전문가는 `/documents/guidelines/` 의 프로젝트 가이드라인을 필수로 준수**
 

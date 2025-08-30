@@ -6,14 +6,11 @@ This document provides comprehensive guidelines for selecting the optimal agent 
 
 ## Agent Categories
 
-### Phase Orchestrators (4 Primary Coordinators)
+### Workflow Coordination (1 Primary Coordinator)
 
-Use these agents to coordinate complete phases or workflows:
+Use this agent for complete feature lifecycle coordination:
 
-- **`design-orchestrator`**: Coordinates Phase 1 (Design) - manages all design specialists
-- **`task-orchestrator`**: Coordinates Phase 2 (Tasks) - manages task documentation and work allocation
-- **`implementation-orchestrator`**: Coordinates Phase 3 (Implementation) - manages all implementation specialists
-- **`workflow-coordinator`**: Coordinates complete feature workflows across all phases
+- **`workflow-coordinator`**: Coordinates complete feature workflows across all phases through smart delegation to appropriate specialists
 
 ### Design Specialists (Phase 1 - 6 Agents)
 
@@ -59,17 +56,18 @@ Use for specialized support across all phases:
 ### 1. Complete Feature Development
 
 ```
-New Feature Request → design-orchestrator (Phase 1)
-↓ Design Complete → task-orchestrator (Phase 2)
-↓ Tasks Complete → implementation-orchestrator (Phase 3)
+New Feature Request → workflow-coordinator (delegates to appropriate specialists)
+↓ Design Phase → relevant design specialists (frontend, backend, system, etc.)
+↓ Tasks Phase → task-engineer + spec-writer
+↓ Implementation Phase → relevant implementation specialists
 ```
 
 ### 2. Specific Phase Work
 
 ```
-Design Questions → design-orchestrator
-Task Documentation → task-orchestrator
-Implementation Work → implementation-orchestrator
+Design Questions → appropriate design specialists based on domain
+Task Documentation → task-engineer or spec-writer based on task type
+Implementation Work → appropriate implementation specialists based on domain
 Cross-Phase Coordination → workflow-coordinator
 ```
 
@@ -165,7 +163,7 @@ Use for agents performing structured, well-defined tasks:
 
 | Task Type | Primary Agent | Support Agents |
 |-----------|---------------|----------------|
-| New Feature | `design-orchestrator` → `task-orchestrator` → `implementation-orchestrator` | `workflow-coordinator` |
+| New Feature | `workflow-coordinator` (smart delegation) | Relevant domain specialists |
 | API Development | `api-impl-specialist` | `spec-writer`, `testing-impl-specialist` |
 | Frontend Feature | `frontend-impl-specialist` | `frontend-design-specialist` (if design needed) |
 | Backend Service | `backend-impl-specialist` | `api-impl-specialist`, `database-impl-specialist` |
@@ -178,11 +176,11 @@ Use for agents performing structured, well-defined tasks:
 
 ## Anti-patterns to Avoid
 
-❌ **Don't use orchestrators for simple single tasks**
+❌ **Don't use workflow-coordinator for simple single tasks**
 
 - Use domain specialists directly for focused work
 
-❌ **Don't bypass phase progression**
+❌ **Don't bypass phase progression for complex features**
 
 - Follow Design → Tasks → Implementation for complex features
 
@@ -198,9 +196,9 @@ Use for agents performing structured, well-defined tasks:
 
 ## Success Patterns
 
-✅ **Use orchestrators for multi-step features**
+✅ **Use workflow-coordinator for multi-step features**
 
-- Let them coordinate the appropriate specialists
+- Let it delegate to appropriate specialists based on expertise
 
 ✅ **Use domain specialists for focused work**
 
@@ -210,16 +208,16 @@ Use for agents performing structured, well-defined tasks:
 
 - Quality assurance and workflow management
 
-✅ **Follow the three-phase pattern**
+✅ **Follow expertise-based delegation**
 
-- Design → Tasks → Implementation for complex features
+- Choose specialists based on their specific domain knowledge
 
 ## Conclusion
 
-This agent ecosystem is designed for maximum efficiency and quality. Choose the right agent for the task scope:
+This agent ecosystem is designed for maximum efficiency and quality through smart delegation. Choose the right agent for the task scope:
 
-- **Complex features**: Start with phase orchestrators
-- **Specific tasks**: Use domain specialists directly
+- **Complex features**: Use workflow-coordinator for smart delegation to appropriate specialists
+- **Specific tasks**: Use domain specialists directly based on their expertise
 - **Quality/Process issues**: Leverage support specialists
 
-All agents follow project guidelines from `/documents/guidelines/` and maintain consistent quality standards.
+All agents follow project guidelines from `/documents/guidelines/` and maintain consistent quality standards through expertise-based collaboration.

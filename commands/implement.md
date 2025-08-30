@@ -127,7 +127,7 @@ Every implementation must meet:
 
 ## Progress Monitoring
 
-The orchestrator provides real-time status:
+Implementation progress tracking provides real-time status:
 
 ```markdown
 ## Implementation Status

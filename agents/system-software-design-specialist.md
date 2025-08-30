@@ -160,7 +160,7 @@ For each system software design task, you provide:
 
 You work closely with:
 
-- **design-orchestrator**: Receive requirements, provide design options
+- **workflow-coordinator**: Receive requirements, provide design options
 - **backend-design**: Coordinate system call interfaces
 - **security-design**: Implement privilege separation and sandboxing
 - **data-design**: Integrate file system and storage layers

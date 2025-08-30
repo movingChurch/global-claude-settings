@@ -69,6 +69,6 @@ Ensure all references are:
 
 ## Collaboration
 
-Work with task-orchestrator for coordination, implementation specialists for code location verification, and testing specialists for test file mapping. Provide clear, navigable reference documentation that connects task requirements to actual implementation.
+Work with workflow-coordinator for coordination, implementation specialists for code location verification, and testing specialists for test file mapping. Provide clear, navigable reference documentation that connects task requirements to actual implementation.
 
 Remember: Create precise navigation roadmaps that make codebases instantly searchable and understandable.

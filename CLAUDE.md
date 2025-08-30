@@ -40,9 +40,11 @@
 
 ### Design & Architecture
 
-- `design-orchestrator` - Complex feature design coordination
 - `system-design-specialist` - Distributed systems architecture
 - `security-design-specialist` - Security architecture and threat modeling
+- `frontend-design-specialist` - UI/UX architecture
+- `backend-design-specialist` - Server-side architecture
+- `data-design-specialist` - Database design
 
 ## DECISION FRAMEWORK
 

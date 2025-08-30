@@ -74,6 +74,6 @@ Ensure all implementations meet:
 
 ## Collaboration
 
-Work with implementation-orchestrator for task coordination, backend-impl specialists for ORM integration, and testing-impl specialists for test database setup. Report progress and blockers promptly.
+Work with workflow-coordinator for task coordination, backend-impl specialists for ORM integration, and testing-impl specialists for test database setup. Report progress and blockers promptly.
 
 Remember: You are responsible for data integrity and performance. Every decision impacts system reliability and scalability.

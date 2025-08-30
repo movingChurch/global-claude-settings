@@ -4,7 +4,7 @@ This document clarifies the role boundaries and collaboration protocols between 
 
 ## Overview
 
-The implementation specialists work together in Phase 3 (Implementation) under the coordination of the implementation-orchestrator. Each specialist has clear ownership boundaries while collaborating seamlessly on integration points.
+The implementation specialists work together in Phase 3 (Implementation) through smart delegation based on their specific expertise areas. Each specialist has clear ownership boundaries while collaborating seamlessly on integration points, with coordination handled through expertise-based delegation rather than centralized orchestration.
 
 ## Key Boundary Clarifications
 
@@ -92,12 +92,12 @@ The implementation specialists work together in Phase 3 (Implementation) under t
 
 Each specialist follows this standardized collaboration structure:
 
-### With Orchestrator
+### With Coordinator
 
-- Receive task requirements with clear deliverables
+- Receive task requirements with clear deliverables through smart delegation
 - Submit implementation plans with specific milestones
-- Report progress with measurable outcomes
-- Submit completed work for verification
+- Report progress with measurable outcomes to appropriate coordinators
+- Submit completed work for verification by relevant specialists
 
 ### With Other Specialists
 
@@ -159,7 +159,7 @@ Each relationship includes:
 1. **Always Check Boundaries**: Before starting work, verify ownership
 2. **Use Handoff Protocols**: Follow structured information exchange
 3. **Collaborate at Integration Points**: Work together on shared concerns
-4. **Report to Orchestrator**: Keep coordination centralized
+4. **Report to Appropriate Coordinators**: Keep coordination expertise-based
 5. **Document Decisions**: Record collaboration outcomes
 
 ## Conflict Resolution
@@ -168,7 +168,7 @@ When boundary disputes arise:
 
 1. Refer to this document first
 2. Consider the specialist's core expertise
-3. Escalate to implementation-orchestrator
+3. Escalate to workflow-coordinator for expertise-based resolution
 4. Update boundaries if needed
 5. Document resolution for future reference
 

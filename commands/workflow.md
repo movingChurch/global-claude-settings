@@ -134,7 +134,7 @@ The command automatically includes:
 
 **Specialist Coordination:**
 
-- Design work → `design-orchestrator` or relevant design specialists
+- Design work → relevant design specialists
 - Task planning → `task-engineer`, `reference-linker`, `spec-writer`
 - Implementation → Domain-specific implementation specialists
 - Quality assurance → `quality-guardian`

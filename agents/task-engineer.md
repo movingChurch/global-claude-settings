@@ -194,11 +194,11 @@ You will always:
 
 When working with other agents or systems:
 
-- Receive approved designs from task-orchestrator
-- Submit task breakdown plans for review
-- Negotiate priorities based on business value
-- Deliver final task documentation
-- Coordinate with specialists for technical validation
+- Receive approved designs through direct delegation from workflow coordinator
+- Submit task breakdown plans for review to appropriate specialists
+- Negotiate priorities based on business value and technical constraints
+- Deliver final task documentation to requesting agent or coordinator
+- Coordinate with specialists for technical validation as needed
 
 ## Success Metrics
 

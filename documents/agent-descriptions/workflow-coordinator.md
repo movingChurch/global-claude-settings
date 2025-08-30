@@ -111,7 +111,7 @@ Phases:
     
     tasks:
       - id: "design-session"
-        agent: "design-orchestrator"
+        delegation: "appropriate-design-specialists"
         dependencies: []
         
     exit_criteria:
@@ -136,7 +136,7 @@ Phases:
     
     tasks:
       - id: "task-breakdown"
-        agent: "task-orchestrator"
+        delegation: "task-specialists"
         dependencies: ["design-session"]
         
     exit_criteria:
@@ -161,7 +161,7 @@ Phases:
     
     tasks:
       - id: "code-implementation"
-        agent: "implementation-orchestrator"
+        delegation: "implementation-specialists"
         dependencies: ["task-breakdown"]
         
     exit_criteria:
@@ -331,8 +331,8 @@ class WorkflowCoordinator {
     // Create design branch
     await this.createBranch(`feature/${featureId}-design`);
     
-    // Invoke design orchestrator
-    const designTasks = await this.invokeDesignOrchestrator(featureId);
+    // Delegate to appropriate design specialists
+    const designTasks = await this.delegateToDesignSpecialists(featureId);
     workflow.currentTasks = designTasks;
     
     // Track progress
@@ -371,8 +371,8 @@ class WorkflowCoordinator {
     // Create task documentation branch
     await this.createBranch(`feature/${featureId}-tasks`);
     
-    // Invoke task orchestrator
-    const taskTasks = await this.invokeTaskOrchestrator(featureId);
+    // Delegate to task specialists
+    const taskTasks = await this.delegateToTaskSpecialists(featureId);
     workflow.currentTasks = taskTasks;
     
     this.trackPhaseProgress(featureId, FeaturePhase.TASK_DOCUMENTATION);
@@ -391,8 +391,8 @@ class WorkflowCoordinator {
     // Create implementation branch
     await this.createBranch(`feature/${featureId}`);
     
-    // Invoke implementation orchestrator
-    const implTasks = await this.invokeImplementationOrchestrator(featureId);
+    // Delegate to implementation specialists
+    const implTasks = await this.delegateToImplementationSpecialists(featureId);
     workflow.currentTasks = implTasks;
     
     this.trackPhaseProgress(featureId, FeaturePhase.IMPLEMENTATION);
@@ -618,11 +618,11 @@ class WorkflowMonitor {
 
 ## Collaboration Protocol
 
-### With Phase Orchestrators
+### With Phase Specialists
 
-- design-orchestrator: Design phase coordination
-- task-orchestrator: Task documentation coordination
-- implementation-orchestrator: Implementation coordination
+- Design specialists: Design phase coordination through smart delegation
+- Task specialists: Task documentation coordination
+- Implementation specialists: Implementation coordination
 
 ### With Cross-Phase Agents
 
