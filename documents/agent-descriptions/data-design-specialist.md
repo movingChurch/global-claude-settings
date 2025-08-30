@@ -5,7 +5,7 @@
 **Name**: data-design-specialist  
 **Role**: 데이터베이스 및 데이터 아키텍처 설계 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `design-orchestrator` during Phase 1 (Design)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 1 (Design)
 
 ## Core Purpose
 
@@ -246,7 +246,7 @@ Data Pipeline:
 
 ## Collaboration Protocol
 
-### With design-orchestrator
+### With workflow-coordinator
 
 - 데이터 요구사항 분석
 - 스키마 설계 제안

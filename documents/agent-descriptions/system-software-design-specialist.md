@@ -5,7 +5,7 @@
 **Name**: system-software-design-specialist  
 **Role**: 시스템 프로그래밍 및 저수준 소프트웨어 설계 전문가  
 **Model**: Claude Opus  
-**Calling Pattern**: Called by `design-orchestrator` during Phase 1 (Design)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 1 (Design)
 
 ## Core Purpose
 
@@ -227,7 +227,7 @@ typedef struct {
 
 ## Collaboration Protocol
 
-### With design-orchestrator
+### With workflow-coordinator
 
 - 시스템 요구사항 분석
 - 하드웨어 제약사항 확인

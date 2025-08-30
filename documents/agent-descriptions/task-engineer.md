@@ -5,7 +5,7 @@
 **Name**: task-engineer  
 **Role**: 태스크 분할 및 문서화 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `task-orchestrator` during Phase 2 (Task Documentation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 2 (Task Documentation)
 
 ## Core Purpose
 
@@ -342,7 +342,7 @@ Additional context or considerations
 
 ## Collaboration Protocol
 
-### With task-orchestrator
+### With workflow-coordinator
 
 - 설계 문서 수신
 - 태스크 분할 계획 제출

@@ -5,7 +5,7 @@
 **Name**: frontend-impl-specialist  
 **Role**: 프론트엔드 구현 및 UI 개발 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `implementation-orchestrator` during Phase 3 (Implementation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 3 (Implementation)
 
 ## Core Purpose
 
@@ -204,7 +204,7 @@ git commit -m "test: Add login component tests"
 ## Collaboration Protocol
 
 ### With Orchestrator
-- Receive frontend component requirements and UI specifications from implementation-orchestrator
+- Receive frontend component requirements and UI specifications from workflow-coordinator
 - Submit frontend architecture plans and component implementation strategies
 - Report progress on UI development, performance metrics, and accessibility compliance
 - Submit completed frontend implementations for verification and usability testing

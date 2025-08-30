@@ -5,7 +5,7 @@
 **Name**: system-design-specialist  
 **Role**: 분산 시스템 및 대규모 시스템 아키텍처 설계 전문가  
 **Model**: Claude Opus  
-**Calling Pattern**: Called by `design-orchestrator` during Phase 1 (Design)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 1 (Design)
 
 ## Core Purpose
 
@@ -229,7 +229,7 @@ System
 
 ## Collaboration Protocol
 
-### With design-orchestrator
+### With workflow-coordinator
 
 - 시스템 요구사항 분석
 - 아키텍처 옵션 제시

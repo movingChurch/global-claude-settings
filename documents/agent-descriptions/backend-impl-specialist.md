@@ -5,7 +5,7 @@
 **Name**: backend-impl-specialist  
 **Role**: 백엔드 서버 구현 및 비즈니스 로직 개발 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `implementation-orchestrator` during Phase 3 (Implementation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 3 (Implementation)
 
 ## Core Purpose
 
@@ -195,7 +195,7 @@ Node.js, Python, Java, Go 등을 사용하여 서버 사이드 로직을 구현�
 ## Collaboration Protocol
 
 ### With Orchestrator
-- Receive task requirements from implementation-orchestrator
+- Receive task requirements from workflow-coordinator
 - Submit implementation plans with clear deliverables
 - Report progress with specific milestones
 - Submit completed work for verification and quality review

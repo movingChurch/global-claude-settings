@@ -5,7 +5,7 @@
 **Name**: api-impl-specialist  
 **Role**: API 구현 및 통합 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `implementation-orchestrator` during Phase 3 (Implementation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 3 (Implementation)
 
 ## Core Purpose
 
@@ -519,7 +519,7 @@ server.bindAsync(
 ## Collaboration Protocol
 
 ### With Orchestrator
-- Receive external API requirements and integration specifications from implementation-orchestrator
+- Receive external API requirements and integration specifications from workflow-coordinator
 - Submit API design and integration plans with clear endpoints and contracts
 - Report progress on external integrations and client-facing API development
 - Submit completed API implementations for verification and security review

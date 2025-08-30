@@ -5,7 +5,7 @@
 **Name**: frontend-design-specialist  
 **Role**: UI/UX 설계 및 프론트엔드 아키텍처 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `design-orchestrator` during Phase 1 (Design)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 1 (Design)
 
 ## Core Purpose
 
@@ -192,7 +192,7 @@
 
 ## Collaboration Protocol
 
-### With design-orchestrator
+### With workflow-coordinator
 
 - 설계 요구사항 수신
 - 프론트엔드 관점 제공

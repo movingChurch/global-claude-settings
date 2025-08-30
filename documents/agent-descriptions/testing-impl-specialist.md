@@ -5,7 +5,7 @@
 **Name**: testing-impl-specialist  
 **Role**: 테스트 자동화 및 품질 보증 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `implementation-orchestrator` during Phase 3 (Implementation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 3 (Implementation)
 
 ## Core Purpose
 

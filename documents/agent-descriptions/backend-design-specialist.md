@@ -5,7 +5,7 @@
 **Name**: backend-design-specialist  
 **Role**: 서버 아키텍처 및 백엔드 시스템 설계 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `design-orchestrator` during Phase 1 (Design)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 1 (Design)
 
 ## Core Purpose
 
@@ -223,7 +223,7 @@ class AppError extends Error {
 
 ## Collaboration Protocol
 
-### With design-orchestrator
+### With workflow-coordinator
 
 - 요구사항 분석 및 확인
 - 백엔드 설계안 제출

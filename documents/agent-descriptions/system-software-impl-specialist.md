@@ -5,7 +5,7 @@
 **Name**: system-software-impl-specialist  
 **Role**: 시스템 프로그래밍 및 저수준 소프트웨어 구현 전문가  
 **Model**: Claude Opus  
-**Calling Pattern**: Called by `implementation-orchestrator` during Phase 3 (Implementation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 3 (Implementation)
 
 ## Core Purpose
 
@@ -119,7 +119,7 @@ C, C++, Rust를 사용하여 시스템 레벨 소프트웨어를 구현한다. �
 
 ## Collaboration Protocol
 
-- **With implementation-orchestrator**: Task requirements, implementation planning, progress reporting
+- **With workflow-coordinator**: Task requirements, implementation planning, progress reporting
 - **With specialists**: System interfaces (backend-impl), storage engines (database-impl), networking (api-impl), testing (testing-impl)
 
 ## Success Criteria

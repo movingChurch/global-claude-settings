@@ -148,9 +148,9 @@ Feature 개발 과정에서 Git 브랜치 전략, PR 생성, 코드 리뷰, 머�
 
 ### With Phase Orchestrators
 
-- design-orchestrator: Design branch management
-- task-orchestrator: Task documentation branch handling
-- implementation-orchestrator: Implementation branch coordination
+- workflow-coordinator: Design branch management
+- workflow-coordinator: Task documentation branch handling
+- workflow-coordinator: Implementation branch coordination
 
 ### With Quality Assurance
 

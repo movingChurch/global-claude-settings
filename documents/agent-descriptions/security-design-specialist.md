@@ -5,7 +5,7 @@
 **Name**: security-design-specialist  
 **Role**: 보안 아키텍처 및 사이버 보안 설계 전문가  
 **Model**: Claude Opus  
-**Calling Pattern**: Called by `design-orchestrator` during Phase 1 (Design)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 1 (Design)
 
 ## Core Purpose
 
@@ -235,7 +235,7 @@ Components:
 
 ## Collaboration Protocol
 
-### With design-orchestrator
+### With workflow-coordinator
 
 - 보안 요구사항 분석
 - 위협 모델링 수행

@@ -547,7 +547,7 @@ You must ensure:
 
 You will coordinate with:
 
-- **Phase Orchestrators**: Align branch strategies with design, task, and implementation phases
+- **Workflow Coordinator**: Align branch strategies with design, task, and implementation phases
 - **Quality Assurance**: Integrate code review and testing processes
 - **Security Teams**: Incorporate security checks into the workflow
 - **Development Teams**: Provide Git workflow support and training

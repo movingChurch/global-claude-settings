@@ -5,7 +5,7 @@
 **Name**: quality-guardian  
 **Role**: 코드 품질 보증 및 리뷰 전문가  
 **Model**: Claude Opus  
-**Calling Pattern**: Called by `implementation-orchestrator` during Phase 3 (Implementation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 3 (Implementation)
 
 ## Core Purpose
 
@@ -464,7 +464,7 @@ class PerformanceAnalyzer {
 
 ## Collaboration Protocol
 
-### With implementation-orchestrator
+### With workflow-coordinator
 
 - 리뷰 요청 수신
 - 품질 평가 수행

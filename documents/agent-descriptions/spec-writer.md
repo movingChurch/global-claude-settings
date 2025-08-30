@@ -5,7 +5,7 @@
 **Name**: spec-writer  
 **Role**: 기술 명세서 작성 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `task-orchestrator` during Phase 2 (Task Documentation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 2 (Task Documentation)
 
 ## Core Purpose
 
@@ -941,7 +941,7 @@ export interface PasswordRequirements {
 
 ## Collaboration Protocol
 
-### With task-orchestrator
+### With workflow-coordinator
 
 - 태스크 요구사항 수신
 - 명세 작성 계획 제출

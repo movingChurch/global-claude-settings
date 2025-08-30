@@ -26,7 +26,6 @@
 
 ### Core Specialists
 
-- `general-purpose` - Complex research and multi-step tasks
 - `frontend-impl-specialist` - React/Vue/Angular implementation
 - `backend-impl-specialist` - Server-side logic and APIs
 - `database-impl-specialist` - Database operations and queries
@@ -45,6 +44,25 @@
 - `frontend-design-specialist` - UI/UX architecture
 - `backend-design-specialist` - Server-side architecture
 - `data-design-specialist` - Database design
+- `system-software-design-specialist` - OS, drivers, embedded systems
+- `design-verification-specialist` - UI/UX validation and testing
+
+### Task & Specification
+
+- `task-engineer` - Task decomposition and work breakdown
+- `reference-linker` - Code reference mapping and documentation
+- `spec-writer` - OpenAPI, GraphQL schemas, technical specifications
+
+### System Implementation
+
+- `system-software-impl-specialist` - C/C++, Rust, systems programming
+- `api-impl-specialist` - REST, GraphQL, gRPC, WebSocket APIs
+
+### Coordination & Support
+
+- `workflow-coordinator` - Complete feature lifecycle management
+- `agent-expert` - Agent design and optimization
+- `system-prompt-expert` - AI prompt engineering
 
 ## DECISION FRAMEWORK
 

@@ -5,7 +5,7 @@
 **Name**: reference-linker  
 **Role**: 코드베이스 참조 연결 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `task-orchestrator` during Phase 2 (Task Documentation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 2 (Task Documentation)
 
 ## Core Purpose
 
@@ -332,7 +332,7 @@ graph TD
 
 ## Collaboration Protocol
 
-### With task-orchestrator
+### With workflow-coordinator
 
 - 태스크 문서 수신
 - 참조 매핑 계획 제출

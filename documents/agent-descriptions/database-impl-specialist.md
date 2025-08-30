@@ -5,7 +5,7 @@
 **Name**: database-impl-specialist  
 **Role**: 데이터베이스 구현 및 최적화 전문가  
 **Model**: Claude Sonnet  
-**Calling Pattern**: Called by `implementation-orchestrator` during Phase 3 (Implementation)
+**Calling Pattern**: Called by `workflow-coordinator` during Phase 3 (Implementation)
 
 ## Core Purpose
 
@@ -345,7 +345,7 @@ SELECT * FROM active_users WHERE created_at > '2024-01-01';
 ## Collaboration Protocol
 
 ### With Orchestrator
-- Receive database design specifications and data requirements from implementation-orchestrator
+- Receive database design specifications and data requirements from workflow-coordinator
 - Submit database schema plans, migration strategies, and optimization approaches
 - Report progress on schema implementation, performance tuning, and data integrity measures
 - Submit completed database implementations for verification and performance review
