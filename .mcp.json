@@ -1,0 +1,40 @@
+{
+  "defaultSystemPrompt": "~/.claude/CLAUDE.md",
+  "mcpServers": {
+    "sequential-thinking": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "env": {}
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp"],
+      "env": {}
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "github": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {}
+    },
+    "supabase": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase",
+        "--read-only",
+        "--project-ref=lfppkatbdsevyoiyhmao"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "sbp_a503c427c79bbf60da67d7ea7365e50d297e7c38"
+      }
+    }
+  }
+}
