@@ -1,12 +1,12 @@
 ---
 name: implement
-description: Describe implementation requests in natural language, and implementation experts will coordinate tasks to implement high-quality code. You can reference existing task documents or directly describe new implementation requirements.
+description: Implement features based on your description. I'll handle straightforward implementations directly or use specialist agents for complex work.
 argument-hint: "Please implement user authentication functionality" or "I want to improve API performance. Please add caching functionality"
 ---
 
-# Implementation Command (Natural Language Support)
+# Implementation Command
 
-Describe implementation requests in natural language, and implementation experts will confirm understanding through conversation and implement high-quality code. You can reference existing task documents or directly describe new features.
+Describe what you want to implement and I'll either handle it directly for simple tasks or coordinate with implementation specialists for complex work.
 
 ## Usage
 
@@ -15,6 +15,7 @@ Describe implementation requests in natural language, and implementation experts
 ```
 
 **Natural Language Input Examples:**
+
 - "Please implement user authentication functionality"
 - "I want to create a payment processing system. Please integrate with Stripe"
 - "API response speed is slow, so I want to add caching"
@@ -37,12 +38,16 @@ Before using this command:
 
 ## What This Command Does
 
-1. **Delegates to implementation-orchestrator**: Uses the Task tool to invoke the implementation-orchestrator
-2. **Analyzes task documents**: Reviews all task specifications and dependencies
-3. **Coordinates specialists**: Assigns tasks to appropriate implementation specialists
-4. **Manages parallel execution**: Optimizes work distribution across specialists
-5. **Enforces quality gates**: Ensures all implementations meet project standards
-6. **Monitors progress**: Tracks completion and identifies blockers
+1. **Smart Delegation**: Use specialists when their expertise matches the task
+2. **Analyze Requirements**: Review specifications and existing code
+3. **Quality Implementation**: Follow project guidelines and best practices
+4. **Delegate to Specialists**: Use appropriate experts for their domains:
+   - `frontend-impl-specialist` for UI/UX implementation
+   - `backend-impl-specialist` for server-side logic and APIs
+   - `database-impl-specialist` for database operations and queries
+   - `testing-impl-specialist` for test implementation
+   - `api-impl-specialist` for REST/GraphQL/WebSocket APIs
+   - `system-software-impl-specialist` for C/C++, drivers, system-level code
 
 ## Context Provided
 
@@ -75,21 +80,20 @@ The command automatically includes:
 /implement Please strengthen the current system with 2FA authentication and XSS security
 ```
 
-## What Happens Next
+## Implementation Approach
 
-The implementation-orchestrator agent will:
+**When to Use Specialists:**
+- Frontend work → `frontend-impl-specialist`
+- Backend/API development → `backend-impl-specialist` or `api-impl-specialist`
+- Database work → `database-impl-specialist`
+- System programming → `system-software-impl-specialist`
+- Testing implementation → `testing-impl-specialist`
+- Multi-component features → Use multiple specialists as needed
 
-1. **Analyze task documentation** and identify dependencies
-2. **Create implementation strategy** for parallel execution
-3. **Assign tasks to specialists**:
-   - `frontend-impl-specialist`: UI components, user interactions
-   - `backend-impl-specialist`: Server logic, business rules
-   - `system-software-impl-specialist`: C/C++, drivers, OS-level code
-   - `database-impl-specialist`: Schema, queries, migrations
-   - `api-impl-specialist`: REST/GraphQL/gRPC endpoints
-   - `testing-impl-specialist`: Unit/integration/E2E tests
-4. **Monitor progress** and coordinate handoffs
-5. **Enforce quality standards** throughout implementation
+**Direct Implementation:**
+- Simple configuration changes
+- Basic file modifications
+- Documentation updates
 
 ## Specialist Assignment Strategy
 
@@ -129,7 +133,7 @@ The orchestrator provides real-time status:
 ## Implementation Status
 ### Completed
 - [x] Task-001: Auth Backend API (backend-impl-specialist)
-### In Progress  
+### In Progress
 - [ ] Task-002: Login UI Component (frontend-impl-specialist) - 75%
 ### Blocked
 - Task-003: Database Migration (dependency: Task-001)
@@ -156,34 +160,23 @@ src/
 └── performance.md     # Performance benchmarks
 ```
 
-## Parallel Execution
+## Quality Standards
 
-The orchestrator maximizes efficiency by:
+All implementations follow:
 
-- ✅ Identifying independent tasks for concurrent execution
-- ✅ Launching multiple specialists simultaneously
-- ✅ Managing task dependencies to prevent blocking  
-- ✅ Coordinating handoffs between specialists
-- ✅ Optimizing resource allocation
-
-## Anti-Patterns Prevented
-
-The orchestrator will never:
-
-- ❌ Bypass guidelines for speed
-- ❌ Merge code without tests
-- ❌ Overload single specialists  
-- ❌ Process parallel tasks sequentially
-- ❌ Skip code reviews
-- ❌ Ignore documentation updates
-- ❌ Compromise on security
+- ✅ Project coding standards and conventions
+- ✅ Proper error handling and validation
+- ✅ Security best practices
+- ✅ Performance considerations
+- ✅ Appropriate test coverage
+- ✅ Clear documentation when needed
 
 ## Success Criteria
 
 Implementation is complete when:
 
 - ✅ All tasks implemented to specification
-- ✅ Test coverage exceeding 80% 
+- ✅ Test coverage exceeding 80%
 - ✅ Performance targets achieved
 - ✅ Security requirements satisfied
 - ✅ 100% guideline compliance
@@ -191,4 +184,4 @@ Implementation is complete when:
 - ✅ Clean code review results
 - ✅ Ready for production deployment
 
-Use this command when task documentation is complete and you're ready to begin coordinated, quality-controlled implementation of your feature.
+Use this command to implement features by delegating to the right specialist for each type of work. Specialists have deep expertise in their domains and will deliver higher quality results.

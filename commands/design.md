@@ -1,12 +1,12 @@
 ---
 name: design
-description: Starts an interactive design phase for new features. Describe your needs in natural language, and design experts will engage in conversation to deeply understand requirements and collaborate on the design process.
+description: Start designing new features through interactive conversation. Describe your needs and I'll help you plan the architecture and requirements.
 argument-hint: "I want to create a user authentication system" or "I need payment functionality, but how should I approach it?"
 ---
 
-# Design Phase Command
+# Design Command
 
-This command initiates the design work necessary before building new features. Just like drawing blueprints before constructing a building, this is the planning stage where we figure out how to build something before writing code.
+This command starts the design process for new features. I'll help you plan the architecture, understand requirements, and create design documentation.
 
 ## Usage
 
@@ -26,10 +26,16 @@ Design experts will use Socratic questioning to help discover what you truly nee
 
 ## What This Command Does
 
-1. **Delegates to Design Experts**: Design specialist agents manage the entire process
-2. **Automatically Includes Project Context**: References all existing project information
-3. **Creates Git Branch**: Sets up a separate branch for design work
-4. **Generates Design Documentation**: Systematically documents design results
+1. **Interactive Design Process**: Engage in conversation to understand requirements
+2. **Architecture Planning**: Plan system design and technical approach
+3. **Creates Git Branch**: Set up a separate branch for design work
+4. **Generate Documentation**: Create comprehensive design documentation
+5. **Delegate to Specialists**: Use design experts when their expertise matches:
+   - `frontend-design-specialist` for UI/UX architecture
+   - `backend-design-specialist` for server-side architecture
+   - `system-design-specialist` for distributed systems
+   - `security-design-specialist` for security architecture
+   - `data-design-specialist` for database design
 
 ## Information Automatically Included
 
@@ -55,14 +61,16 @@ When executing this command, the following information is automatically consider
 
 ## Interactive Design Process
 
-An interactive design journey with design experts:
-
-1. **Natural Language Understanding**: Initial requirements are identified based on your description
-2. **Deep Questioning**: Essential questions like "Why is this feature needed?" and "What experience do users want?" are asked
-3. **Interaction**: Design ideas are proposed, feedback is received, and improvements are made together
-4. **Expert Collaboration**: Frontend, backend, and security experts are consulted as needed
-5. **Consensus Building**: Design decisions are reviewed together and consensus is reached
-6. **Documentation**: Design derived through conversation is systematically documented
+1. **Requirements Gathering**: Understand what you want to build
+2. **Architecture Discussion**: Plan the technical approach
+3. **Design Decisions**: Make informed choices about implementation
+4. **Expert Consultation**: Delegate to appropriate design specialists:
+   - Frontend architecture → `frontend-design-specialist`
+   - Backend systems → `backend-design-specialist`
+   - Distributed systems → `system-design-specialist`
+   - Security planning → `security-design-specialist`
+   - Database design → `data-design-specialist`
+5. **Documentation**: Create clear design specifications
 
 ## Generated Document Locations
 
@@ -95,4 +103,4 @@ Items to verify before moving to the next stage:
 - ✅ Architectural Decision Records (ADR) are complete
 - ✅ Implementable design specifications are finished
 
-When starting new features, using this command allows you to establish a solid design foundation before proceeding with implementation.
+Use this command to establish a solid design foundation before implementation. I'll delegate to the appropriate design specialist based on the type of architecture expertise needed.

@@ -1,12 +1,12 @@
 ---
 name: workflow
-description: Manages the entire development process in natural language. Coordinate the entire process from design to implementation through natural conversation like "I want to create feature X" or "How is project Y progressing?"
+description: Manage complete feature development from design to implementation. I'll coordinate the entire process and track progress.
 argument-hint: "I want to create user login functionality" or "I'm curious about the payment system progress"
 ---
 
-# Complete Development Workflow Command (Natural Language Support)
+# Complete Development Workflow Command
 
-A command that manages the entire feature development process through natural conversation. It coordinates the entire process from design to implementation, monitors progress, and ensures compliance with quality guidelines.
+Manage entire feature development lifecycle through natural conversation. I'll coordinate design, planning, implementation, and quality control.
 
 ## Usage
 
@@ -17,16 +17,19 @@ A command that manages the entire feature development process through natural co
 **Natural Language Input Examples:**
 
 **Starting New Features:**
+
 - "I want to create user login functionality from scratch"
 - "I want to develop a payment system comprehensively"
 - "Please create an online shopping mall"
 
 **Progress Status Check:**
+
 - "I'm curious about the user authentication project progress"
 - "How far has payment functionality development progressed?"
 - "Please show me the overall project status"
 
 **Process Management:**
+
 - "Can we move to the next stage?"
 - "Please conduct quality inspection"
 - "Are there any risk factors?"
@@ -36,12 +39,12 @@ The workflow coordinator guides the entire process through natural conversation.
 
 ## What This Command Does
 
-1. **Complete lifecycle management**: Orchestrates Design → Tasks → Implementation
-2. **Phase transition control**: Validates quality gates between phases
-3. **Git workflow integration**: Manages branch strategies and PR processes
-4. **Quality gate enforcement**: Ensures standards compliance at each phase
-5. **Risk monitoring**: Proactive identification and mitigation
-6. **Stakeholder coordination**: Manages communication and reviews
+1. **Complete Lifecycle Management**: Coordinate design → planning → implementation
+2. **Smart Delegation**: Use specialists when their expertise matches the work
+3. **Git Workflow Integration**: Manage branches and PR processes
+4. **Quality Assurance**: Ensure standards compliance throughout
+5. **Progress Monitoring**: Track development and identify issues
+6. **Expert Coordination**: Use appropriate specialists for each phase
 
 ## Context Provided
 
@@ -80,18 +83,21 @@ The command automatically includes:
 ### Phase Structure
 
 **Phase 1: Design (1 week)**
+
 - Branch: `feature/###-[feature-name]-design`
 - Entry: Requirements defined, stakeholders identified
 - Exit: Design documents complete, ADRs recorded, PR merged
 - Deliverables: `/documents/features/###-[feature-name]/design/`
 
 **Phase 2: Task Documentation (3 days)**  
+
 - Branch: `feature/###-[feature-name]-tasks`
 - Entry: Design complete and approved
 - Exit: All tasks documented, plan approved, PR merged
 - Deliverables: `/documents/features/###-[feature-name]/tasks/`
 
 **Phase 3: Implementation (1-3 weeks)**
+
 - Branch: `feature/###-[feature-name]`
 - Entry: Task documentation complete, resources allocated
 - Exit: Code implemented, tests passing >80%, reviews approved, PR merged
@@ -100,6 +106,7 @@ The command automatically includes:
 ### Quality Gate Management
 
 **Design Approval Gate**
+
 - ✅ All requirements addressed
 - ✅ Architecture review passed
 - ✅ Security review completed
@@ -107,6 +114,7 @@ The command automatically includes:
 - **Reviewers**: Technical Lead, Security Architect, Product Owner
 
 **Task Validation Gate**
+
 - ✅ All tasks have acceptance criteria
 - ✅ Dependencies correctly identified  
 - ✅ Resource estimates validated
@@ -114,6 +122,7 @@ The command automatically includes:
 - **Reviewers**: Development Team Lead, Technical Architect
 
 **Implementation Acceptance Gate**
+
 - ✅ Functionality matches design
 - ✅ All tests passing (>80% coverage)
 - ✅ Security scan passed
@@ -121,20 +130,24 @@ The command automatically includes:
 - ✅ Documentation complete
 - **Reviewers**: Code Reviewers, QA Team, Product Owner
 
-## What Happens Next
+## Workflow Management
 
-The workflow-coordinator agent will:
+**Specialist Coordination:**
 
-1. **Initialize feature structure** with proper documentation hierarchy
-2. **Set up Git workflows** with appropriate branch strategies
-3. **Coordinate phase orchestrators**:
-   - `design-orchestrator`: For Phase 1 design work
-   - `task-orchestrator`: For Phase 2 task breakdown  
-   - `implementation-orchestrator`: For Phase 3 implementation
-4. **Manage phase transitions** with quality gate validation
-5. **Monitor progress and risks** proactively
-6. **Coordinate reviews and approvals** at each phase
-7. **Maintain stakeholder communication** throughout lifecycle
+- Design work → `design-orchestrator` or relevant design specialists
+- Task planning → `task-engineer`, `reference-linker`, `spec-writer`
+- Implementation → Domain-specific implementation specialists
+- Quality assurance → `quality-guardian`
+- Git operations → `github-expert`
+
+**Process Steps:**
+
+1. **Initialize Structure**: Set up documentation and Git workflows
+2. **Design Phase**: Plan architecture using appropriate design specialists
+3. **Task Planning**: Break down work using task specialists
+4. **Implementation**: Execute development using implementation specialists
+5. **Quality Control**: Use quality specialists for review and testing
+6. **Integration**: Coordinate merge and deployment
 
 ## Branch Strategy
 
@@ -187,6 +200,7 @@ The coordinator proactively monitors:
 - **Resource Risks**: Team availability and skill gaps
 
 Risk levels and alerts:
+
 - 🟢 **Low Risk**: On track, no issues identified
 - 🟡 **Medium Risk**: Minor delays or quality concerns
 - 🔴 **High Risk**: Significant blockers or quality issues
@@ -238,6 +252,7 @@ Feature development success measured by:
 ## When to Use This Command
 
 **Use `/workflow`** for:
+
 - ✅ New feature development requiring full lifecycle management
 - ✅ Complex features with multiple stakeholders  
 - ✅ Features with strict quality requirements
@@ -246,9 +261,10 @@ Feature development success measured by:
 - ✅ Process compliance requirements
 
 **Use individual phase commands** (`/design`, `/task`, `/implement`) for:
+
 - ✅ Single-phase work
 - ✅ Simple features  
 - ✅ Iterative improvements
 - ✅ Quick prototypes
 
-Use this command when you need comprehensive, end-to-end feature development management with quality gates, risk monitoring, and stakeholder coordination.
+Use this command for complete feature development management. I'll coordinate with the appropriate specialists at each phase based on the expertise needed.

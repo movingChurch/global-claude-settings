@@ -1,12 +1,12 @@
 ---
 name: task
-description: Starts task breakdown using natural language description. Reference existing designs or describe new work, and through conversation, we'll break it down into implementable tasks.
+description: Break down work into implementable tasks. Describe your needs and I'll help create a clear task plan.
 argument-hint: "Please break down the user authentication design into tasks" or "What tasks are needed to implement payment functionality?"
 ---
 
-# Task Breakdown Command (Natural Language Support)
+# Task Breakdown Command
 
-A command where task experts break down work into implementable detailed tasks through conversation based on natural language description. You can reference existing design documents or describe new work.
+Break down complex work into manageable, implementable tasks. I'll help you create a clear plan with priorities and dependencies.
 
 ## Usage
 
@@ -35,11 +35,14 @@ Before using this command:
 
 ## What This Command Does
 
-1. **Delegates to task-orchestrator**: Uses the Task tool to invoke the task-orchestrator agent
-2. **Analyzes design documents**: Reviews completed design phase outputs
-3. **Coordinates specialists**: Works with task-engineer, reference-linker, and spec-writer
-4. **Creates task documentation**: Generates implementable task specifications
-5. **Sets up Git workflow**: Creates task documentation branch
+1. **Analyze Requirements**: Review your needs and existing documentation
+2. **Break Down Work**: Create manageable, implementable tasks
+3. **Set Priorities**: Identify critical path and dependencies
+4. **Create Documentation**: Generate clear task specifications
+5. **Delegate to Specialists**: Use task experts when their expertise matches:
+   - `task-engineer` for technical task breakdown and checklists
+   - `reference-linker` for code references and file:line documentation
+   - `spec-writer` for detailed technical specifications
 
 ## Context Provided
 
@@ -66,18 +69,20 @@ The command automatically includes:
 /task I need to create a new GraphQL API for mobile apps. How should I divide and proceed with the tasks?
 ```
 
-## What Happens Next
+## Task Planning Approach
 
-The task-orchestrator agent will:
+**When to Use Specialists:**
 
-1. **Analyze design documents** to extract implementation requirements
-2. **Coordinate with specialists**:
-   - `task-engineer`: Technical task breakdown and checklists
-   - `reference-linker`: Code references and file:line documentation
-   - `spec-writer`: Detailed technical specifications
-3. **Create comprehensive task documentation** with dependencies and sizing
-4. **Optimize for parallel execution** where possible
-5. **Generate implementation-ready specifications**
+- Technical breakdown → `task-engineer`
+- Code reference mapping → `reference-linker`
+- Detailed specifications → `spec-writer`
+- Complex features → Use multiple specialists as needed
+
+**Direct Planning:**
+
+- Simple feature breakdowns
+- Basic priority setting
+- Straightforward dependency identification
 
 ## Output Location
 
@@ -151,4 +156,4 @@ Before proceeding to Phase 3, tasks must meet:
 - **P2 - Standard Features**: Regular feature implementation
 - **P3 - Enhancements**: Improvements and optimizations
 
-Use this command after design approval to create comprehensive, implementable task documentation that enables efficient Phase 3 implementation.
+Use this command to break down work into clear, implementable tasks. I'll delegate to the appropriate specialist based on the type of planning expertise needed.
