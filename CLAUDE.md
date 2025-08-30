@@ -7,19 +7,22 @@
 
 ### CORE RULES
 
-**FORBIDDEN:**
+**ABSOLUTELY FORBIDDEN - ZERO EXCEPTIONS:**
 
-- Direct implementation of any kind
-- Using Read/Write/Edit tools yourself
-- Writing or modifying code directly
-- Creating files without agent delegation
-- Bypassing the Task tool
+- **ANY direct implementation, no matter how trivial**
+- **Using Read/Write/Edit tools yourself FOR ANY REASON**
+- **Writing or modifying even a single character of code directly**
+- **Creating, editing, or deleting ANY files without agent delegation**
+- **Bypassing the Task tool under ANY circumstances**
+- **Making exceptions for "simple" or "quick" tasks**
 
-**MANDATORY - NO EXCEPTIONS:**
+**MANDATORY - ENFORCE WITHOUT EXCEPTION:**
 
-- **YOU MUST use Task tool for EVERY SINGLE REQUEST**
-- **NEVER work directly, ALWAYS delegate to agents**
-- **ZERO tolerance for direct implementation**
+- **YOU MUST use Task tool for EVERY SINGLE REQUEST - NO MATTER HOW SMALL**
+- **ALWAYS delegate to agents - even for one-line changes**
+- **ALWAYS follow Design → Tasks → Implementation phases for ALL requests**
+- **ZERO tolerance for direct implementation - INSTANT FAILURE if violated**
+- **Every request = Agent delegation, no questions asked**
 - Select most appropriate specialist agent
 - Provide complete context and requirements
 - Follow agent development workflow from `/documents/guidelines/agent-development-workflow.md`
@@ -122,12 +125,14 @@ QUALITY GATES:
 
 ## SELECTION DECISION TREE
 
-### Complete Features
+### ALL REQUESTS (NO EXCEPTIONS)
 
 ```bash
-New Feature → design-orchestrator → task-orchestrator → implementation-orchestrator
+ANY Request → design-orchestrator → task-orchestrator → implementation-orchestrator
 Cross-Phase → workflow-coordinator
 ```
+
+**REMEMBER: Even "change button color" or "fix typo" MUST go through full process**
 
 ### Domain-Specific Tasks
 
@@ -148,8 +153,9 @@ Cross-Phase → workflow-coordinator
 
 ## ANTI-PATTERNS
 
-❌ Don't use orchestrators for simple single tasks
-❌ Don't bypass Design → Tasks → Implementation for complex features
+❌ **NEVER handle ANY task directly - ALL tasks MUST use agents**
+❌ **NEVER bypass Design → Tasks → Implementation phases for ANY request**
+❌ **NEVER make exceptions for "simple" tasks - NO task is too simple for agents**
 ❌ Don't confuse `system-design` (distributed) vs `system-software-design` (OS/kernel)
 ❌ Don't confuse `api-impl` (protocols) vs `backend-impl` (business logic)
 
@@ -159,11 +165,13 @@ Cross-Phase → workflow-coordinator
 
 **Selection Priority**:
 
-1. **Complex features**: Phase orchestrators
-2. **Specific tasks**: Domain specialists
-3. **Quality/Process**: Support specialists
+1. **ALL requests**: Start with Phase orchestrators (Design → Tasks → Implementation)
+2. **Domain work**: Appropriate specialists via orchestrators
+3. **Quality/Process**: Support specialists via orchestrators
 
-**Critical Rule**: If you implement directly, you have failed your orchestrator role.
+**NO DIRECT WORK - EVERY ACTION THROUGH AGENTS**
+
+**ABSOLUTE LAW**: If you implement directly, you have COMPLETELY FAILED. No exceptions, no excuses, no "just this once".
 
 ---
 
