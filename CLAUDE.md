@@ -27,7 +27,7 @@
 - Provide complete context and requirements
 - Follow agent development workflow from `/documents/guidelines/agent-development-workflow.md`
 
-## AGENT SELECTION (23 Total Agents)
+## AGENT SELECTION (25 Total Agents - supabase-expert counted in multiple categories)
 
 ### Phase Orchestrators (4 - Primary Coordinators)
 
@@ -36,7 +36,7 @@
 - `implementation-orchestrator` - Phase 3 coordination
 - `workflow-coordinator` - Complete feature coordination
 
-### Design Specialists (6 - Phase 1)
+### Design Specialists (8 - Phase 1)
 
 - `frontend-design-specialist` - UI/UX, React, Vue architecture
 - `backend-design-specialist` - API, server, database architecture
@@ -44,6 +44,8 @@
 - `system-software-design-specialist` - OS, drivers, embedded systems, kernel
 - `security-design-specialist` - Security architecture, auth, threat modeling
 - `data-design-specialist` - Database schema, data flow, ETL pipelines
+- `supabase-expert` - Supabase schema design, RLS policies, Edge Functions architecture
+- `design-verification-specialist` - UI/UX validation, accessibility testing, automated browser verification
 
 ### Task Specialists (3 - Phase 2)
 
@@ -51,7 +53,7 @@
 - `reference-linker` - Code reference mapping, file:line docs
 - `spec-writer` - OpenAPI, GraphQL schemas, interfaces
 
-### Implementation Specialists (6 - Phase 3)
+### Implementation Specialists (7 - Phase 3)
 
 - `frontend-impl-specialist` - React, Vue, Angular implementation
 - `backend-impl-specialist` - Node.js, Python, Java server implementation
@@ -59,13 +61,15 @@
 - `database-impl-specialist` - SQL, NoSQL, schema implementation
 - `api-impl-specialist` - REST, GraphQL, gRPC, WebSocket implementation
 - `testing-impl-specialist` - Unit, integration, E2E, performance testing
+- `supabase-expert` - Supabase migrations, Edge Functions deployment, RLS implementation
 
-### Support Specialists (4 - Cross-Phase)
+### Support Specialists (5 - Cross-Phase)
 
 - `github-expert` - Git workflow, PR management, CI/CD
 - `quality-guardian` - Code review, quality assurance
 - `agent-expert` - Agent design, optimization
 - `system-prompt-expert` - AI prompt engineering
+- `supabase-expert` - Supabase MCP operations, migrations, Edge Functions
 
 ## CONTEXT INJECTION
 
@@ -86,6 +90,10 @@ PROJECT CONTEXT:
 - Architecture: [from /documents/architecture/]
 - Design: [from /documents/design/]
 - Feature Context: [from /documents/features/ if applicable]
+
+WORKFLOW CONTEXT:
+- Current Phase: [Design/Tasks/Implementation/Quality]
+- Commit Needed: [Yes/No - based on phase completion]
 
 REQUIREMENTS:
 [Specific requirements and deliverables]
@@ -108,6 +116,25 @@ QUALITY GATES:
 - **Robustness**: Explicit error handling, strong typing
 - **Quality**: >80% coverage, zero critical issues, linter compliance
 - **Files**: Never create unless absolutely necessary, prefer editing existing
+
+## GIT WORKFLOW INTEGRATION
+
+### Development Workflow
+
+Branch Creation → Design → Tasks → Implementation → Quality → PR/Merge
+
+### Commit Checkpoints
+
+- **Start**: Create branch (github-expert)
+- **Design Complete**: Commit design docs (github-expert)
+- **Tasks Complete**: Commit task docs (github-expert)
+- **Implementation**: Atomic commits for each change (github-expert)
+- **Quality Complete**: Commit tests/fixes (github-expert)
+- **Finish**: PR and merge (github-expert)
+
+**Key**: All Git operations delegated to github-expert
+
+**MANDATORY DESIGN VERIFICATION**: All frontend designs MUST be verified using `design-verification-specialist` during Phase 1
 
 ## DOCUMENT STRUCTURE
 
@@ -136,20 +163,21 @@ Cross-Phase → workflow-coordinator
 
 ### Domain-Specific Tasks
 
-- **Frontend**: `frontend-design-specialist` (design) / `frontend-impl-specialist` (code)
+- **Frontend**: `frontend-design-specialist` (design) / `frontend-impl-specialist` (code) / `design-verification-specialist` (verification)
 - **Backend**: `backend-design-specialist` (design) / `backend-impl-specialist` (code)
 - **APIs**: `spec-writer` (contracts) / `api-impl-specialist` (implementation)
-- **Database**: `data-design-specialist` (schema) / `database-impl-specialist` (queries)
+- **Database**: `data-design-specialist` (schema) / `database-impl-specialist` (queries) / `supabase-expert` (Supabase)
 - **System Code**: `system-software-design-specialist` / `system-software-impl-specialist`
 - **Security**: `security-design-specialist` + relevant implementation specialists
 - **Testing**: `testing-impl-specialist` (all phases)
 
-### Support & Quality
+### Support & Quality (Cross-Phase)
 
-- **Git Issues**: `github-expert`
-- **Code Review**: `quality-guardian`
-- **Agent Issues**: `agent-expert`
-- **Prompt Problems**: `system-prompt-expert`
+- **Git Operations (ALL phases)**: `github-expert` - Branches, commits, PRs, merges throughout entire workflow
+- **Code Review**: `quality-guardian` - Quality assurance and review
+- **Agent Issues**: `agent-expert` - Agent design and optimization
+- **Prompt Problems**: `system-prompt-expert` - AI prompt engineering
+- **Supabase Platform**: `supabase-expert` - MCP operations, migrations, Edge Functions, RLS
 
 ## ANTI-PATTERNS
 
@@ -163,11 +191,14 @@ Cross-Phase → workflow-coordinator
 
 **Workflow**: "Analyze → Select Agent → Delegate → Monitor"
 
+**Git Timing**: Branch → Design (commit) → Tasks (commit) → Implementation (atomic commits) → Quality (commit) → PR/Merge
+
 **Selection Priority**:
 
 1. **ALL requests**: Start with Phase orchestrators (Design → Tasks → Implementation)
 2. **Domain work**: Appropriate specialists via orchestrators
-3. **Quality/Process**: Support specialists via orchestrators
+3. **Git operations**: `github-expert` throughout ALL phases
+4. **Quality/Process**: Support specialists via orchestrators
 
 **NO DIRECT WORK - EVERY ACTION THROUGH AGENTS**
 
