@@ -1,6 +1,6 @@
 ---
 name: verify
-description: Run all configured project checks (lint, test, build)
+description: Run all configured project checks
 argument-hint: "verify" or "verify quick"
 ---
 
@@ -14,120 +14,44 @@ Run all verification checks configured in your project.
 /verify [scope]
 ```
 
-**Scope options:**
+**Options:**
+- No argument or `all` - Run all checks
+- `quick` - Essential checks only
+- `lint` - Linting only
+- `test` - Tests only
+- `build` - Build only
 
-- `all` or no argument - Run all configured checks (default)
-- `quick` - Essential checks only (build, syntax)
-- `lint` - Run only linting tools
-- `test` - Run only tests
-- `build` - Run only build process
+## What It Does
 
-## Anti-Overengineering Rules
+1. **Discovers** project configuration automatically
+2. **Executes** all found verification checks
+3. **Reports** unified pass/fail status
 
-**ESSENTIAL CHECKS ONLY:**
+## Checks
 
-- ✅ Run only configured project checks
-- ✅ Skip checks not defined in project
-- ✅ Focus on blocking issues, not perfection
-- ✅ Prioritize functionality over style
-- ✅ Fast feedback over comprehensive coverage
+- **Build** - Compile and bundle
+- **Test** - Run test suites
+- **Lint** - Code quality checks
+- **Type** - Type safety validation
+- **Deps** - Dependency health
 
-**NO EXCESSIVE VERIFICATION:**
-
-- ❌ Don't add checks not requested
-- ❌ Don't gold-plate quality standards
-- ❌ Don't run unnecessary tools
-- ❌ Don't over-analyze minor issues
-
-## What Gets Verified
-
-### Auto-Detected from Project
-
-The command automatically discovers and runs whatever is configured in your project:
-
-- **Build Scripts**: npm run build, make, cargo build, mvn compile, etc.
-- **Test Scripts**: npm test, pytest, cargo test, go test, etc.
-- **Lint Scripts**: npm run lint, pylint, cargo clippy, etc.
-- **Type Checking**: tsc, mypy, flow, or any configured type checker
-- **Format Checking**: prettier, black, rustfmt, gofmt, etc.
-
-### Common Script Locations
-
-- `package.json` scripts
-- `Makefile` targets
-- `Cargo.toml` commands
-- `pyproject.toml` / `setup.cfg` / `tox.ini`
-- `.github/workflows` CI scripts
-- `gradle` / `maven` tasks
-- Custom shell scripts (test.sh, lint.sh, etc.)
-
-## Verification Process
-
-1. **Discovery**: Find all available checks in the project:
-   - Check for package.json scripts
-   - Look for Makefile targets
-   - Find build configuration files
-   - Detect CI/CD workflows
-   - Identify test runners
-
-2. **Essential First**: Run critical checks
-   - Build/compilation (if configured)
-   - Syntax validation
-   - Dependency checks
-
-3. **Quality Second**: Run quality checks
-   - Linting (if configured)
-   - Tests (if configured)
-   - Type checking (if configured)
-
-4. **Report**: Show what was found and run
-
-## Specialists Used
-
-- `general-purpose` - Discover and execute project-configured checks
-- `quality-guardian` - Analyze results and provide recommendations
-
-## Output Format
+## Output
 
 ```text
-✅ PROJECT VERIFICATION COMPLETE
-
-DISCOVERED CHECKS:
-- Build: npm run build
-- Test: npm test
-- Lint: npm run lint
-- Type Check: npm run typecheck
-
-ESSENTIAL CHECKS:
 ✅ Build successful
 ✅ Dependencies resolved
+⚠️  Lint: 3 warnings
+✅ Tests: 87% coverage
+❌ Type check: 2 errors
 
-QUALITY CHECKS:
-⚠️  3 linting warnings (non-blocking)
-✅ Tests passed (87% coverage)
-❌ Type check failed (2 errors)
-
-SUMMARY:
-- Status: FAIL (type errors must be fixed)
-- Blocking Issues: 2
-- Warnings: 3
-- Time: 45s
+STATUS: FAIL
+Fix 2 type errors to proceed
 ```
 
-## Success Criteria
+## Pass/Fail
 
-**PASS Requirements:**
+**PASS** = Build works, no critical errors
+**WARN** = Style issues, low coverage
+**FAIL** = Build failed or blocking errors
 
-- All essential checks pass
-- No blocking errors
-- Build succeeds
-- Core functionality works
-
-**Warnings are OK:**
-
-- Style/formatting issues
-- Non-critical linting warnings
-- Coverage below 100%
-- Minor optimization suggestions
-
-Project verification provides fast, actionable feedback on code readiness.
+The command adapts to any project structure and tooling.
