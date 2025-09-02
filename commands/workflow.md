@@ -240,14 +240,13 @@ The coordinator maintains:
 
 Feature development success measured by:
 
-- ✅ Complete feature lifecycle management
-- ✅ 100% project guideline compliance  
-- ✅ Clear phase transition criteria
-- ✅ 100% quality gate operation
-- ✅ Early risk identification and mitigation
-- ✅ Stakeholder satisfaction
-- ✅ Continuous process improvement
-- ✅ On-time, on-quality delivery
+- ✅ **Feature Completeness**: Only requested features implemented accurately
+- ✅ **Simplicity**: Simplest working solution delivered
+- ✅ **User Satisfaction**: Requirements met precisely, no bloat
+- ✅ **Time Efficiency**: Fast delivery, no unnecessary delays
+- ✅ **Code Quality**: Simple, maintainable, readable code
+- ✅ **Anti-Overengineering**: Unnecessary complexity eliminated
+- ✅ **MVP Achievement**: Maximum value with minimum features
 
 ## When to Use This Command
 
@@ -266,5 +265,30 @@ Feature development success measured by:
 - ✅ Simple features  
 - ✅ Iterative improvements
 - ✅ Quick prototypes
+
+## Anti-Overengineering Rules
+
+**NEVER DO:**
+- 🚫 Develop features beyond requirements
+- 🚫 Create excessive processes or documentation
+- 🚫 Build "just in case" preparatory work
+- 🚫 Add unnecessary complexity
+- 🚫 Over-engineer quality gates or approval stages
+
+**CORE PRINCIPLES:**
+- ✅ **YAGNI**: You Aren't Gonna Need It
+- ✅ **MVP First**: Minimum viable product approach
+- ✅ **Simple Solutions**: Choose the simplest working approach
+- ✅ **User Requested Only**: Only explicitly requested features
+- ✅ **Essential Only**: Core functionality requirements only
+
+**IMPLEMENTATION CHECKLIST:**
+```
+✅ Was this explicitly requested by the user?
+✅ Is this essential to core functionality?
+✅ Is this the simplest approach?
+❌ Is this "might need later" logic?
+❌ Are these excessive settings/options?
+```
 
 Use this command for complete feature development management. I'll coordinate with the appropriate specialists at each phase based on the expertise needed.

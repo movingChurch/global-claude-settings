@@ -80,4 +80,20 @@ Specialists invoked:
 - **FOLLOW PATTERNS**: Use existing code patterns and conventions
 - **QUALITY FIRST**: Ensure code meets quality standards before completion
 
+## Anti-Overengineering Rules
+
+**NEVER IMPLEMENT:**
+- Features not in requirements
+- Excessive abstraction layers
+- "Future-proof" or preparatory code
+- Unnecessary design patterns
+- Complex configurations without clear need
+
+**IMPLEMENT ONLY ESSENTIALS:**
+- ✅ Explicitly requested functionality only
+- ✅ Minimum viable product (MVP) approach
+- ✅ Simplest working solution
+- ✅ Essential to core functionality only
+- ✅ Direct path to user value
+
 Code will be implemented, tested, and ready for review.

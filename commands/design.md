@@ -89,4 +89,20 @@ Specialists invoked:
 - **CONTEXT IS CRITICAL**: Always pass guidelines and architecture to specialists
 - **MAINTAIN CONSISTENCY**: All designs must align with project standards
 
+## Anti-Overengineering Rules
+
+**NEVER DO:**
+- Add features not in requirements
+- Over-abstract or apply complex patterns unnecessarily
+- Write "just in case" or "future-proof" code
+- Add unnecessary configurations or options
+- Design for imaginary use cases
+
+**ONLY DO WHAT'S ESSENTIAL:**
+- ✅ Explicitly requested features only
+- ✅ Simplest solution first
+- ✅ YAGNI (You Aren't Gonna Need It)
+- ✅ KISS (Keep It Simple, Stupid)
+- ✅ MVP approach - minimum viable solution
+
 Design documents will be created and ready for review.
