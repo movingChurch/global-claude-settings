@@ -93,6 +93,7 @@ Specialists invoked:
 ## Anti-Overengineering Rules
 
 **NEVER DO:**
+
 - Add features not in requirements
 - Over-abstract or apply complex patterns unnecessarily
 - Write "just in case" or "future-proof" code
@@ -100,6 +101,7 @@ Specialists invoked:
 - Design for imaginary use cases
 
 **ONLY DO WHAT'S ESSENTIAL:**
+
 - ✅ Explicitly requested features only
 - ✅ Simplest solution first
 - ✅ YAGNI (You Aren't Gonna Need It)

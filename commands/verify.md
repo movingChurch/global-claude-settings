@@ -15,6 +15,7 @@ Run all verification checks configured in your project.
 ```
 
 **Options:**
+
 - No argument or `all` - Run all checks
 - `quick` - Essential checks only
 - `lint` - Linting only

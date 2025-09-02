@@ -31,6 +31,7 @@ Convert design documents into clear, implementable tasks.
 ## Task Format
 
 Each task includes:
+
 - Description
 - Dependencies
 - Implementation checklist
@@ -46,6 +47,7 @@ Each task includes:
 ## Anti-Overengineering Rules
 
 **NO EXCESSIVE TASK BREAKDOWN:**
+
 - Unnecessary granularity or micro-tasks
 - Tasks not derived from requirements
 - Over-complex dependency chains
@@ -53,6 +55,7 @@ Each task includes:
 - Abstract or speculative work items
 
 **ESSENTIAL TASKS ONLY:**
+
 - ✅ Critical to core functionality
 - ✅ Required for complete user flow
 - ✅ Explicitly user-requested work
