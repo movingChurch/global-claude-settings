@@ -34,12 +34,12 @@ If feature description is not provided or unclear, the system will interactively
 
 ## Process
 
-1. **Persistent Interactive Information Gathering**
-   - Continue asking questions until ALL required information is obtained
-   - Do NOT proceed to design until complete clarity is achieved
-   - Ask follow-up questions for any ambiguous or incomplete answers
-   - Required information checklist:
-     - Feature name and detailed description
+1. **Start with User Conversation**
+   - Begin by engaging with the user directly
+   - Ask clarifying questions to understand the feature
+   - Continue dialogue until requirements are clear
+   - Required information to gather:
+     - Feature name and purpose
      - Business goals and success metrics
      - Target users and use cases
      - Functional requirements (must-have vs nice-to-have)
@@ -60,10 +60,11 @@ If feature description is not provided or unclear, the system will interactively
    - Ensure all specialists work within established project constraints
    - Maintain consistency across all design documents
 
-4. Analyze requirements
-5. Create architecture design
-6. Document decisions
-7. Generate design files
+4. **Create Design Documentation**
+   - Analyze requirements
+   - Create architecture design
+   - Document decisions
+   - Generate design files
 
 ## Specialists Used
 
@@ -84,8 +85,8 @@ Specialists invoked:
 
 ## Important Notes
 
-- **DO NOT SKIP QUESTIONS**: Continue asking until ALL information is clear
-- **ENFORCE COMPLETENESS**: Missing information leads to poor design
+- **USER FIRST**: Always start with user conversation, not assumptions
+- **INTERACTIVE DIALOGUE**: Engage in back-and-forth until clarity is achieved
 - **CONTEXT IS CRITICAL**: Always pass guidelines and architecture to specialists
 - **MAINTAIN CONSISTENCY**: All designs must align with project standards
 
