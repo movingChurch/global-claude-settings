@@ -22,56 +22,34 @@ Turn task documents into working code.
 
 ## What Gets Built
 
-```
-src/
-├── components/     # Frontend code
-├── services/       # Backend code
-├── database/       # Database schemas
-└── tests/         # Test files
-```
+Code implementation following:
 
-## Quality Documentation
-
-```
-/documents/features/###-[feature-name]/quality/
-├── review-notes.md    # Code review feedback
-├── test-results.md    # Test coverage >80%
-└── performance.md     # Performance metrics
-```
+- **Project Guidelines** - Coding standards from `/documents/guidelines/`
+- **Architecture Patterns** - System design from `/documents/architecture/`
+- **Task Requirements** - Specifications from task documents
+- **Existing Conventions** - Patterns already established in codebase
 
 ## Implementation Process
 
-1. **Context Loading**
-   - Load task documents from feature directory
-   - Load project guidelines from `/documents/guidelines/`
-   - Load architecture context from `/documents/architecture/`
-   - Prepare comprehensive context package for each specialist
+1. **Load Context**
+   - Task documents from feature directory
+   - Project guidelines and architecture
+   - Existing codebase patterns
 
-2. **Specialist Execution with Context**
-   - Pass ALL context to each specialist:
-     - Task requirements
-     - Project guidelines
-     - Architecture patterns
-     - Code conventions
-     - Existing implementations
-   - Ensure consistency across all implementations
+2. **Implement Code**
+   - Follow established project structure
+   - Apply consistent patterns and conventions
+   - Ensure all specialists use same context
 
-## Specialists Used
+## How It Works
 
-Each specialist receives:
+Implementation specialists receive complete context:
 
-- Task requirements from `/documents/features/###-[feature-name]/tasks/`
-- Project guidelines from `/documents/guidelines/`
-- Architecture context from `/documents/architecture/`
-- Code conventions and patterns
+- Task requirements
+- Project guidelines and architecture
+- Existing code patterns
 
-Specialists invoked:
-
-- `frontend-impl-specialist` - UI components
-- `backend-impl-specialist` - Server logic
-- `database-impl-specialist` - Database work
-- `api-impl-specialist` - API endpoints
-- `testing-impl-specialist` - Test suites
+Approriate specialists are selected based on the implementation needs.
 
 ## Important Notes
 
@@ -83,6 +61,7 @@ Specialists invoked:
 ## Anti-Overengineering Rules
 
 **NEVER IMPLEMENT:**
+
 - Features not in requirements
 - Excessive abstraction layers
 - "Future-proof" or preparatory code
@@ -90,6 +69,7 @@ Specialists invoked:
 - Complex configurations without clear need
 
 **IMPLEMENT ONLY ESSENTIALS:**
+
 - ✅ Explicitly requested functionality only
 - ✅ Minimum viable product (MVP) approach
 - ✅ Simplest working solution
