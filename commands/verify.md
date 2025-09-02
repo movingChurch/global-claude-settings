@@ -94,7 +94,7 @@ The command automatically discovers and runs whatever is configured in your proj
 
 DISCOVERED CHECKS:
 - Build: npm run build
-- Test: npm test  
+- Test: npm test
 - Lint: npm run lint
 - Type Check: npm run typecheck
 
