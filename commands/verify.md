@@ -1,12 +1,12 @@
 ---
 name: verify
-description: Run comprehensive project verification checks (lint, test, build) for any language
-argument-hint: "verify all" or "verify python only"
+description: Run all configured project checks (lint, test, build)
+argument-hint: "verify" or "verify quick"
 ---
 
 # Verify Command
 
-Run comprehensive project verification to ensure code quality and functionality across any programming language or framework.
+Run all verification checks configured in your project.
 
 ## Usage
 
@@ -16,10 +16,11 @@ Run comprehensive project verification to ensure code quality and functionality 
 
 **Scope options:**
 
-- `all` - Full verification (default)
-- `quick` - Essential checks only
-- `[language]` - Language-specific checks (e.g., `python`, `rust`, `go`, `java`)
-- `[tool]` - Specific tool only (e.g., `lint`, `test`, `build`)
+- `all` or no argument - Run all configured checks (default)
+- `quick` - Essential checks only (build, syntax)
+- `lint` - Run only linting tools
+- `test` - Run only tests
+- `build` - Run only build process
 
 ## Anti-Overengineering Rules
 
@@ -40,79 +41,73 @@ Run comprehensive project verification to ensure code quality and functionality 
 
 ## What Gets Verified
 
-### Language-Agnostic Checks
+### Auto-Detected from Project
 
-- **Syntax Validation**: Language parser/compiler checks
-- **Build/Compilation**: Make, CMake, Cargo, Maven, Gradle, npm, etc.
-- **Dependencies**: Package resolution, version conflicts, security
-- **Configuration**: Valid project config files
+The command automatically discovers and runs whatever is configured in your project:
 
-### Code Quality by Language
+- **Build Scripts**: npm run build, make, cargo build, mvn compile, etc.
+- **Test Scripts**: npm test, pytest, cargo test, go test, etc.
+- **Lint Scripts**: npm run lint, pylint, cargo clippy, etc.
+- **Type Checking**: tsc, mypy, flow, or any configured type checker
+- **Format Checking**: prettier, black, rustfmt, gofmt, etc.
 
-**Python**: pylint, flake8, black, mypy, pytest, tox
-**JavaScript/TypeScript**: ESLint, Prettier, tsc, Jest, Vitest
-**Rust**: rustfmt, clippy, cargo check, cargo test
-**Go**: go fmt, go vet, golint, go test
-**Java**: Checkstyle, SpotBugs, JUnit, Maven/Gradle
-**C/C++**: clang-format, cppcheck, valgrind, CMake/Make
-**Ruby**: RuboCop, RSpec, Bundler
-**Swift**: SwiftLint, XCTest, Swift Package Manager
+### Common Script Locations
 
-### Universal Checks
-
-- **Tests**: Unit tests, integration tests (language-appropriate)
-- **Linting**: Code style and quality tools
-- **Type Safety**: Static type checking where applicable
-- **Documentation**: Doc generation, comment validation
+- `package.json` scripts
+- `Makefile` targets
+- `Cargo.toml` commands
+- `pyproject.toml` / `setup.cfg` / `tox.ini`
+- `.github/workflows` CI scripts
+- `gradle` / `maven` tasks
+- Custom shell scripts (test.sh, lint.sh, etc.)
 
 ## Verification Process
 
-1. **Auto-Discovery**: Detect language and tools from:
-   - File extensions (.py, .rs, .go, .java, etc.)
-   - Config files (package.json, Cargo.toml, go.mod, pom.xml, etc.)
-   - Build files (Makefile, CMakeLists.txt, build.gradle, etc.)
-   - Tool configs (.eslintrc, .pylintrc, rustfmt.toml, etc.)
+1. **Discovery**: Find all available checks in the project:
+   - Check for package.json scripts
+   - Look for Makefile targets
+   - Find build configuration files
+   - Detect CI/CD workflows
+   - Identify test runners
 
-2. **Essential First**: Run blocking checks
+2. **Essential First**: Run critical checks
+   - Build/compilation (if configured)
    - Syntax validation
-   - Compilation/build
-   - Dependency resolution
+   - Dependency checks
 
 3. **Quality Second**: Run quality checks
-   - Linting/formatting
-   - Type checking
-   - Test execution
+   - Linting (if configured)
+   - Tests (if configured)
+   - Type checking (if configured)
 
-4. **Report**: Clear, actionable feedback
+4. **Report**: Show what was found and run
 
 ## Specialists Used
 
-- `quality-guardian` - Code quality assessment for any language
-- `general-purpose` - Project discovery, tool detection, and execution
-- Language-specific specialists when needed:
-  - `system-software-impl-specialist` - C/C++/Rust verification
-  - `backend-impl-specialist` - Server-side language checks
-  - `frontend-impl-specialist` - Client-side language checks
+- `general-purpose` - Discover and execute project-configured checks
+- `quality-guardian` - Analyze results and provide recommendations
 
 ## Output Format
 
 ```text
 ✅ PROJECT VERIFICATION COMPLETE
 
-DETECTED: Python 3.11 project (pytest, mypy, black)
+DISCOVERED CHECKS:
+- Build: npm run build
+- Test: npm test  
+- Lint: npm run lint
+- Type Check: npm run typecheck
 
 ESSENTIAL CHECKS:
-✅ Syntax validation passed (Python AST)
-✅ Build successful (setup.py/pyproject.toml)
-✅ Dependencies resolved (pip/poetry)
+✅ Build successful
+✅ Dependencies resolved
 
 QUALITY CHECKS:
-⚠️  3 linting warnings (pylint - non-blocking)
-✅ Tests passed (87% coverage - pytest)
-❌ Type check failed (2 errors - mypy)
+⚠️  3 linting warnings (non-blocking)
+✅ Tests passed (87% coverage)
+❌ Type check failed (2 errors)
 
 SUMMARY:
-- Language: Python
 - Status: FAIL (type errors must be fixed)
 - Blocking Issues: 2
 - Warnings: 3
