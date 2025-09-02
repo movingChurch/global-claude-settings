@@ -37,12 +37,14 @@ Load and memorize all project guidelines and architecture for consistent context
 ## Context Loading
 
 **Guidelines:**
+
 - Coding standards and conventions
-- Project structure patterns  
+- Project structure patterns
 - Quality requirements
 - Development workflows
 
 **Architecture:**
+
 - System design decisions
 - Technical patterns and constraints
 - Integration requirements

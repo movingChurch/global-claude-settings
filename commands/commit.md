@@ -49,6 +49,7 @@ Create well-organized commits with detailed, semantic commit messages.
 ```
 
 **Types:**
+
 - `feat` - New feature
 - `fix` - Bug fix
 - `refactor` - Code restructuring
@@ -90,12 +91,14 @@ Proceed? [Y/n/edit]
 ## Commit Guidelines
 
 **Good Commits:**
+
 - Single purpose
 - Complete functionality
 - Clear message
 - Proper type/scope
 
 **Avoid:**
+
 - Mixed concerns
 - WIP commits
 - Vague messages
