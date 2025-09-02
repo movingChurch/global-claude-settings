@@ -49,7 +49,7 @@ Implementation specialists receive complete context:
 - Project guidelines and architecture
 - Existing code patterns
 
-Approriate specialists are selected based on the implementation needs.
+Appropriate specialists are selected based on the implementation needs.
 
 ## Important Notes
 
