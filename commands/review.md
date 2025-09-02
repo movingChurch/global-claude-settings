@@ -24,68 +24,60 @@ Perform thorough code reviews with constructive feedback.
 
 ## What It Does
 
-1. **Examines** code quality and correctness
-2. **Identifies** bugs and vulnerabilities
-3. **Checks** standards compliance
-4. **Suggests** improvements
-5. **Validates** best practices
+1. **Compares** code against project guidelines
+2. **Validates** architecture pattern compliance
+3. **Checks** coding standards from `/documents/guidelines/`
+4. **Verifies** design patterns from `/documents/architecture/`
+5. **Ensures** consistency with established conventions
 
-## Review Checklist
+## Review Based On
 
-**Code Quality:**
-- ✓ Readability and clarity
-- ✓ Naming conventions
-- ✓ Code organization
-- ✓ DRY principle
-- ✓ SOLID principles
+**Project Guidelines (`/documents/guidelines/`):**
+- ✓ Coding standards and conventions
+- ✓ Naming patterns and style rules
+- ✓ File organization structure
+- ✓ Quality requirements
+- ✓ Development workflows
 
-**Functionality:**
-- ✓ Logic correctness
-- ✓ Edge case handling
-- ✓ Error management
-- ✓ Input validation
-- ✓ Output accuracy
+**Architecture Patterns (`/documents/architecture/`):**
+- ✓ System design compliance
+- ✓ Technical pattern usage
+- ✓ Integration requirements
+- ✓ Performance standards
+- ✓ Security requirements
 
-**Security:**
-- ✓ Injection vulnerabilities
-- ✓ Authentication issues
-- ✓ Data exposure risks
-- ✓ Cryptography usage
-- ✓ Access control
-
-**Performance:**
-- ✓ Algorithm efficiency
-- ✓ Database queries
-- ✓ Memory usage
-- ✓ Caching opportunities
-- ✓ Async operations
+**Existing Codebase:**
+- ✓ Consistency with current patterns
+- ✓ Similar implementations
+- ✓ Established conventions
+- ✓ Team practices
 
 ## Output Example
 
 ```text
 CODE REVIEW: auth/login.js
 
-🟢 STRENGTHS:
-- Clean function separation
-- Good error handling
-- Follows project conventions
+📋 GUIDELINES COMPLIANCE:
+✅ Follows naming conventions from guidelines
+✅ Matches file organization structure
+❌ Missing error handling pattern (see guidelines/error-handling.md)
 
-🟡 SUGGESTIONS:
-1. Line 42: Consider extracting magic number
-   const MAX_ATTEMPTS = 3; // instead of hardcoded 3
+🏗️ ARCHITECTURE COMPLIANCE:
+✅ Uses repository pattern correctly
+❌ Direct DB call instead of service layer (see architecture/layers.md)
+⚠️  Missing rate limiting (architecture/security.md)
 
-2. Line 78: Optimize database query
-   Use indexed field for user lookup
-
-🔴 ISSUES:
-1. Line 95: Security - Password logged in plain text
+🔴 VIOLATIONS:
+1. Line 95: Against security guidelines
    Remove: console.log(password)
+   Reference: guidelines/security.md#logging
 
-2. Line 112: Bug - Missing null check
-   Add: if (!user) return error
+2. Line 112: Architecture pattern violation
+   Use service layer instead of direct DB access
+   Reference: architecture/patterns.md#service-layer
 
-OVERALL: 7/10
-Fix critical issues before merge
+ACTION REQUIRED:
+Align with project guidelines and architecture before merge
 ```
 
 ## Review Categories
