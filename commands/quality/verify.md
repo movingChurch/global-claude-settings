@@ -8,6 +8,18 @@ argument-hint: "verify" or "verify quick"
 
 Run all verification checks configured in your project.
 
+## Context Clarification
+
+Before verification, if requirements are unclear:
+
+1. **Use `/interview` command** to understand:
+   - Verification priorities and focus areas
+   - Test coverage expectations
+   - Performance benchmarks
+   - Security requirements
+2. **Clarify acceptance criteria**
+3. **Confirm verification scope** before proceeding
+
 ## Usage
 
 ```bash

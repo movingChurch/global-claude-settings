@@ -22,24 +22,36 @@ Perform thorough code reviews with constructive feedback.
 - `--performance` - Focus on performance
 - `--quick` - High-level review only
 
+## Context Clarification
+
+Before reviewing, if focus areas are unclear:
+
+1. **Use `/interview` command** to determine:
+   - Review priorities (security, performance, maintainability)
+   - Specific concerns or known issues
+   - Compliance requirements
+   - Severity thresholds for findings
+2. **Ask about context** - business criticality, deployment timeline
+3. **Confirm review scope** before proceeding
+
 ## What It Does
 
-1. **Compares** code against project guidelines
+1. **Compares** code against ./documents/guidelines/
 2. **Validates** architecture pattern compliance
-3. **Checks** coding standards from `/documents/guidelines/`
-4. **Verifies** design patterns from `/documents/architecture/`
+3. **Checks** coding standards from `./documents/guidelines/`
+4. **Verifies** design patterns from `./documents/architectures/`
 5. **Ensures** consistency with established conventions
 
 ## Review Based On
 
-**Project Guidelines (`/documents/guidelines/`):**
+**Project Guidelines (`./documents/guidelines/`):**
 - ✓ Coding standards and conventions
 - ✓ Naming patterns and style rules
 - ✓ File organization structure
 - ✓ Quality requirements
 - ✓ Development workflows
 
-**Architecture Patterns (`/documents/architecture/`):**
+**Architecture Patterns (`./documents/architectures/`):**
 - ✓ System design compliance
 - ✓ Technical pattern usage
 - ✓ Integration requirements
@@ -77,7 +89,7 @@ CODE REVIEW: auth/login.js
    Reference: architecture/patterns.md#service-layer
 
 ACTION REQUIRED:
-Align with project guidelines and architecture before merge
+Align with ./documents/guidelines/ and architecture before merge
 ```
 
 ## Review Categories

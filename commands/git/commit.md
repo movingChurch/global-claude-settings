@@ -21,6 +21,18 @@ Create well-organized commits with detailed, semantic commit messages.
 - `--amend` - Amend last commit
 - `--interactive` - Review each commit before creating
 
+## Context Clarification
+
+Before committing, if unclear:
+
+1. **Use `/interview` command** to understand:
+   - Commit granularity preferences
+   - Commit message conventions
+   - Branch protection rules
+   - Sign-off requirements
+2. **Verify scope** - what should be included/excluded
+3. **Confirm approach** before creating commits
+
 ## What It Does
 
 1. **Analyzes** all uncommitted changes

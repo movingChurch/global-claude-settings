@@ -14,13 +14,20 @@ Create comprehensive design documentation for new features.
 /design [feature description]
 ```
 
-If feature description is not provided or unclear, the system will interactively ask for:
+## Context Clarification
 
-- Feature name and purpose
-- Target users
-- Key requirements
-- Technical constraints
-- Integration points
+If requirements are unclear:
+
+1. **Use `/interview` command** to systematically gather:
+   - Feature name and business purpose
+   - Target users and use cases
+   - Functional and non-functional requirements
+   - Technical constraints and limitations
+   - Integration points and dependencies
+   - Performance and scalability needs
+   - Security and compliance requirements
+2. **Verify all aspects** are understood
+3. **Confirm design approach** before creating documentation
 
 ## Output Structure
 
@@ -51,8 +58,8 @@ If feature description is not provided or unclear, the system will interactively
      - Timeline and priorities
 
 2. **Context Preparation**
-   - Load project guidelines from `/documents/guidelines/`
-   - Load architecture context from `/documents/architecture/`
+   - Load ./documents/guidelines/ from `./documents/guidelines/`
+   - Load architecture context from `./documents/architectures/`
    - Prepare comprehensive context package for each specialist
 
 3. **Design Generation with Context**
@@ -71,8 +78,8 @@ If feature description is not provided or unclear, the system will interactively
 Each specialist receives:
 
 - Complete feature requirements from information gathering
-- Project guidelines from `/documents/guidelines/`
-- Architecture context from `/documents/architecture/`
+- Project guidelines from `./documents/guidelines/`
+- Architecture context from `./documents/architectures/`
 - Existing design patterns and conventions
 
 Specialists invoked:

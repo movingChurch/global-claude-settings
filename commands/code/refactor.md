@@ -1,12 +1,12 @@
 ---
 name: refactor
-description: Refactor code to align with project guidelines and architecture
+description: Refactor code to align with ./documents/guidelines/ and architecture
 argument-hint: "refactor this file" or "refactor authentication module"
 ---
 
 # Refactor Command
 
-Refactor existing code to match project standards and architecture patterns.
+Refactor existing code to match project standards and ./documents/architectures/.
 
 ## Usage
 
@@ -20,17 +20,29 @@ Refactor existing code to match project standards and architecture patterns.
 - `current` - Refactor currently open file
 - `all` - Scan entire project for refactoring opportunities
 
+## Context Clarification
+
+Before refactoring, if requirements are unclear:
+
+1. **Use `/interview` command** to understand:
+   - Refactoring goals and priorities
+   - Performance vs readability tradeoffs
+   - Backward compatibility requirements
+   - Testing coverage expectations
+2. **Verify scope** - which patterns to apply, what to preserve
+3. **Confirm approach** before making changes
+
 ## What It Does
 
-1. **Analyzes** code against project guidelines
-2. **Identifies** deviations from architecture patterns
+1. **Analyzes** code against ./documents/guidelines/
+2. **Identifies** deviations from ./documents/architectures/
 3. **Refactors** to match established standards
 4. **Validates** changes maintain functionality
 
 ## Reference Points
 
-- `/documents/guidelines/` - Project coding standards
-- `/documents/architecture/` - System design patterns
+- `./documents/guidelines/` - Project coding standards
+- `./documents/architectures/` - System design patterns
 - Existing codebase patterns and conventions
 
 ## Refactoring Focus

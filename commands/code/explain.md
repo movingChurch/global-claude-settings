@@ -14,6 +14,19 @@ Understand complex code through clear explanations and insights.
 /explain [target]
 ```
 
+## Context Clarification
+
+Before explaining, if requirements are unclear:
+
+1. **Use `/interview` command** to understand:
+   - Target audience (technical level)
+   - Explanation depth needed
+   - Specific areas of interest
+   - Documentation purpose
+2. **Confirm scope** - what aspects to focus on
+3. **Verify approach** before generating explanation
+```
+
 **Options:**
 
 - `[file/function]` - Specific code to explain

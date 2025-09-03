@@ -14,18 +14,31 @@ Turn task documents into working code.
 /implement [feature or task reference]
 ```
 
+## Context Clarification
+
+Before starting implementation, if requirements are unclear:
+
+1. **Use `/interview` command** to gather missing context
+2. **Ask specific questions** about:
+   - Feature scope and boundaries
+   - Performance requirements
+   - Security considerations
+   - Integration points
+   - Edge cases and error handling
+3. **Confirm understanding** before proceeding with implementation
+
 ## Prerequisites
 
-- Task documents in `/documents/features/###-[feature-name]/tasks/`
-- Project guidelines in `/documents/guidelines/`
-- Architecture context in `/documents/architecture/`
+- Task documents in `./documents/features/[feature-name]/tasks/`
+- Project guidelines in `./documents/guidelines/`
+- Architecture context in `./documents/architectures/`
 
 ## What Gets Built
 
 Code implementation following:
 
-- **Project Guidelines** - Coding standards from `/documents/guidelines/`
-- **Architecture Patterns** - System design from `/documents/architecture/`
+- **Project Guidelines** - Coding standards from `./documents/guidelines/`
+- **Architecture Patterns** - System design from `./documents/architectures/`
 - **Task Requirements** - Specifications from task documents
 - **Existing Conventions** - Patterns already established in codebase
 

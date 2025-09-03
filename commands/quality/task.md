@@ -14,6 +14,18 @@ Convert design documents into clear, implementable tasks.
 /task [feature name or description]
 ```
 
+## Context Clarification
+
+Before creating tasks, if requirements are unclear:
+
+1. **Use `/interview` command** to understand:
+   - Task granularity preferences
+   - Team size and skill levels
+   - Sprint duration and velocity
+   - Dependencies and constraints
+2. **Clarify priorities** - MVP vs nice-to-have features
+3. **Confirm task structure** before breaking down
+
 ## Prerequisites
 
 - Design documents in `/documents/features/###-[feature-name]/design/`
