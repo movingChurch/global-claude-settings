@@ -66,7 +66,23 @@ EXECUTING: documents/design/[feature-name]/tasks/
 ☐ [Pending checklist item]
 ```
 
+## Anti-Overengineering Rules
+
+**NEVER DO:**
+- Implement features beyond task specifications
+- Add extra functionality not in checklist items
+- Create additional files or components not specified
+- Over-optimize or add unnecessary abstractions
+- Skip verification conditions to add extra features
+
+**ONLY DO WHAT'S ESSENTIAL:**
+- ✅ Execute exactly what each task specifies
+- ✅ Complete all checklist items as written
+- ✅ Verify completion conditions precisely
+- ✅ Focus on making tasks pass verification
+- ✅ Stop when task verification conditions are met
+
 ## Success Criteria
 
 **GOOD** = All tasks executed sequentially with completed checklists, verified completion conditions, and working implementation
-**BAD** = Incomplete tasks, unverified completion conditions, or implementation that doesn't meet task specifications
+**BAD** = Incomplete tasks, unverified completion conditions, over-engineered implementation, or implementation that doesn't meet task specifications

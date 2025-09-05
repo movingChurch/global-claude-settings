@@ -48,7 +48,12 @@ Before building, if requirements are unclear:
 
 5. **Requirement Validation** - Ensure all requirements are clear, actionable, and complete using 5W1H framework
 
-6. **Document Generation** - Call `@technical-writer` to create requirements document in Korean following template structure with variable substitution
+6. **Document Generation** - Call `@technical-writer` to create requirements document:
+   - **MANDATORY**: Must use loaded template as exact base structure - NO modifications to template structure allowed
+   - **MANDATORY**: All sections, headings, and formatting from template must be preserved exactly
+   - **MANDATORY**: Only substitute variables (${PROJECT_NAME}, ${FEATURE_NAME}) and fill content placeholders
+   - **FORBIDDEN**: Creating custom sections, changing section order, or modifying template structure
+   - Create Korean requirements document following template structure precisely
 
 7. **File Creation** - Save Korean requirements document to `documents/design/[feature-name]/requirements.md`
 
@@ -68,7 +73,23 @@ Created: documents/design/[feature-name]/requirements.md
 ✓ Korean requirements document ready for development planning
 ```
 
+## Anti-Overengineering Rules
+
+**NEVER DO:**
+- Add requirements not explicitly requested by user
+- Create additional sections beyond template structure
+- Assume future needs or add "nice-to-have" features
+- Over-complicate simple requirements
+- Add technical implementation details (belongs in design phase)
+
+**ONLY DO WHAT'S ESSENTIAL:**
+- ✅ Document exactly what user requested
+- ✅ Use template structure precisely as-is
+- ✅ Follow 5W1H methodology for clarity only
+- ✅ Keep requirements at appropriate abstraction level
+- ✅ Focus on business needs, not technical solutions
+
 ## Success Criteria
 
 **GOOD** = Clear, actionable requirements document with complete 5W1H details for each requirement that can guide development decisions
-**BAD** = Ambiguous requirements, missing context, or vague descriptions that lead to unclear implementation goals
+**BAD** = Ambiguous requirements, missing context, vague descriptions, or over-engineered requirements beyond user requests

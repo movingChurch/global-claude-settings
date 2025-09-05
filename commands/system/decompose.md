@@ -29,9 +29,13 @@ Convert requirements and architecture documents into clear, implementable tasks 
 
 3. **Task Generation** - Call specialist agents for task breakdown:
    - Use `@task-engineer` to break down complex requirements into smallest iteration units
-   - Generate tasks using `task-template.md` structure
+   - Load template from `~/.claude/documents/templates/task-template.md`
+   - **MANDATORY**: Must use loaded template as exact base structure - NO modifications to template structure allowed
+   - **MANDATORY**: All sections, headings, and formatting from template must be preserved exactly
+   - **MANDATORY**: Only substitute variables (${TASK_NAME}) and fill content placeholders
+   - **FORBIDDEN**: Creating custom sections, changing section order, or modifying template structure
    - Create `001-[task-name].md`, `002-[task-name].md` format
-   - Include purpose, result, implementation checklist, and verification conditions
+   - Include purpose, result, implementation checklist, and verification conditions as defined in template
 
 4. **Dependency Management** - Use agents for sequencing:
    - Call `@workflow-coordinator` to establish logical dependencies between tasks
@@ -64,7 +68,23 @@ Created: documents/design/[feature-name]/tasks/
 ✓ Ready for implementation planning
 ```
 
+## Anti-Overengineering Rules
+
+**NEVER DO:**
+- Create tasks not derived from requirements or architecture
+- Break down tasks into unnecessarily small units
+- Add "preparation" or "research" tasks unless explicitly needed
+- Create tasks for imaginary or future requirements
+- Add extra sections beyond template structure
+
+**ONLY DO WHAT'S ESSENTIAL:**
+- ✅ Create tasks only for documented requirements
+- ✅ Use smallest iteration units that produce verifiable results
+- ✅ Follow template structure exactly
+- ✅ Focus on direct path to requirement completion
+- ✅ Ensure each task has clear verification conditions
+
 ## Success Criteria
 
 **GOOD** = Clear, implementable tasks with specific verification conditions that represent smallest iteration units derived from requirements and architecture
-**BAD** = Vague tasks, missing verification conditions, or tasks not aligned with documented requirements and architecture
+**BAD** = Vague tasks, missing verification conditions, over-engineered task breakdown, or tasks not aligned with documented requirements and architecture

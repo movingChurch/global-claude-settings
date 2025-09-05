@@ -50,9 +50,13 @@ Create comprehensive architecture design documentation through systematic Korean
    - Generate architecture design using multiple specialists when beneficial
 
 6. **Document Creation** - Generate architecture document:
-   - Use `architecture-template.md` as base structure
+   - Load template from `~/.claude/documents/templates/architecture-template.md`
+   - **MANDATORY**: Must use loaded template as exact base structure - NO modifications to template structure allowed
+   - **MANDATORY**: All sections, headings, and formatting from template must be preserved exactly
+   - **MANDATORY**: Only substitute variables (${PROJECT_NAME}, ${FEATURE_NAME}) and fill content placeholders
+   - **FORBIDDEN**: Creating custom sections, changing section order, or modifying template structure
    - Create `documents/design/[feature-name]/architecture.md`
-   - Include tables and mermaid diagrams for visual clarity
+   - Include tables and mermaid diagrams as specified in template structure only
 
 ## Output
 
@@ -69,7 +73,23 @@ Created: documents/design/[feature-name]/architecture.md
 ✓ Architecture document ready for implementation planning
 ```
 
+## Anti-Overengineering Rules
+
+**NEVER DO:**
+- Design beyond what requirements specify
+- Add architecture components not needed for requirements
+- Over-abstract or add unnecessary complexity
+- Create "future-proof" designs for unspecified needs
+- Add extra diagrams or sections beyond template structure
+
+**ONLY DO WHAT'S ESSENTIAL:**
+- ✅ Design only for documented requirements
+- ✅ Use simplest solution that meets needs
+- ✅ Follow template structure exactly
+- ✅ Keep architecture at appropriate abstraction level
+- ✅ Focus on solving stated problems only
+
 ## Success Criteria
 
 **GOOD** = Clear architecture document with comprehensive context, visual diagrams, and actionable design that aligns with project standards and requirements
-**BAD** = Ambiguous architecture, missing context, or design that conflicts with project guidelines and constraints
+**BAD** = Ambiguous architecture, missing context, over-engineered design, or architecture that conflicts with project guidelines and constraints
