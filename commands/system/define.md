@@ -33,20 +33,24 @@ Before building, if requirements are unclear:
    - Check `documents/process/` for project-specific workflow requirements
    - Load any mandatory process steps for requirements gathering
 
-2. **Interview Process** - Use `/interview` command to systematically gather requirements about:
-   - Feature name for directory structure
-   - Project purpose and objectives
-   - Expected deliverables and outcomes
-   - Detailed functional requirements with 5W1H methodology
-   - Specific acceptance criteria and success metrics
-   - Any constraints or dependencies
-   - Continue questioning until user confirms completion
+2. **Interview Process** - Use `/interview` command to systematically gather requirements:
+   - Start with feature name for directory structure
+   - Gather project purpose and objectives
+   - Collect expected deliverables and outcomes
+   - Gather detailed functional requirements iteratively
+   - Collect specific acceptance criteria and success metrics
+   - Identify any constraints or dependencies
+   - **Continue iterative questioning until user confirms all requirements are complete**
+   - **Do not proceed to next step until user explicitly states "done" or "complete"**
 
 3. **Structure Creation** - Create directory structure: `documents/design/[feature-name]/`
 
 4. **Template Loading** - Load requirements template from `~/.claude/documents/templates/requirements-template.md`
 
-5. **Requirement Validation** - Ensure all requirements are clear, actionable, and complete using 5W1H framework
+5. **Requirement Processing** - Process requirements into 5W1H format:
+   - Transform each functional requirement into 5W1H sentence structure
+   - Ensure each requirement clearly specifies: who, what, when, where, why, and how
+   - Validate requirements are clear, actionable, and complete
 
 6. **Document Generation** - Call `@technical-writer` to create requirements document:
    - **MANDATORY**: Must use loaded template as exact base structure - NO modifications to template structure allowed
@@ -85,7 +89,7 @@ Created: documents/design/[feature-name]/requirements.md
 **ONLY DO WHAT'S ESSENTIAL:**
 - ✅ Document exactly what user requested
 - ✅ Use template structure precisely as-is
-- ✅ Follow 5W1H methodology for clarity only
+- ✅ Transform requirements into 5W1H sentence format for clarity
 - ✅ Keep requirements at appropriate abstraction level
 - ✅ Focus on business needs, not technical solutions
 
