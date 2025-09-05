@@ -27,24 +27,28 @@ Continue questioning until 100% clarity is achieved.
 
 ## What It Does
 
-1. **Systematic Questioning** - Asks structured, probing questions to uncover all requirements
-2. **Assumption Challenge** - Questions everything that seems obvious and validates assumptions
-3. **Context Discovery** - Continues questioning until 100% context clarity is achieved
-4. **Gap Identification** - Identifies missing information and edge cases
-5. **Complete Picture** - Builds comprehensive requirement understanding through detailed dialogue
+1. **Interactive Korean Questioning** - Ask one focused question at a time in Korean, building on previous responses
+2. **Response Analysis** - Analyze each user response to identify gaps, ambiguities, and follow-up needs
+3. **Adaptive Questioning** - Refine and improve questions based on received answers and discovered context
+4. **Assumption Challenge** - Question everything that seems obvious and validate assumptions through Korean dialogue
+5. **Context Building** - Continue iterative questioning until sufficient context is established
+6. **Gap Identification** - Identify missing information and edge cases through progressive inquiry
+7. **Completion Validation** - Ensure all requirements are clear before concluding interview
 
 ## Output
 
-```
-Interactive conversation with systematic questions including:
-- Technical requirement clarifications
-- Edge case identification
-- Assumption validation
-- Missing context discovery
-- Complete requirement specification
+```text
+Interactive Korean conversation with iterative questioning:
+- One focused question at a time in Korean
+- Response analysis and follow-up question generation
+- Technical requirement clarifications through dialogue
+- Edge case identification through progressive inquiry
+- Assumption validation via Korean Q&A
+- Missing context discovery through adaptive questioning
+- Complete requirement specification through iterative process
 ```
 
 ## Success Criteria
 
-**GOOD** = All requirements fully understood, no ambiguities remain, complete context captured
-**BAD** = Vague understanding, assumptions left unchallenged, missing critical information
+**GOOD** = All requirements fully understood through Korean dialogue, no ambiguities remain, complete context captured through iterative questioning
+**BAD** = Vague understanding, assumptions left unchallenged, missing critical information, or rushed questioning without sufficient iteration
