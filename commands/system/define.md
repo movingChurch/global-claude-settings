@@ -29,7 +29,11 @@ Before building, if requirements are unclear:
 
 ## What It Does
 
-1. **Interview Process** - Use `/interview` command to systematically gather requirements about:
+1. **Process Guide Loading** - Load development process requirements:
+   - Check `documents/process/` for project-specific workflow requirements
+   - Load any mandatory process steps for requirements gathering
+
+2. **Interview Process** - Use `/interview` command to systematically gather requirements about:
    - Feature name for directory structure
    - Project purpose and objectives
    - Expected deliverables and outcomes
@@ -38,15 +42,15 @@ Before building, if requirements are unclear:
    - Any constraints or dependencies
    - Continue questioning until user confirms completion
 
-2. **Structure Creation** - Create directory structure: `documents/design/[feature-name]/`
+3. **Structure Creation** - Create directory structure: `documents/design/[feature-name]/`
 
-3. **Template Loading** - Load requirements template from `~/.claude/documents/templates/requirements-template.md`
+4. **Template Loading** - Load requirements template from `~/.claude/documents/templates/requirements-template.md`
 
-4. **Requirement Validation** - Ensure all requirements are clear, actionable, and complete using 5W1H framework
+5. **Requirement Validation** - Ensure all requirements are clear, actionable, and complete using 5W1H framework
 
-5. **Document Generation** - Call `@technical-writer` to create requirements document in Korean following template structure
+6. **Document Generation** - Call `@technical-writer` to create requirements document in Korean following template structure with variable substitution
 
-6. **File Creation** - Save Korean requirements document to `documents/design/[feature-name]/requirements.md`
+7. **File Creation** - Save Korean requirements document to `documents/design/[feature-name]/requirements.md`
 
 ## Output
 

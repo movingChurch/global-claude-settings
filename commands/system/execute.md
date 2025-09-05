@@ -16,11 +16,12 @@ Execute all tasks sequentially from task documents, tracking checklist progress 
 
 ## What It Does
 
-1. **Context Loading** - Load all required documents:
+1. **Context Loading** - Load all required documents (document-first approach):
    - Read all task files from `documents/design/[feature-name]/tasks/`
    - Load `requirements.md` and `architecture.md` for reference
    - Load project guidelines from `documents/guidelines/`
    - Load architecture context from `documents/architectures/`
+   - Check `documents/process/` for mandatory execution process requirements
 
 2. **Sequential Task Execution** - Execute tasks in dependency order:
    - Process tasks in `001-`, `002-`, `003-` sequence

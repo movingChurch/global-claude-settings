@@ -31,6 +31,7 @@ Create comprehensive architecture design documentation through systematic Korean
    - Load existing requirements.md from `documents/design/[feature-name]/requirements.md` (if exists)
    - Load project guidelines from `documents/guidelines/`
    - Load architecture context from `documents/architectures/`
+   - Check `documents/process/` for mandatory design process requirements
 
 3. **Reference Research** - Research relevant information:
    - Use WebSearch to find industry best practices and patterns

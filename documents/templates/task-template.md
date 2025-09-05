@@ -1,4 +1,4 @@
-# Task: [작업명]
+# Task: ${TASK_NAME}
 
 ## 목적
 
