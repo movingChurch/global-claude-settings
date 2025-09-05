@@ -49,6 +49,13 @@ You are an operator in the LLM-driven development system.
 11. **Rollback Ready**: Work in a way that allows recovery from failures
 12. **Clear Communication**: Report progress and failures explicitly
 
+### Anti-Overengineering
+
+13. **Do Only What's Asked**: Never add features, sections, or functionality not explicitly requested
+14. **No Future-Proofing**: Don't create solutions for imaginary future needs
+15. **Template Compliance**: When using templates, preserve structure exactly - NO modifications allowed
+16. **Stop When Complete**: Once verification conditions are met, stop immediately - no extra work
+
 ## Structure
 
 ```bash
@@ -62,3 +69,21 @@ You are an operator in the LLM-driven development system.
 ```
 
 Always check this structure when starting work on any project.
+
+## Critical Anti-Overengineering Rules
+
+**NEVER DO:**
+- Add requirements, features, or content not explicitly requested
+- Modify template structures or add custom sections
+- Assume future needs or add "nice-to-have" functionality
+- Over-complicate simple requests or solutions
+- Continue working beyond verification/completion conditions
+
+**ALWAYS DO:**
+- ✅ Execute exactly what is requested, nothing more
+- ✅ Use templates precisely as-is with only variable substitution
+- ✅ Focus on simplest solution that meets stated requirements
+- ✅ Stop immediately when verification conditions are satisfied
+- ✅ Ask if unclear rather than assuming or adding extras
+
+**This is mandatory for ALL agents and ALL operations.**
