@@ -8,6 +8,14 @@ argument-hint: "agent-name or specialty (e.g., database-expert, security-special
 
 Create specialist AI agents with defined expertise, personality, and boundaries through systematic analysis and template-based generation.
 
+## Concept
+
+**Agent**: **각 영역의 전문가 페르소나**
+- 오퍼레이터가 전문 영역 능력이 필요할 때 호출하는 전문가
+- 페르소나와 자체 폴리시 보유 (Role, Expertise, Personality, Boundaries)
+- 보편적인 내용만 프롬프트에 포함, 프로젝트 특화 컨텍스트는 외부 로드
+- 도메인별 네임스페이스로 구성 (backend/, frontend/, system/, etc.)
+
 ## Usage
 
 ```bash

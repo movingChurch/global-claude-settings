@@ -8,6 +8,14 @@ argument-hint: "command-name (e.g., deploy, test, analyze)"
 
 Create user command interfaces that provide structured workflows and consistent outputs through systematic analysis and template-based generation.
 
+## Concept
+
+**Command**: **인간이 오퍼레이터에게 사용하는 명령**
+- 구체적인 과정과 명확한 결과물: 일관된 아웃픫 생성이 핵심
+- 페르소나보다 프로세스 중심: 자동화 과정에 가까운 개념
+- 네임스페이스별 기능 구분 (code/, git/, quality/, system/, etc.)
+- 컨텍스트 명확화 요구사항으로 /interview 강제 사용
+
 ## Usage
 
 ```bash

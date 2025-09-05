@@ -25,7 +25,6 @@
       "args": [
         "-y",
         "@supabase/mcp-server-supabase",
-        "--read-only",
         "--project-ref=lfppkatbdsevyoiyhmao"
       ],
       "env": {
