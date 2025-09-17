@@ -1,12 +1,12 @@
 ---
 name: initialize
-description: Load ./documents/guidelines/ and architecture into context
+description: Load ./documents/standards/ and projects into context
 argument-hint: "initialize" or "initialize refresh"
 ---
 
 # Initialize Command
 
-Load and memorize all ./documents/guidelines/ and architecture for consistent context in future work.
+Load and memorize all ./documents/standards/ and projects for consistent context in future work.
 
 ## Usage
 
@@ -35,27 +35,27 @@ Before initialization, if project context is unclear:
 ## What It Does
 
 1. **Discovers** all project documentation automatically
-2. **Loads** guidelines and architecture into memory
+2. **Loads** standards and projects into memory
 3. **Validates** documentation completeness
 4. **Reports** what was found and loaded
 
 ## Discovery Locations
 
-- `./documents/guidelines/` - Project standards and conventions
-- `./documents/architectures/` - System design patterns
+- `./documents/standards/` - Project standards and conventions
+- `./documents/projects/` - System design patterns
 - `./documents/design/` - Existing design documents
 - Root configuration files - Project setup and tooling
 
 ## Context Loading
 
-**Guidelines:**
+**Standards:**
 
 - Coding standards and conventions
 - Project structure patterns
 - Quality requirements
 - Development workflows
 
-**Architecture:**
+**Projects:**
 
 - System design decisions
 - Technical patterns and constraints
@@ -68,13 +68,13 @@ Before initialization, if project context is unclear:
 ✅ PROJECT CONTEXT INITIALIZED
 
 LOADED:
-📋 Guidelines: 5 documents
-🏗️  Architecture: 3 documents
+📋 Standards: 5 documents
+🏗️  Projects: 3 documents
 📐 Design Patterns: 2 documents
 
 READY:
 - Coding standards applied
-- Architecture patterns available
+- Project patterns available
 - Design conventions loaded
 
 Context expires: Never (until refresh)

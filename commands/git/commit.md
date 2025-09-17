@@ -115,6 +115,7 @@ Proceed? [Y/n/edit]
 - WIP commits
 - Vague messages
 - Huge changesets
+- Claude Code attribution footers
 
 ## Specialist Used
 

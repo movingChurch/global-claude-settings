@@ -19,8 +19,8 @@ Convert requirements and architecture documents into clear, implementable tasks 
 1. **Document Loading** - Load existing project documents:
    - Read `documents/design/[feature-name]/requirements.md`
    - Read `documents/design/[feature-name]/architecture.md`
-   - Load project guidelines from `documents/guidelines/` (when needed)
-   - Load architecture context from `documents/architectures/` (when needed)
+   - Load project standards from `documents/standards/` (when needed)
+   - Load architecture context from `documents/projects/` (when needed)
 
 2. **Task Analysis** - Analyze documents to identify tasks:
    - Break down each requirement into smallest iteration units

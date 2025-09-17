@@ -29,9 +29,9 @@ Create comprehensive architecture design documentation through systematic Korean
 
 2. **Context Loading** - Load project context:
    - Load existing requirements.md from `documents/design/[feature-name]/requirements.md` (if exists)
-   - Load project guidelines from `documents/guidelines/`
-   - Load architecture context from `documents/architectures/`
-   - Check `documents/process/` for mandatory design process requirements
+   - Load project standards from `documents/standards/`
+   - Load architecture context from `documents/projects/`
+   - Check `documents/standards/` for mandatory design process requirements
 
 3. **Reference Research** - Research relevant information:
    - Use WebSearch to find industry best practices and patterns
@@ -40,7 +40,7 @@ Create comprehensive architecture design documentation through systematic Korean
 
 4. **Context Preparation** - Prepare comprehensive context for specialists:
    - Requirements and objectives
-   - Project guidelines and architectural constraints
+   - Project standards and architectural constraints
    - Research findings and industry references
    - Technical requirements and constraints
 
@@ -65,7 +65,7 @@ Created: documents/design/[feature-name]/architecture.md
 
 🏗️ ARCHITECTURE DOCUMENT CREATED:
 ✓ Feature requirements gathered through Korean interview
-✓ Project guidelines and architectural constraints loaded
+✓ Project standards and architectural constraints loaded
 ✓ Industry references and best practices researched
 ✓ Comprehensive context prepared for design specialists
 ✓ Architecture design generated using specialist agents
@@ -92,4 +92,4 @@ Created: documents/design/[feature-name]/architecture.md
 ## Success Criteria
 
 **GOOD** = Clear architecture document with comprehensive context, visual diagrams, and actionable design that aligns with project standards and requirements
-**BAD** = Ambiguous architecture, missing context, over-engineered design, or architecture that conflicts with project guidelines and constraints
+**BAD** = Ambiguous architecture, missing context, over-engineered design, or architecture that conflicts with project standards and constraints

@@ -36,22 +36,24 @@ Before reviewing, if focus areas are unclear:
 
 ## What It Does
 
-1. **Compares** code against ./documents/guidelines/
+1. **Compares** code against ./documents/standards/
 2. **Validates** architecture pattern compliance
-3. **Checks** coding standards from `./documents/guidelines/`
-4. **Verifies** design patterns from `./documents/architectures/`
+3. **Checks** coding standards from `./documents/standards/`
+4. **Verifies** design patterns from `./documents/projects/`
 5. **Ensures** consistency with established conventions
 
 ## Review Based On
 
-**Project Guidelines (`./documents/guidelines/`):**
+**Project Standards (`./documents/standards/`):**
+
 - ✓ Coding standards and conventions
 - ✓ Naming patterns and style rules
 - ✓ File organization structure
 - ✓ Quality requirements
 - ✓ Development workflows
 
-**Architecture Patterns (`./documents/architectures/`):**
+**Architecture Patterns (`./documents/projects/`):**
+
 - ✓ System design compliance
 - ✓ Technical pattern usage
 - ✓ Integration requirements
@@ -59,6 +61,7 @@ Before reviewing, if focus areas are unclear:
 - ✓ Security requirements
 
 **Existing Codebase:**
+
 - ✓ Consistency with current patterns
 - ✓ Similar implementations
 - ✓ Established conventions
@@ -89,12 +92,13 @@ CODE REVIEW: auth/login.js
    Reference: architecture/patterns.md#service-layer
 
 ACTION REQUIRED:
-Align with ./documents/guidelines/ and architecture before merge
+Align with ./documents/standards/ and architecture before merge
 ```
 
 ## Review Categories
 
 **Severity Levels:**
+
 - 🔴 **Critical** - Must fix (security, bugs)
 - 🟡 **Important** - Should fix (performance, maintainability)
 - 🟢 **Minor** - Nice to have (style, optimization)

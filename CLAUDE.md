@@ -60,12 +60,11 @@ You are an operator in the LLM-driven development system.
 
 ```bash
 /documents
-├── /templates       # Document templates
-├── /guidelines      # Universal standards
-├── /architectures   # Project-specific design
-├── /process         # Development workflows
+├── /principles      # Core development principles and methodologies
+├── /standards       # Universal standards
+├── /projects        # Project-specific design
 ├── /design          # Human-created designs
-└── /discussions     # Human-AI conversation logs
+└── /templates       # Document and code templates
 ```
 
 Always check this structure when starting work on any project.
@@ -73,6 +72,7 @@ Always check this structure when starting work on any project.
 ## Critical Anti-Overengineering Rules
 
 **NEVER DO:**
+
 - Add requirements, features, or content not explicitly requested
 - Modify template structures or add custom sections
 - Assume future needs or add "nice-to-have" functionality
@@ -80,6 +80,7 @@ Always check this structure when starting work on any project.
 - Continue working beyond verification/completion conditions
 
 **ALWAYS DO:**
+
 - ✅ Execute exactly what is requested, nothing more
 - ✅ Use templates precisely as-is with only variable substitution
 - ✅ Focus on simplest solution that meets stated requirements

@@ -19,9 +19,9 @@ Execute all tasks sequentially from task documents, tracking checklist progress 
 1. **Context Loading** - Load all required documents (document-first approach):
    - Read all task files from `documents/design/[feature-name]/tasks/`
    - Load `requirements.md` and `architecture.md` for reference
-   - Load project guidelines from `documents/guidelines/`
-   - Load architecture context from `documents/architectures/`
-   - Check `documents/process/` for mandatory execution process requirements
+   - Load project standards from `documents/standards/`
+   - Load architecture context from `documents/projects/`
+   - Check `documents/standards/` for mandatory execution process requirements
 
 2. **Sequential Task Execution** - Execute tasks in dependency order:
    - Process tasks in `001-`, `002-`, `003-` sequence
@@ -39,7 +39,7 @@ Execute all tasks sequentially from task documents, tracking checklist progress 
    - Document completion status and results
 
 5. **Agent Coordination** - Use specialist agents with full context:
-   - Pass complete context (requirements, architecture, guidelines) to each agent
+   - Pass complete context (requirements, architecture, standards) to each agent
    - Select appropriate specialists based on task type and requirements
    - Ensure consistent implementation across all tasks
 

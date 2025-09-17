@@ -30,7 +30,7 @@ Before building, if requirements are unclear:
 ## What It Does
 
 1. **Process Guide Loading** - Load development process requirements:
-   - Check `documents/process/` for project-specific workflow requirements
+   - Check `documents/standards/` for project-specific workflow requirements
    - Load any mandatory process steps for requirements gathering
 
 2. **Interview Process** - Use `/interview` command to systematically gather requirements:
