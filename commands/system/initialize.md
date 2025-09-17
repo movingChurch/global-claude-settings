@@ -34,17 +34,17 @@ Before initialization, if project context is unclear:
 
 ## What It Does
 
-1. **Discovers** all project documentation automatically
-2. **Loads** standards and projects into memory
-3. **Validates** documentation completeness
-4. **Reports** what was found and loaded
+1. **Reads** all files in `./documents/standards/` folder
+2. **Reads** all files in `./documents/projects/` folder
+3. **Analyzes** current project structure and codebase
+4. **Loads** all content into memory for context
+5. **Reports** what was loaded
 
-## Discovery Locations
+## Target Locations
 
-- `./documents/standards/` - Project standards and conventions
-- `./documents/projects/` - System design patterns
-- `./documents/design/` - Existing design documents
-- Root configuration files - Project setup and tooling
+- `./documents/standards/` - All standards and conventions files
+- `./documents/projects/` - All project-specific design files
+- **Current project** - Directory structure, package files, main code patterns
 
 ## Context Loading
 
@@ -62,35 +62,41 @@ Before initialization, if project context is unclear:
 - Integration requirements
 - Performance and security standards
 
+**Current Project:**
+
+- Directory structure and file organization
+- Dependencies, build files, and configuration files
+- Main code patterns and architectural setup
+- Technology stack and framework usage
+
 ## Output
 
 ```text
 ✅ PROJECT CONTEXT INITIALIZED
 
 LOADED:
-📋 Standards: 5 documents
-🏗️  Projects: 3 documents
-📐 Design Patterns: 2 documents
+📋 Standards: 5 documents from ./documents/standards/
+🏗️  Projects: 3 documents from ./documents/projects/
+📁 Project Structure: [Detected project type and main language]
+
+ANALYZED:
+- Directory structure: Main folders and organization pattern
+- Dependencies: Key libraries and frameworks in use
+- Configuration: Build tools, linting, and project setup files
+- Code patterns: Main architectural patterns and conventions
 
 READY:
-- Coding standards applied
-- Project patterns available
-- Design conventions loaded
+- All standards and conventions loaded into context
+- All project designs and patterns loaded into context
+- Current project structure and setup understood
+- Context available for all subsequent commands
 
 Context expires: Never (until refresh)
 ```
 
-## Anti-Overengineering
-
-- ✅ Load only existing documentation
-- ✅ Focus on actionable guidance
-- ✅ Skip incomplete or draft documents
-- ❌ Don't create missing documentation
-- ❌ Don't make assumptions about standards
-
 ## Success Criteria
 
-**GOOD INIT** = All existing docs loaded and ready for use
-**INCOMPLETE INIT** = Some documents missing or unreadable
+**GOOD INIT** = All files from standards/ and projects/ folders loaded + current project structure analyzed
+**INCOMPLETE INIT** = Some files could not be read or project structure unclear
 
-The initialize command prepares context for all subsequent commands.
+The initialize command loads standards, project documentation, and current project context for all subsequent commands.
