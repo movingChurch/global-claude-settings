@@ -19,6 +19,7 @@ Analyzes project code using @system/code-analyst agent and generates structured 
 ```
 
 **Examples:**
+
 ```bash
 /code analyze src/
 /code analyze .
@@ -37,12 +38,15 @@ Analyzes project code using @system/code-analyst agent and generates structured 
 ## Workflow Details
 
 ### Step 1: Path Validation
+
 ```
 Input Path → Exists Check → Access Check → Continue/Error
 ```
 
 ### Step 2: Existing Analysis Check
+
 Existing files to analyze:
+
 - `tech-stack.md`: Technology stack identification results
 - `architecture.md`: Architecture structure analysis
 - `guideline-compliance.md`: Guideline compliance status
@@ -50,13 +54,17 @@ Existing files to analyze:
 - `legacy-assessment.md`: Legacy code assessment
 
 ### Step 3: Code Analysis Request
+
 Information provided to @code-analyst agent:
+
 - Current project code (specified path)
 - Existing analysis results (if available)
 - Request for updated analysis across 5 categories
 
 ### Step 4: Analysis File Updates
+
 Analysis performed for each category:
+
 1. **Tech Stack Analysis** → `tech-stack.md`
 2. **Architecture Analysis** → `architecture.md`  
 3. **Guideline Compliance** → `guideline-compliance.md`
@@ -64,6 +72,7 @@ Analysis performed for each category:
 5. **Legacy Assessment** → `legacy-assessment.md`
 
 ### Step 5: Result Storage
+
 Result storage location: `{project}/documents/analysis/`
 
 ## Output
@@ -95,39 +104,47 @@ Analysis completed: /project/documents/analysis/
 ## Key Features
 
 ### Incremental Updates
+
 - Update only changes and improvements considering existing analysis results
 - Improve efficiency by preventing unnecessary re-analysis
 
 ### Systematic Analysis
+
 - Utilize professional and accurate analysis from @code-analyst agent
 - Document only certain analysis results without speculation
 
 ### Structured Documentation
+
 - Store separately by category in project-specific `analysis` folder
 - Ensure easy management with consistent file naming and structure
 
 ### Integrated Workflow
+
 - Complete entire code analysis process with single command
 - Support integration with other development commands
 
 ## Error Handling
 
 **Path Not Found**: When the specified path does not exist
+
 ```
 ❌ Error: Path '{path}' could not be found.
 ```
 
 **Access Denied**: When there are no file/folder access permissions
+
 ```
 ❌ Error: Cannot access path '{path}'. Please check permissions.
 ```
 
 **Agent Call Failed**: When @code-analyst agent call fails
+
 ```
 ❌ Error: Code analysis agent call failed. Please try again.
 ```
 
 **Partial Update**: When only some files are updated
+
 ```
 ⚠️ Warning: Only 3 out of 5 files were updated. Please check the rest manually.
 ```

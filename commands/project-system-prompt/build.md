@@ -11,6 +11,7 @@ Create project-specific LLM behavior rules and context that complement the root 
 ## Concept
 
 **Project System Prompt**: **특정 프로젝트에만 적용되는 특화된 규칙**
+
 - 루트 레벨 이후 추가 로드되는 프로젝트별 컨텍스트
 - 프로젝트 컨텍스트: 프로젝트명, 목적, 도메인, 비즈니스 로직
 - 기술 스택: 사용 언어, 프레임워크, 도구 설정

@@ -11,6 +11,7 @@ Create universal LLM behavior rules that apply across all projects through syste
 ## Concept
 
 **Root System Prompt**: **모든 프로젝트에서 공통으로 사용되는 기본 행동 규칙**
+
 - 3-tier 아키텍처의 Operator 역할 정의 (Human → LLM → Tools)
 - 범용 행동 원칙: 문서 우선, 검증 우선, 일관성 보장
 - 공통 출력 형식: 에러, 성공, 진행 상황 보고 표준
